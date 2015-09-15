@@ -1,0 +1,1233 @@
+[INFO] 10:09:13:865 Filesystem/(15687:15687): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:09:20:361 Filesystem/(15687:15690): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 12:22:00:694 Filesystem/(19137:19137): Escuchando nuevos clientes en puerto 43002.
+[INFO] 12:22:06:57 Filesystem/(19137:19142): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 12:31:26:508 Filesystem/(19455:19455): Escuchando nuevos clientes en puerto 43002.
+[INFO] 12:33:34:830 Filesystem/(19471:19471): Escuchando nuevos clientes en puerto 43002.
+[INFO] 12:37:04:715 Filesystem/(19520:19520): Escuchando nuevos clientes en puerto 43002.
+[INFO] 12:37:18:41 Filesystem/(19562:19562): Escuchando nuevos clientes en puerto 43002.
+[INFO] 12:43:46:126 Filesystem/(19807:19807): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 13:11:17:998 Filesystem/(20358:20358): Error al crear escucha en puerto 43002.
+[INFO] 13:11:37:720 Filesystem/(20383:20383): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 13:12:57:638 Filesystem/(20436:20436): Error al crear escucha en puerto 43002.
+[INFO] 13:13:33:817 Filesystem/(20479:20479): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:13:51:808 Filesystem/(20518:20518): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:17:02:410 Filesystem/(20616:20616): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:24:04:261 Filesystem/(20771:20771): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:24:39:127 Filesystem/(20771:20782): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:30:43:291 Filesystem/(20920:20920): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:30:51:618 Filesystem/(20964:20964): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:30:57:362 Filesystem/(20964:20974): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:33:38:425 Filesystem/(21073:21073): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:33:48:990 Filesystem/(21115:21115): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:33:53:872 Filesystem/(21115:21124): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:37:22:620 Filesystem/(21186:21186): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:37:40:82 Filesystem/(21206:21206): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:37:42:193 Filesystem/(21206:21209): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:38:52:768 Filesystem/(21249:21249): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:39:11:941 Filesystem/(21249:21261): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:41:15:33 Filesystem/(21460:21460): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:41:20:279 Filesystem/(21460:21470): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:44:28:910 Filesystem/(21601:21601): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:44:37:82 Filesystem/(21601:21613): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 14:32:06:719 Filesystem/(22841:22841): Error al crear escucha en puerto 43002.
+[INFO] 14:32:26:68 Filesystem/(22848:22848): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:32:29:453 Filesystem/(22848:22852): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:35:03:790 Filesystem/(22905:22905): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:35:09:933 Filesystem/(22905:22917): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:10:44:999 Filesystem/(23116:23116): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:10:57:704 Filesystem/(23116:23127): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:18:23:803 Filesystem/(23210:23210): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:18:30:470 Filesystem/(23210:23222): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:35:41:937 Filesystem/(23804:23804): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:41:49:762 Filesystem/(23970:23970): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:43:51:846 Filesystem/(23970:23982): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 15:47:20:110 Filesystem/(24042:24042): Error al crear escucha en puerto 43002.
+[ERROR] 15:47:30:894 Filesystem/(24077:24077): Error al crear escucha en puerto 43002.
+[ERROR] 15:47:46:213 Filesystem/(24117:24117): Error al crear escucha en puerto 43002.
+[INFO] 15:48:18:802 Filesystem/(24171:24171): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:48:25:494 Filesystem/(24171:24180): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:56:11:434 Filesystem/(24457:24457): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:01:17:238 Filesystem/(24712:24712): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:01:57:323 Filesystem/(24712:24724): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:06:49:157 Filesystem/(24763:24763): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:07:19:700 Filesystem/(24763:24776): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 16:09:41:133 Filesystem/(24821:24821): Error al crear escucha en puerto 43002.
+[INFO] 16:10:01:221 Filesystem/(24863:24863): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:10:32:857 Filesystem/(24863:24873): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:21:44:608 Filesystem/(25055:25055): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:21:48:418 Filesystem/(25055:25070): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:26:31:311 Filesystem/(25174:25174): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:26:42:743 Filesystem/(25174:25185): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:55:16:55 Filesystem/(25776:25776): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:56:03:844 Filesystem/(25825:25825): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 17:00:19:805 Filesystem/(25962:25962): Error al crear escucha en puerto 43002.
+[INFO] 17:06:00:913 Filesystem/(2210:2210): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:06:38:322 Filesystem/(2247:2247): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:08:32:420 Filesystem/(2505:2505): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:09:00:318 Filesystem/(2543:2543): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:10:12:861 Filesystem/(2624:2624): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 17:12:12:812 Filesystem/(2721:2721): Error al crear escucha en puerto 43002.
+[ERROR] 17:12:13:439 Filesystem/(2740:2740): Error al crear escucha en puerto 43002.
+[INFO] 17:12:47:382 Filesystem/(2799:2799): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:27:51:721 Filesystem/(3030:3030): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:28:10:721 Filesystem/(3030:3035): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:29:56:649 Filesystem/(3113:3113): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:30:03:239 Filesystem/(3113:3125): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:32:01:836 Filesystem/(3193:3193): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:33:07:79 Filesystem/(3193:3204): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:37:30:244 Filesystem/(3496:3496): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:37:33:85 Filesystem/(3496:3499): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:08:08:416 Filesystem/(3700:3700): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:10:19:304 Filesystem/(3801:3801): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:11:00:333 Filesystem/(3831:3831): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:55:44:513 Filesystem/(5774:5774): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:00:10:667 Filesystem/(5857:5857): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:00:14:971 Filesystem/(5857:5862): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:01:37:102 Filesystem/(5899:5899): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:01:40:979 Filesystem/(5899:5910): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:26:58:247 Filesystem/(7274:7274): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:27:00:608 Filesystem/(7274:7277): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:30:54:591 Filesystem/(7347:7347): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:33:20:903 Filesystem/(7412:7412): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:33:23:680 Filesystem/(7412:7419): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:35:19:510 Filesystem/(7425:7425): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:35:53:965 Filesystem/(7447:7447): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 08:51:35:500 Filesystem/(7747:7747): Error al crear escucha en puerto 43002.
+[INFO] 08:51:52:891 Filesystem/(7749:7749): Escuchando nuevos clientes en puerto 43002.
+[INFO] 08:51:59:324 Filesystem/(7749:7753): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 08:54:39:390 Filesystem/(7785:7785): Escuchando nuevos clientes en puerto 43002.
+[INFO] 08:59:30:793 Filesystem/(7922:7922): Escuchando nuevos clientes en puerto 43002.
+[INFO] 08:59:32:905 Filesystem/(7922:7925): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 09:01:01:205 Filesystem/(7957:7957): Escuchando nuevos clientes en puerto 43002.
+[INFO] 09:04:34:818 Filesystem/(8053:8053): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 09:13:19:298 Filesystem/(8241:8241): Error al crear escucha en puerto 43002.
+[INFO] 09:13:33:417 Filesystem/(8244:8244): Escuchando nuevos clientes en puerto 43002.
+[INFO] 09:13:42:905 Filesystem/(8244:8247): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 09:20:42:276 Filesystem/(8456:8456): Escuchando nuevos clientes en puerto 43002.
+[INFO] 09:21:14:828 Filesystem/(8456:8463): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 09:21:28:778 Filesystem/(8456:8463): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 09:21:37:827 Filesystem/(8456:8470): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 09:21:49:978 Filesystem/(8456:8470): Se ha desconectado un Nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 09:22:34:562 Filesystem/(8477:8477): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 09:28:37:623 Filesystem/(8747:8747): Error al crear escucha en puerto 43002.
+[INFO] 09:28:47:786 Filesystem/(8767:8767): Escuchando nuevos clientes en puerto 43002.
+[INFO] 09:29:11:85 Filesystem/(8767:8775): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:00:37:135 Filesystem/(10622:10622): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 13:03:52:975 Filesystem/(12259:12259): Error al crear escucha en puerto 43002.
+[INFO] 13:04:07:550 Filesystem/(12261:12261): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:04:23:246 Filesystem/(12261:12288): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:04:47:540 Filesystem/(12261:12297): Se ha conectado un nodo. ID = 4, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:04:56:88 Filesystem/(12261:12297): Se ha desconectado un Nodo. ID = 4, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:04:59:634 Filesystem/(12261:12288): Se ha desconectado un NN. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:05:05:685 Filesystem/(12261:12305): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:05:10:20 Filesystem/(12261:12313): Se ha conectado un nodo. ID = 4, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:05:16:270 Filesystem/(12261:12313): Se ha desconectado un Nodo. ID = 4, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:05:17:92 Filesystem/(12261:12317): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:05:17:947 Filesystem/(12261:12317): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:05:18:773 Filesystem/(12261:12321): Se ha conectado un nodo. ID = 4, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:05:20:636 Filesystem/(12261:12321): Se ha desconectado un Nodo. ID = 4, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:06:05:196 Filesystem/(12359:12359): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:06:08:435 Filesystem/(12359:12365): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:07:07:194 Filesystem/(12427:12427): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:07:10:489 Filesystem/(12427:12432): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:22:51:470 Filesystem/(16403:16403): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 19:26:01:731 Filesystem/(16443:16443): Error al crear escucha en puerto 43002.
+[INFO] 19:26:23:483 Filesystem/(16481:16481): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:28:15:890 Filesystem/(16611:16611): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 19:50:23:307 Filesystem/(16843:16843): Error al crear escucha en puerto 43002.
+[INFO] 19:51:43:245 Filesystem/(16866:16866): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:52:37:740 Filesystem/(16909:16909): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:47:13:464 Filesystem/(16909:20682): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:47:52:122 Filesystem/(20716:20716): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:47:57:81 Filesystem/(20716:20719): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:52:22:678 Filesystem/(20797:20797): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:53:44:909 Filesystem/(20857:20857): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:02:57:826 Filesystem/(20917:20917): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:06:24:234 Filesystem/(21037:21037): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:07:29:809 Filesystem/(21102:21102): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:14:21:371 Filesystem/(21312:21312): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:16:52:406 Filesystem/(21340:21340): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:17:47:199 Filesystem/(21347:21347): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:41:23:583 Filesystem/(21459:21459): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:47:16:724 Filesystem/(21563:21563): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:58:07:595 Filesystem/(21930:21930): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:05:15:600 Filesystem/(22004:22004): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:08:12:330 Filesystem/(22167:22167): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:15:28:488 Filesystem/(22229:22229): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:16:24:867 Filesystem/(22258:22258): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:17:22:674 Filesystem/(22266:22266): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:20:07:751 Filesystem/(22322:22322): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:21:36:335 Filesystem/(22396:22396): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:25:33:79 Filesystem/(22467:22467): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:26:05:542 Filesystem/(22499:22499): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:30:36:640 Filesystem/(22611:22611): Escuchando nuevos clientes en puerto 43002.
+[INFO] 09:38:29:259 Filesystem/(22820:22820): Escuchando nuevos clientes en puerto 43002.
+[INFO] 09:39:11:233 Filesystem/(22898:22898): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 09:41:57:314 Filesystem/(22998:22998): Error al crear escucha en puerto 43002.
+[INFO] 09:42:45:741 Filesystem/(23041:23041): Escuchando nuevos clientes en puerto 43002.
+[INFO] 09:44:34:33 Filesystem/(23214:23214): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 09:44:37:754 Filesystem/(23237:23237): Error al crear escucha en puerto 43002.
+[ERROR] 09:44:39:458 Filesystem/(23258:23258): Error al crear escucha en puerto 43002.
+[INFO] 09:45:03:699 Filesystem/(23283:23283): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:42:42:228 Filesystem/(27526:27526): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:44:48:493 Filesystem/(27672:27672): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:45:16:397 Filesystem/(27672:27707): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:48:23:679 Filesystem/(27725:27725): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:48:37:775 Filesystem/(27725:27728): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:51:56:931 Filesystem/(27725:27728): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:54:37:750 Filesystem/(27795:27795): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:55:00:613 Filesystem/(27795:27805): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:55:19:245 Filesystem/(27838:27838): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:55:26:685 Filesystem/(27838:27848): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 12:09:16:978 Filesystem/(28188:28188): Escuchando nuevos clientes en puerto 43002.
+[INFO] 12:09:25:346 Filesystem/(28188:28197): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 12:39:22:99 Filesystem/(28557:28557): Escuchando nuevos clientes en puerto 43002.
+[INFO] 12:39:24:962 Filesystem/(28557:28560): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 12:50:37:340 Filesystem/(28704:28704): Escuchando nuevos clientes en puerto 43002.
+[INFO] 12:51:33:400 Filesystem/(28704:28707): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:02:37:23 Filesystem/(29186:29186): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:02:41:528 Filesystem/(29186:29189): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:02:53:640 Filesystem/(29186:29194): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 13:04:02:966 Filesystem/(29247:29247): Error al crear escucha en puerto 43002.
+[INFO] 13:04:27:859 Filesystem/(29289:29289): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:04:32:193 Filesystem/(29289:29297): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:05:06:997 Filesystem/(29289:29307): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:07:19:17 Filesystem/(29360:29360): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:10:47:821 Filesystem/(29360:29375): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:11:08:643 Filesystem/(29360:29379): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:13:48:280 Filesystem/(29455:29455): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:13:56:793 Filesystem/(29455:29463): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:14:06:240 Filesystem/(29455:29467): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:16:59:541 Filesystem/(29627:29627): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:17:15:653 Filesystem/(29627:29639): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:17:40:243 Filesystem/(29627:29643): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:19:38:253 Filesystem/(29627:29639): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:19:38:916 Filesystem/(29627:29643): Se ha desconectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 14:31:16:4 Filesystem/(29926:29926): Error al crear escucha en puerto 43002.
+[INFO] 14:31:24:539 Filesystem/(29931:29931): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:31:27:131 Filesystem/(29931:29934): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:56:46:934 Filesystem/(30203:30203): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:56:55:893 Filesystem/(30203:30206): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:57:34:83 Filesystem/(30203:30206): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:59:18:660 Filesystem/(30296:30296): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:59:21:669 Filesystem/(30296:30299): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:30:56:415 Filesystem/(4901:4901): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:31:05:574 Filesystem/(4901:4904): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:32:48:752 Filesystem/(4953:4953): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:32:56:973 Filesystem/(4953:4966): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:38:07:713 Filesystem/(5134:5134): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:39:21:521 Filesystem/(5134:5148): Se ha desconectado un NN. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:39:21:529 Filesystem/(5134:5149): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:42:15:558 Filesystem/(5231:5231): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:42:17:870 Filesystem/(5231:5234): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:03:20:880 Filesystem/(5723:5723): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 22:04:25:731 Filesystem/(5775:5775): Error al crear escucha en puerto 43002.
+[INFO] 22:04:45:576 Filesystem/(5795:5795): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:57:45:530 Filesystem/(6102:6102): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:14:15:59 Filesystem/(6497:6497): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:32:23:997 Filesystem/(9855:9855): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:33:16:992 Filesystem/(9925:9925): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:33:32:130 Filesystem/(9925:9941): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:39:01:37 Filesystem/(10050:10050): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:39:04:474 Filesystem/(10050:10061): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:46:09:319 Filesystem/(10160:10160): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:46:13:103 Filesystem/(10160:10168): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:00:47:772 Filesystem/(10296:10296): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:00:53:471 Filesystem/(10296:10299): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:14:20:159 Filesystem/(10486:10486): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:15:41:848 Filesystem/(10486:10489): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:16:51:183 Filesystem/(10486:10489): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:25:30:577 Filesystem/(10601:10601): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:25:32:878 Filesystem/(10601:10604): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:29:53:301 Filesystem/(10692:10692): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:29:55:235 Filesystem/(10692:10695): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:38:21:105 Filesystem/(10940:10940): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:38:26:878 Filesystem/(10940:10943): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:39:50:350 Filesystem/(10940:10943): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:40:43:542 Filesystem/(11000:11000): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:53:25:193 Filesystem/(11000:11016): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:00:45:555 Filesystem/(11199:11199): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:00:47:513 Filesystem/(11199:11202): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:02:37:779 Filesystem/(11199:11202): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:50:20:993 Filesystem/(11199:11422): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:57:14:836 Filesystem/(11199:11422): Se ha desconectado un Nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:08:44:11 Filesystem/(11734:11734): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:08:46:883 Filesystem/(11734:11737): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 17:13:21:539 Filesystem/(11853:11853): Error al crear escucha en puerto 43002.
+[INFO] 17:13:27:483 Filesystem/(11734:11737): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:13:28:22 Filesystem/(11734:11870): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:13:31:632 Filesystem/(11734:11870): Se ha desconectado un Nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:13:45:40 Filesystem/(11902:11902): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:13:54:728 Filesystem/(11902:11911): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:17:33:572 Filesystem/(11952:11952): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:17:35:476 Filesystem/(11952:11955): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:19:18:637 Filesystem/(12532:12532): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:19:21:154 Filesystem/(12532:12535): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:21:27:82 Filesystem/(12588:12588): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:21:29:626 Filesystem/(12588:12591): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:30:44:591 Filesystem/(12708:12708): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:30:46:626 Filesystem/(12708:12711): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:30:44:847 Filesystem/(13426:13426): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:31:33:828 Filesystem/(13483:13483): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:33:42:775 Filesystem/(13563:13563): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:34:09:965 Filesystem/(13603:13603): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:39:17:283 Filesystem/(13778:13778): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:39:19:111 Filesystem/(13778:13781): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:41:09:139 Filesystem/(13836:13836): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:42:25:347 Filesystem/(13909:13909): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:42:26:934 Filesystem/(13909:13912): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:44:30:789 Filesystem/(14016:14016): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:44:32:397 Filesystem/(14016:14019): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:11:21:315 Filesystem/(14418:14418): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:11:23:9 Filesystem/(14418:14421): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:59:00:603 Filesystem/(14825:14825): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:59:02:349 Filesystem/(14825:14828): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:04:37:639 Filesystem/(14925:14925): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:04:40:837 Filesystem/(14925:14928): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:09:21:636 Filesystem/(14993:14993): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:09:24:60 Filesystem/(14993:14996): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:13:39:912 Filesystem/(15106:15106): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:13:44:811 Filesystem/(15106:15109): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:17:16:158 Filesystem/(15245:15245): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:17:18:82 Filesystem/(15245:15248): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:24:10:525 Filesystem/(15362:15362): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:24:13:114 Filesystem/(15362:15365): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:48:34:54 Filesystem/(15826:15826): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:48:35:749 Filesystem/(15826:15829): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:51:52:250 Filesystem/(15934:15934): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:51:56:63 Filesystem/(15934:15937): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:53:07:262 Filesystem/(15976:15976): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:53:12:649 Filesystem/(15976:15981): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:58:36:934 Filesystem/(16108:16108): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:58:39:96 Filesystem/(16108:16113): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:01:54:955 Filesystem/(16247:16247): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:01:56:793 Filesystem/(16247:16251): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:02:39:352 Filesystem/(16292:16292): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:02:40:931 Filesystem/(16292:16297): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:03:43:894 Filesystem/(16341:16341): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:04:01:282 Filesystem/(16341:16353): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:14:08:560 Filesystem/(16588:16588): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:14:28:381 Filesystem/(16588:16597): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:23:19:816 Filesystem/(16809:16809): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:23:21:705 Filesystem/(16809:16812): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:30:28:819 Filesystem/(16972:16972): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:30:30:288 Filesystem/(16972:16975): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:31:15:279 Filesystem/(16984:16984): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:31:17:255 Filesystem/(16984:16987): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:04:49:956 Filesystem/(25244:25244): Escuchando nuevos clientes en puerto 43002.
+[INFO] 02:04:54:441 Filesystem/(25244:25247): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:10:03:17 Filesystem/(25364:25364): Escuchando nuevos clientes en puerto 43002.
+[INFO] 02:10:04:333 Filesystem/(25364:25367): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:10:42:865 Filesystem/(25379:25379): Escuchando nuevos clientes en puerto 43002.
+[INFO] 02:10:43:747 Filesystem/(25379:25382): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:13:16:691 Filesystem/(25452:25452): Escuchando nuevos clientes en puerto 43002.
+[INFO] 02:13:17:806 Filesystem/(25452:25455): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 02:19:57:132 Filesystem/(25508:25508): Error al crear escucha en puerto 43002.
+[ERROR] 02:20:00:770 Filesystem/(25509:25509): Error al crear escucha en puerto 43002.
+[ERROR] 02:20:46:597 Filesystem/(25514:25514): Error al crear escucha en puerto 43002.
+[INFO] 02:24:28:289 Filesystem/(25598:25598): Escuchando nuevos clientes en puerto 43002.
+[INFO] 02:25:02:662 Filesystem/(25598:25640): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:28:33:907 Filesystem/(25598:25640): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:28:34:745 Filesystem/(25598:25727): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:31:43:682 Filesystem/(25598:25727): Se ha desconectado un Nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:31:45:643 Filesystem/(25598:25816): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:33:01:891 Filesystem/(25827:25827): Escuchando nuevos clientes en puerto 43002.
+[INFO] 02:33:03:514 Filesystem/(25827:25830): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:34:48:111 Filesystem/(25827:25830): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:35:32:672 Filesystem/(25827:25883): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 02:35:44:762 Filesystem/(25888:25888): Escuchando nuevos clientes en puerto 43002.
+[INFO] 02:35:45:540 Filesystem/(25888:25891): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:27:42:463 Filesystem/(26069:26069): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:28:02:102 Filesystem/(26071:26071): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:28:04:508 Filesystem/(26071:26076): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:28:05:875 Filesystem/(26071:26076): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:28:06:363 Filesystem/(26071:26078): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:28:07:191 Filesystem/(26071:26078): Se ha desconectado un Nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:28:08:66 Filesystem/(26071:26082): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:28:30:232 Filesystem/(26071:26082): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:28:32:404 Filesystem/(26071:26086): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:38:44:698 Filesystem/(26200:26200): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:38:46:297 Filesystem/(26200:26205): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:02:04:905 Filesystem/(26634:26634): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:02:05:890 Filesystem/(26634:26639): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:10:53:33 Filesystem/(26718:26718): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:10:54:772 Filesystem/(26718:26723): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:16:05:731 Filesystem/(26811:26811): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:16:08:210 Filesystem/(26811:26816): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:18:01:825 Filesystem/(26824:26824): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:18:06:339 Filesystem/(26824:26829): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:28:03:584 Filesystem/(27316:27316): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:28:05:181 Filesystem/(27316:27319): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:32:16:413 Filesystem/(27332:27332): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:32:19:614 Filesystem/(27332:27335): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:33:23:85 Filesystem/(27394:27394): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:33:24:436 Filesystem/(27394:27397): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:53:14:25 Filesystem/(29109:29109): Escuchando nuevos clientes en puerto 43002.
+[INFO] 18:53:16:92 Filesystem/(29109:29112): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:01:51:819 Filesystem/(29109:29112): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:02:10:251 Filesystem/(29202:29202): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:02:12:442 Filesystem/(29202:29205): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:12:03:511 Filesystem/(29354:29354): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:12:05:855 Filesystem/(29354:29357): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:48:18:688 Filesystem/(29354:29357): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:48:21:789 Filesystem/(29354:29555): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:48:46:925 Filesystem/(29354:29555): Se ha desconectado un Nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:49:04:236 Filesystem/(29354:29565): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:49:22:244 Filesystem/(29354:29565): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:07:46:45 Filesystem/(30850:30850): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:08:57:315 Filesystem/(30850:30854): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:12:03:646 Filesystem/(30941:30941): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:30:33:91 Filesystem/(31179:31179): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:30:39:962 Filesystem/(31179:31182): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:09:01:633 Filesystem/(31540:31540): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:12:36:590 Filesystem/(31794:31794): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:16:45:522 Filesystem/(32176:32176): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:23:18:756 Filesystem/(32352:32352): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:23:58:487 Filesystem/(32399:32399): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:24:54:278 Filesystem/(32451:32451): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:25:00:562 Filesystem/(32486:32486): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:25:03:535 Filesystem/(32486:32494): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:28:01:181 Filesystem/(32565:32565): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:28:03:493 Filesystem/(32565:32568): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:33:30:898 Filesystem/(32565:32568): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:33:37:833 Filesystem/(32565:32690): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:35:20:778 Filesystem/(32723:32723): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:35:27:93 Filesystem/(32759:32759): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:35:35:686 Filesystem/(32759:32767): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:54:31:232 Filesystem/(485:485): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:54:33:777 Filesystem/(485:488): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 22:55:28:339 Filesystem/(541:541): Error al crear escucha en puerto 43002.
+[INFO] 22:55:30:884 Filesystem/(485:488): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:55:32:899 Filesystem/(485:552): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:55:44:89 Filesystem/(586:586): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:55:48:285 Filesystem/(586:597): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:58:25:296 Filesystem/(693:693): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:58:27:840 Filesystem/(693:696): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:16:51:770 Filesystem/(1350:1350): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:17:15:913 Filesystem/(1350:1360): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:17:20:215 Filesystem/(1350:1364): Se ha desconectado un NN. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:17:37:287 Filesystem/(1350:1367): Se ha desconectado un NN. Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:17:38:182 Filesystem/(1350:1370): Se ha desconectado un NN. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:17:38:926 Filesystem/(1350:1373): Se ha desconectado un NN. Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:18:06:221 Filesystem/(1350:1360): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:18:26:646 Filesystem/(1350:1385): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:18:29:553 Filesystem/(1350:1385): Se ha desconectado un Nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:22:26:831 Filesystem/(1527:1527): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:22:39:792 Filesystem/(1527:1530): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:23:05:224 Filesystem/(1527:1536): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:26:39:347 Filesystem/(1658:1658): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:27:32:827 Filesystem/(1658:1695): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:27:33:539 Filesystem/(1658:1703): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:30:09:255 Filesystem/(1834:1834): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:30:16:353 Filesystem/(1834:1844): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:31:56:189 Filesystem/(1949:1949): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:32:04:298 Filesystem/(1949:1961): Se ha conectado un nodo. ID = 2, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:32:11:507 Filesystem/(1949:1969): Se ha conectado un nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:33:53:559 Filesystem/(2007:2007): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:34:09:894 Filesystem/(2009:2009): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:34:13:914 Filesystem/(2009:2022): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:34:15:305 Filesystem/(2009:2027): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:56:34:702 Filesystem/(2241:2241): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:56:38:261 Filesystem/(2241:2246): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:58:51:457 Filesystem/(2323:2323): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:58:53:565 Filesystem/(2323:2328): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:08:01:800 Filesystem/(2438:2438): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:08:03:673 Filesystem/(2438:2443): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:19:51:370 Filesystem/(2620:2620): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:19:53:937 Filesystem/(2620:2625): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:27:18:14 Filesystem/(2883:2883): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:27:21:764 Filesystem/(2883:2888): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:28:42:294 Filesystem/(2894:2894): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:28:45:309 Filesystem/(2894:2899): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:32:09:140 Filesystem/(2971:2971): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:35:55:885 Filesystem/(2975:2975): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:36:03:47 Filesystem/(2975:2980): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:39:50:262 Filesystem/(2983:2983): Escuchando nuevos clientes en puerto 43002.
+[INFO] 21:39:51:877 Filesystem/(2983:2988): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 21:39:53:605 Filesystem/(2983:2990): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:15:25:525 Filesystem/(4452:4452): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:15:56:476 Filesystem/(4468:4468): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:15:58:764 Filesystem/(4468:4471): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:24:52:795 Filesystem/(4598:4598): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:29:50:436 Filesystem/(4600:4600): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:30:00:920 Filesystem/(4600:4607): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 01:05:41:938 Filesystem/(4750:4750): Escuchando nuevos clientes en puerto 43002.
+[INFO] 01:05:44:114 Filesystem/(4750:4753): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 01:06:18:692 Filesystem/(4763:4763): Escuchando nuevos clientes en puerto 43002.
+[INFO] 01:06:36:420 Filesystem/(4763:4769): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 01:14:34:514 Filesystem/(4879:4879): Escuchando nuevos clientes en puerto 43002.
+[INFO] 01:14:36:464 Filesystem/(4879:4884): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 01:17:07:141 Filesystem/(4931:4931): Escuchando nuevos clientes en puerto 43002.
+[INFO] 01:17:07:797 Filesystem/(4931:4936): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 01:18:43:704 Filesystem/(4977:4977): Escuchando nuevos clientes en puerto 43002.
+[INFO] 01:18:44:971 Filesystem/(4977:4983): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 01:21:32:801 Filesystem/(5271:5271): Escuchando nuevos clientes en puerto 43002.
+[INFO] 01:21:34:429 Filesystem/(5271:5275): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 01:28:31:130 Filesystem/(5308:5308): Escuchando nuevos clientes en puerto 43002.
+[INFO] 01:28:34:422 Filesystem/(5308:5313): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:44:52:947 Filesystem/(7784:7784): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:44:54:770 Filesystem/(7784:7788): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:49:43:412 Filesystem/(7879:7879): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:49:47:997 Filesystem/(7879:7882): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:50:37:924 Filesystem/(7879:7882): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:53:13:680 Filesystem/(7974:7974): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:53:41:703 Filesystem/(7974:7980): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:00:52:148 Filesystem/(7991:7991): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:00:54:53 Filesystem/(7991:7994): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:07:27:758 Filesystem/(7991:7994): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:31:09:449 Filesystem/(11279:11279): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:31:11:112 Filesystem/(11279:11282): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:32:22:637 Filesystem/(11293:11293): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:32:31:286 Filesystem/(11295:11295): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:32:45:401 Filesystem/(11297:11297): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:32:46:506 Filesystem/(11297:11302): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:38:01:864 Filesystem/(11336:11336): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:38:26:542 Filesystem/(11336:11343): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:38:52:248 Filesystem/(11344:11344): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:38:56:455 Filesystem/(11346:11346): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:38:57:476 Filesystem/(11346:11349): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:40:49:740 Filesystem/(11384:11384): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:40:53:235 Filesystem/(11384:11387): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:40:55:45 Filesystem/(11384:11391): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:47:32:773 Filesystem/(11496:11496): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:47:34:706 Filesystem/(11496:11499): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:47:35:757 Filesystem/(11496:11503): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:47:38:909 Filesystem/(11496:11507): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:02:25:69 Filesystem/(11496:11507): Se ha desconectado un Nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:02:42:896 Filesystem/(11496:11499): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:03:52:499 Filesystem/(11573:11573): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:13:32:8 Filesystem/(11583:11583): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:13:32:965 Filesystem/(11583:11586): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:13:52:335 Filesystem/(11591:11591): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:13:56:855 Filesystem/(11591:11595): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:14:07:360 Filesystem/(11591:11595): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:14:37:630 Filesystem/(11603:11603): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:14:39:166 Filesystem/(11603:11606): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:14:39:534 Filesystem/(11603:11610): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:15:06:887 Filesystem/(11603:11606): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:15:16:128 Filesystem/(11603:11610): Se ha desconectado un Nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:10:09:24 Filesystem/(11822:11822): Escuchando nuevos clientes en puerto 43002.
+[INFO] 18:10:11:282 Filesystem/(11822:11825): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:10:16:867 Filesystem/(11822:11829): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:10:17:985 Filesystem/(11822:11833): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:11:07:546 Filesystem/(11822:11829): Se ha desconectado un Nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:11:27:416 Filesystem/(11822:11825): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:19:45:64 Filesystem/(12004:12004): Escuchando nuevos clientes en puerto 43002.
+[INFO] 18:19:47:465 Filesystem/(12004:12007): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:19:51:502 Filesystem/(12004:12011): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:19:53:815 Filesystem/(12004:12015): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:23:40:567 Filesystem/(12004:12007): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:23:42:86 Filesystem/(12004:12011): Se ha desconectado un Nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:23:43:590 Filesystem/(12004:12015): Se ha desconectado un Nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:23:46:700 Filesystem/(12045:12045): Escuchando nuevos clientes en puerto 43002.
+[INFO] 18:23:49:993 Filesystem/(12045:12048): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:23:50:616 Filesystem/(12045:12052): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:27:53:85 Filesystem/(12045:12048): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:27:54:616 Filesystem/(12045:12052): Se ha desconectado un Nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:28:03:659 Filesystem/(12087:12087): Escuchando nuevos clientes en puerto 43002.
+[INFO] 18:28:06:635 Filesystem/(12087:12090): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:28:07:995 Filesystem/(12087:12094): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:32:19:30 Filesystem/(12197:12197): Escuchando nuevos clientes en puerto 43002.
+[INFO] 18:32:27:593 Filesystem/(12197:12207): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:32:28:192 Filesystem/(12197:12211): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:32:28:856 Filesystem/(12197:12215): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:35:55:683 Filesystem/(12197:12207): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:36:40:119 Filesystem/(12197:12215): Se ha desconectado un Nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:43:24:8 Filesystem/(12393:12393): Escuchando nuevos clientes en puerto 43002.
+[INFO] 18:43:28:768 Filesystem/(12393:12403): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:43:29:400 Filesystem/(12393:12407): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:45:13:249 Filesystem/(12393:12403): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:54:28:477 Filesystem/(12531:12531): Escuchando nuevos clientes en puerto 43002.
+[INFO] 18:54:32:267 Filesystem/(12531:12542): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:54:33:146 Filesystem/(12531:12546): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:55:58:407 Filesystem/(12531:12542): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:00:31:209 Filesystem/(12696:12696): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:00:35:777 Filesystem/(12696:12705): Se ha conectado un nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:00:38:425 Filesystem/(12696:12709): Se ha conectado un nodo. ID = 2, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:03:25:93 Filesystem/(12696:12705): Se ha desconectado un Nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:13:13:608 Filesystem/(13013:13013): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:13:16:886 Filesystem/(13013:13016): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:13:18:982 Filesystem/(13013:13020): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:21:15:195 Filesystem/(13173:13173): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:21:16:706 Filesystem/(13173:13176): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:21:21:994 Filesystem/(13173:13180): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:24:18:677 Filesystem/(13358:13358): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:24:21:581 Filesystem/(13358:13361): Se ha conectado un nodo. ID = 2, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:24:26:957 Filesystem/(13358:13365): Se ha conectado un nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:27:07:460 Filesystem/(13430:13430): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:27:14:138 Filesystem/(13430:13440): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:27:16:125 Filesystem/(13430:13444): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:30:46:429 Filesystem/(13563:13563): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:30:48:996 Filesystem/(13563:13566): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:30:50:924 Filesystem/(13563:13570): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:32:54:273 Filesystem/(13652:13652): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:32:55:418 Filesystem/(13652:13655): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:32:56:929 Filesystem/(13652:13659): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:34:27:551 Filesystem/(13707:13707): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:34:30:983 Filesystem/(13707:13710): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:34:36:374 Filesystem/(13707:13714): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:38:42:945 Filesystem/(13861:13861): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:38:44:216 Filesystem/(13861:13864): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:38:45:187 Filesystem/(13861:13868): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:39:12:8 Filesystem/(13861:13864): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:41:27:920 Filesystem/(13861:13868): Se ha desconectado un Nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:43:58:177 Filesystem/(13978:13978): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:43:59:570 Filesystem/(13978:13981): Se ha conectado un nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:44:00:152 Filesystem/(13978:13985): Se ha conectado un nodo. ID = 2, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:44:22:796 Filesystem/(13978:13981): Se ha desconectado un Nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:52:00:351 Filesystem/(14044:14044): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:53:34:338 Filesystem/(14051:14051): Escuchando nuevos clientes en puerto 43002.
+[INFO] 19:53:35:850 Filesystem/(14051:14054): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:53:38:307 Filesystem/(14051:14058): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 19:54:38:498 Filesystem/(14051:14058): Se ha desconectado un Nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:07:13:247 Filesystem/(14280:14280): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:07:14:806 Filesystem/(14280:14283): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:07:16:78 Filesystem/(14280:14287): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:08:15:48 Filesystem/(14280:14283): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:12:50:345 Filesystem/(14365:14365): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:12:53:803 Filesystem/(14365:14374): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:12:55:80 Filesystem/(14365:14378): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:16:20:97 Filesystem/(14466:14466): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:16:21:855 Filesystem/(14466:14469): Se ha conectado un nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:16:23:297 Filesystem/(14466:14473): Se ha conectado un nodo. ID = 2, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:16:58:580 Filesystem/(14466:14469): Se ha desconectado un Nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:27:08:313 Filesystem/(14614:14614): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:27:09:439 Filesystem/(14614:14617): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:27:10:873 Filesystem/(14614:14621): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:27:14:495 Filesystem/(14614:14625): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:29:30:947 Filesystem/(14655:14655): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:31:37:714 Filesystem/(14655:14658): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:31:40:627 Filesystem/(14655:14662): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:31:41:970 Filesystem/(14655:14666): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:32:30:67 Filesystem/(14655:14662): Se ha desconectado un Nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:45:24:774 Filesystem/(14876:14876): Escuchando nuevos clientes en puerto 43002.
+[INFO] 20:45:26:570 Filesystem/(14876:14879): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:45:28:79 Filesystem/(14876:14883): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 20:45:29:427 Filesystem/(14876:14887): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:38:16:101 Filesystem/(15123:15123): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:38:19:608 Filesystem/(15123:15126): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:49:07:56 Filesystem/(15246:15246): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:50:22:604 Filesystem/(15250:15250): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:50:34:155 Filesystem/(15250:15253): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:23:17:489 Filesystem/(15447:15447): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:23:21:412 Filesystem/(15447:15457): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:24:55:596 Filesystem/(15531:15531): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:24:58:938 Filesystem/(15531:15542): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:32:20:755 Filesystem/(15816:15816): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:32:24:721 Filesystem/(15816:15827): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:24:59:542 Filesystem/(16592:16592): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:25:01:373 Filesystem/(16592:16595): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:25:03:117 Filesystem/(16592:16601): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:25:04:607 Filesystem/(16592:16605): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:28:16:49 Filesystem/(16631:16631): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:28:18:425 Filesystem/(16631:16634): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:28:20:865 Filesystem/(16631:16638): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:28:22:593 Filesystem/(16631:16642): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:48:46:940 Filesystem/(16738:16738): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:48:48:260 Filesystem/(16738:16741): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:49:09:141 Filesystem/(16738:16741): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:50:27:50 Filesystem/(16798:16798): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:50:29:994 Filesystem/(16798:16801): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 11:59:30:637 Filesystem/(16930:16930): Error al crear escucha en puerto 43002.
+[INFO] 12:24:00:163 Filesystem/(17099:17099): Escuchando nuevos clientes en puerto 43002.
+[INFO] 12:24:03:203 Filesystem/(17099:17102): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:12:03:498 Filesystem/(17422:17422): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:12:05:601 Filesystem/(17422:17425): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:12:07:105 Filesystem/(17422:17429): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:12:07:995 Filesystem/(17422:17433): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:54:49:774 Filesystem/(18310:18310): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:55:12:278 Filesystem/(18310:18345): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:55:13:423 Filesystem/(18310:18349): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:55:14:240 Filesystem/(18310:18353): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:02:06:31 Filesystem/(18438:18438): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:02:27:671 Filesystem/(18438:18441): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:02:29:79 Filesystem/(18438:18445): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:50:31:384 Filesystem/(19124:19124): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:50:33:128 Filesystem/(19124:19127): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:50:34:814 Filesystem/(19124:19131): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:50:34:838 Filesystem/(19124:19131): Se ha desconectado un Nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:50:37:512 Filesystem/(19124:19134): Se ha desconectado un NN. Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:50:50:183 Filesystem/(19124:19137): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:50:54:176 Filesystem/(19124:19141): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:53:45:629 Filesystem/(19124:19137): Se ha desconectado un Nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:21:49:344 Filesystem/(19124:19141): Se ha desconectado un Nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:22:06:134 Filesystem/(19585:19585): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:25:52:786 Filesystem/(19739:19739): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:27:33:383 Filesystem/(19841:19841): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:27:35:439 Filesystem/(19841:19844): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:28:00:350 Filesystem/(19853:19853): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:28:01:928 Filesystem/(19853:19856): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:29:04:753 Filesystem/(19897:19897): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:29:09:919 Filesystem/(19897:19905): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:30:57:898 Filesystem/(20001:20001): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:30:59:659 Filesystem/(20001:20004): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:31:12:600 Filesystem/(20050:20050): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:31:15:748 Filesystem/(20050:20058): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:31:42:625 Filesystem/(20126:20126): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:31:43:698 Filesystem/(20126:20129): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:31:58:566 Filesystem/(20187:20187): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:32:01:21 Filesystem/(20187:20196): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:33:33:855 Filesystem/(20302:20302): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:33:35:762 Filesystem/(20302:20310): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:33:49:723 Filesystem/(20302:20310): Se ha desconectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:33:50:409 Filesystem/(20302:20348): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:34:20:230 Filesystem/(20420:20420): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:34:26:470 Filesystem/(20420:20423): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:34:39:142 Filesystem/(20420:20423): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:34:42:94 Filesystem/(20420:20427): Se ha conectado un nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:35:08:285 Filesystem/(20420:20431): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:36:24:872 Filesystem/(20572:20572): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:36:30:815 Filesystem/(20572:20582): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:36:45:869 Filesystem/(20572:20586): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:39:13:324 Filesystem/(20572:20586): Se ha desconectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:40:56:864 Filesystem/(21172:21172): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:41:19:790 Filesystem/(21172:21180): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:42:41:5 Filesystem/(21172:21191): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:47:32:494 Filesystem/(21871:21871): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:47:46:469 Filesystem/(21871:21880): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:47:58:511 Filesystem/(21871:21884): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:50:06:370 Filesystem/(22119:22119): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:50:09:154 Filesystem/(22119:22127): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:52:00:801 Filesystem/(22119:22132): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:53:42:97 Filesystem/(22119:22132): Se ha desconectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:54:27:243 Filesystem/(22337:22337): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:57:46:828 Filesystem/(22337:22468): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:58:03:807 Filesystem/(22337:22475): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:58:40:270 Filesystem/(22483:22483): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:58:44:958 Filesystem/(22483:22486): Se ha desconectado un NN. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:59:01:349 Filesystem/(22483:22492): Se ha conectado un nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:59:15:614 Filesystem/(22483:22496): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:00:16:384 Filesystem/(22483:22496): Se ha desconectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:00:34:803 Filesystem/(22633:22633): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:00:37:939 Filesystem/(22633:22636): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:00:45:476 Filesystem/(22633:22640): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 16:06:51:203 Filesystem/(22739:22739): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:06:53:955 Filesystem/(22739:22742): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:11:35:375 Filesystem/(23098:23098): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:13:12:982 Filesystem/(23098:23101): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:13:22:446 Filesystem/(23098:23105): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:13:56:731 Filesystem/(23146:23146): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:14:14:559 Filesystem/(23146:23159): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:15:04:975 Filesystem/(23230:23230): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:15:13:606 Filesystem/(23230:23238): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:16:10:977 Filesystem/(23366:23366): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:16:14:386 Filesystem/(23366:23376): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:17:42:586 Filesystem/(23366:23387): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:19:03:231 Filesystem/(23428:23428): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:19:10:951 Filesystem/(23428:23437): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:19:45:678 Filesystem/(23428:23443): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:22:56:843 Filesystem/(23626:23626): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:23:02:401 Filesystem/(23626:23634): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:23:23:2 Filesystem/(23626:23638): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:27:29:484 Filesystem/(24053:24053): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:27:32:852 Filesystem/(24053:24061): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:27:52:484 Filesystem/(24053:24065): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:29:09:641 Filesystem/(24275:24275): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:29:14:115 Filesystem/(24275:24284): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:30:01:898 Filesystem/(24275:24288): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:34:30:646 Filesystem/(24640:24640): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:34:34:503 Filesystem/(24640:24649): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:38:21:939 Filesystem/(24640:24653): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:39:29:144 Filesystem/(24836:24836): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:39:32:92 Filesystem/(24836:24846): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:41:46:548 Filesystem/(24836:24850): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:42:24:466 Filesystem/(24921:24921): Escuchando nuevos clientes en puerto 43002.
+[INFO] 22:42:27:185 Filesystem/(24921:24924): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:42:30:73 Filesystem/(24921:24928): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:42:50:970 Filesystem/(24921:24928): Se ha desconectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 22:42:55:18 Filesystem/(24921:24974): Se ha conectado Marta. Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:08:53:123 Filesystem/(28490:28490): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:08:58:146 Filesystem/(28490:28493): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:09:23:298 Filesystem/(28490:28497): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:31:00:570 Filesystem/(29193:29193): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:31:03:298 Filesystem/(29193:29196): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:31:03:977 Filesystem/(29193:29200): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:31:04:793 Filesystem/(29193:29204): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 23:59:08:60 Filesystem/(29595:29595): Error al crear escucha en puerto 43002.
+[ERROR] 23:59:20:478 Filesystem/(29598:29598): Error al crear escucha en puerto 43002.
+[ERROR] 23:59:47:316 Filesystem/(29601:29601): Error al crear escucha en puerto 43002.
+[ERROR] 23:59:51:493 Filesystem/(29602:29602): Error al crear escucha en puerto 43002.
+[ERROR] 00:00:08:389 Filesystem/(29603:29603): Error al crear escucha en puerto 43002.
+[ERROR] 00:00:09:484 Filesystem/(29604:29604): Error al crear escucha en puerto 43002.
+[ERROR] 00:00:58:190 Filesystem/(29662:29662): Error al crear escucha en puerto 43002.
+[ERROR] 00:01:53:233 Filesystem/(29692:29692): Error al crear escucha en puerto 43002.
+[ERROR] 00:01:54:546 Filesystem/(29693:29693): Error al crear escucha en puerto 43002.
+[ERROR] 00:01:55:242 Filesystem/(29694:29694): Error al crear escucha en puerto 43002.
+[ERROR] 00:01:55:985 Filesystem/(29695:29695): Error al crear escucha en puerto 43002.
+[ERROR] 00:01:56:762 Filesystem/(29696:29696): Error al crear escucha en puerto 43002.
+[ERROR] 00:01:57:338 Filesystem/(29697:29697): Error al crear escucha en puerto 43002.
+[ERROR] 00:01:58:154 Filesystem/(29698:29698): Error al crear escucha en puerto 43002.
+[ERROR] 00:02:00:841 Filesystem/(29699:29699): Error al crear escucha en puerto 43002.
+[ERROR] 00:02:01:330 Filesystem/(29700:29700): Error al crear escucha en puerto 43002.
+[ERROR] 00:02:01:737 Filesystem/(29701:29701): Error al crear escucha en puerto 43002.
+[ERROR] 00:02:02:98 Filesystem/(29702:29702): Error al crear escucha en puerto 43002.
+[ERROR] 00:02:02:537 Filesystem/(29703:29703): Error al crear escucha en puerto 43002.
+[ERROR] 00:02:03:433 Filesystem/(29704:29704): Error al crear escucha en puerto 43002.
+[ERROR] 00:02:03:889 Filesystem/(29705:29705): Error al crear escucha en puerto 43002.
+[ERROR] 00:02:04:282 Filesystem/(29706:29706): Error al crear escucha en puerto 43002.
+[ERROR] 00:02:04:689 Filesystem/(29707:29707): Error al crear escucha en puerto 43002.
+[INFO] 00:03:47:815 Filesystem/(2205:2205): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:04:22:175 Filesystem/(2205:2247): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:04:33:370 Filesystem/(2205:2247): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:04:47:325 Filesystem/(2205:2253): Se ha conectado un nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:06:01:123 Filesystem/(3708:3708): Espacio Total: 0MB[0b] - Online: 0MB[0b] - Usado: 0MB[0b] - Libre Total: 0MB[0b] - Libre Online: 0MB[0b]
+[INFO] 10:06:01:176 Filesystem/(3708:3708): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:09:59:860 Filesystem/(3815:3815): Espacio Total: 0MB[0b] - Online: 0MB[0b] - Usado: 1560MB[78b] - Libre Total: -1560MB[-78b] - Libre Online: -1560MB[-78b]
+[INFO] 10:10:02:391 Filesystem/(3815:3815): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:10:06:857 Filesystem/(3880:3880): Espacio Total: 0MB[0b] - Online: 0MB[0b] - Usado: 1560MB[78b] - Libre Total: -1560MB[-78b] - Libre Online: -1560MB[-78b]
+[INFO] 10:10:06:857 Filesystem/(3880:3880): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:13:14:274 Filesystem/(3955:3955): Espacio Online: 0MB[0b] - Usado: 1560MB[78b]
+[ERROR] 10:13:14:278 Filesystem/(3955:3955): Error al crear escucha en puerto 43002.
+[INFO] 10:15:59:756 Filesystem/(3985:3985): Espacio Online: 0MB[0b] - Usado: 1560MB[78b]
+[INFO] 10:15:59:767 Filesystem/(3985:3985): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:34:01:879 Filesystem/(4213:4213): Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b]
+[ERROR] 10:34:01:879 Filesystem/(4213:4213): Error al crear escucha en puerto 43002.
+[INFO] 10:34:14:829 Filesystem/(4216:4216): Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b]
+[INFO] 10:34:14:829 Filesystem/(4216:4216): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:34:36:784 Filesystem/(4216:4224): Espacio Online: 1020MB[51b] - Espacio Utilizado: 1560MB[78b]
+[INFO] 10:34:36:784 Filesystem/(4216:4224): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:39:51:203 Filesystem/(4336:4336): Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 10:39:51:203 Filesystem/(4336:4336): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:39:53:906 Filesystem/(4336:4339): Espacio Online: 1020MB[51b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 500MB[25b].
+[INFO] 10:39:53:906 Filesystem/(4336:4339): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:42:29:453 Filesystem/(4439:4439): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 10:42:29:453 Filesystem/(4439:4439): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:42:37:830 Filesystem/(4439:4442): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:42:37:830 Filesystem/(4439:4442): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 500MB[25b].
+[INFO] 10:43:54:219 Filesystem/(4498:4498): Espacio Total: -60MB[-3b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 10:43:54:219 Filesystem/(4498:4498): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:45:05:747 Filesystem/(4535:4535): Espacio Total: -20MB[-1b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 10:45:05:747 Filesystem/(4535:4535): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:47:11:654 Filesystem/(4588:4588): Espacio Total: (null)MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 10:47:11:654 Filesystem/(4588:4588): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:47:25:675 Filesystem/(4588:4591): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:47:25:675 Filesystem/(4588:4591): Espacio Total: (null)MB[0b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 500MB[25b].
+[INFO] 10:47:57:679 Filesystem/(4588:4640): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:47:57:679 Filesystem/(4588:4640): Espacio Total: (null)MB[0b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1000MB[50b].
+[INFO] 10:48:04:486 Filesystem/(4588:4644): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:48:54:691 Filesystem/(4687:4687): Espacio Total: (null)MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 10:48:54:691 Filesystem/(4687:4687): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:49:09:196 Filesystem/(4718:4718): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 10:49:09:196 Filesystem/(4718:4718): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:49:14:597 Filesystem/(4718:4721): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:49:14:597 Filesystem/(4718:4721): Espacio Total: 0MB[0b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 500MB[25b].
+[INFO] 10:49:20:197 Filesystem/(4718:4725): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:49:20:197 Filesystem/(4718:4725): Espacio Total: 0MB[0b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1000MB[50b].
+[INFO] 10:49:22:300 Filesystem/(4718:4729): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:49:22:300 Filesystem/(4718:4729): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1500MB[75b].
+[INFO] 10:49:38:258 Filesystem/(4718:4729): Espacio Total: 3060MB[153b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1000MB[50b].
+[INFO] 10:49:38:258 Filesystem/(4718:4729): Se ha desconectado un Nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:25:22:234 Filesystem/(4912:4912): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 11:25:22:261 Filesystem/(4912:4912): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:25:57:566 Filesystem/(4914:4914): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 11:25:57:594 Filesystem/(4914:4914): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:39:00:884 Filesystem/(4914:5008): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:39:00:888 Filesystem/(4914:5008): Espacio Total: 0MB[0b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 500MB[25b].
+[INFO] 11:39:02:461 Filesystem/(4914:5010): Se ha conectado un nodo. ID = 2, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:39:02:463 Filesystem/(4914:5010): Espacio Total: 0MB[0b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1000MB[50b].
+[INFO] 11:39:03:200 Filesystem/(4914:5014): Se ha conectado un nodo. ID = 3, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:39:03:202 Filesystem/(4914:5014): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1500MB[75b].
+[INFO] 11:39:23:887 Filesystem/(4914:4914): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1500MB[75b].
+[INFO] 11:40:18:982 Filesystem/(4914:4914): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1500MB[75b].
+[INFO] 11:40:21:567 Filesystem/(4914:4914): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1500MB[75b].
+[INFO] 12:44:00:609 Filesystem/(4914:4914): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 3060MB[153b].
+[INFO] 13:03:20:21 Filesystem/(5307:5307): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:03:21:50 Filesystem/(5307:5307): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:03:23:30 Filesystem/(5307:5312): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:03:23:36 Filesystem/(5307:5312): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 13:03:23:779 Filesystem/(5307:5316): Se ha conectado un nodo. ID = 3, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:03:23:779 Filesystem/(5307:5316): Espacio Total: 2040MB[102b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 2040MB[102b].
+[INFO] 13:03:24:408 Filesystem/(5307:5319): Se ha conectado un nodo. ID = 2, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 13:03:24:413 Filesystem/(5307:5319): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 3060MB[153b].
+[INFO] 13:03:27:836 Filesystem/(5307:5307): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 3060MB[153b].
+[INFO] 13:03:30:159 Filesystem/(5307:5307): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 3060MB[153b].
+[INFO] 13:03:32:391 Filesystem/(5307:5307): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 3060MB[153b].
+[INFO] 13:06:36:238 Filesystem/(5383:5383): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:06:36:240 Filesystem/(5383:5383): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:08:31:17 Filesystem/(5435:5435): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:08:32:47 Filesystem/(5435:5435): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:09:21:154 Filesystem/(5438:5438): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:09:21:183 Filesystem/(5438:5438): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:09:47:846 Filesystem/(5440:5440): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:09:47:846 Filesystem/(5440:5440): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:16:18:38 Filesystem/(5460:5460): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:16:18:38 Filesystem/(5460:5460): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:17:08:137 Filesystem/(5515:5515): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[ERROR] 13:17:08:137 Filesystem/(5515:5515): Error al crear escucha en puerto 43002.
+[INFO] 13:17:22:902 Filesystem/(5554:5554): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:17:22:904 Filesystem/(5554:5554): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:18:11:827 Filesystem/(5602:5602): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:18:11:829 Filesystem/(5602:5602): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:20:13:145 Filesystem/(5666:5666): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:20:13:148 Filesystem/(5666:5666): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:20:38:73 Filesystem/(5713:5713): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:20:38:76 Filesystem/(5713:5713): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:21:31:364 Filesystem/(5785:5785): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:21:31:366 Filesystem/(5785:5785): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:22:36:284 Filesystem/(5844:5844): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:22:36:296 Filesystem/(5844:5844): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:25:27:802 Filesystem/(5884:5884): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[ERROR] 13:25:27:835 Filesystem/(5884:5884): Error al crear escucha en puerto 43002.
+[INFO] 13:25:45:308 Filesystem/(5888:5888): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:25:45:336 Filesystem/(5888:5888): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:30:39:492 Filesystem/(5917:5917): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:30:39:496 Filesystem/(5917:5917): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:31:16:754 Filesystem/(5963:5963): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:31:16:757 Filesystem/(5963:5963): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:33:51:485 Filesystem/(6028:6028): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:33:51:487 Filesystem/(6028:6028): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:37:06:992 Filesystem/(6114:6114): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:37:07:21 Filesystem/(6114:6114): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:41:07:1 Filesystem/(6126:6126): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:41:08:29 Filesystem/(6126:6126): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:46:31:709 Filesystem/(6176:6176): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:46:31:710 Filesystem/(6176:6176): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:46:57:283 Filesystem/(6208:6208): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:46:57:283 Filesystem/(6208:6208): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:47:35:471 Filesystem/(6211:6211): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:47:35:471 Filesystem/(6211:6211): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:47:42:273 Filesystem/(6214:6214): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:47:42:273 Filesystem/(6214:6214): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:47:50:489 Filesystem/(6217:6217): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:47:50:489 Filesystem/(6217:6217): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:48:12:548 Filesystem/(6220:6220): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:48:12:548 Filesystem/(6220:6220): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:48:24:860 Filesystem/(6227:6227): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:48:24:861 Filesystem/(6227:6227): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:48:55:895 Filesystem/(6232:6232): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:48:55:895 Filesystem/(6232:6232): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:49:02:764 Filesystem/(6235:6235): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:49:02:800 Filesystem/(6235:6235): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:49:26:653 Filesystem/(6237:6237): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:49:26:681 Filesystem/(6237:6237): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:51:14:535 Filesystem/(6256:6256): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 13:51:14:563 Filesystem/(6256:6256): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:08:49:944 Filesystem/(6431:6431): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 14:08:49:973 Filesystem/(6431:6431): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:09:43:62 Filesystem/(6433:6433): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 14:09:43:90 Filesystem/(6433:6433): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:26:33:390 Filesystem/(6541:6541): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 14:26:33:418 Filesystem/(6541:6541): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:27:39:349 Filesystem/(6553:6553): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 14:27:39:378 Filesystem/(6553:6553): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:41:45:885 Filesystem/(7288:7288): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 14:41:45:913 Filesystem/(7288:7288): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:47:56:172 Filesystem/(7303:7303): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 14:47:56:200 Filesystem/(7303:7303): Escuchando nuevos clientes en puerto 43002.
+[INFO] 14:53:58:77 Filesystem/(7303:7309): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:53:58:80 Filesystem/(7303:7309): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 14:53:59:788 Filesystem/(7303:7311): Se ha conectado un nodo. ID = 3, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:53:59:788 Filesystem/(7303:7311): Espacio Total: 2040MB[102b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 14:54:00:555 Filesystem/(7303:7317): Se ha conectado un nodo. ID = 2, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 14:54:00:556 Filesystem/(7303:7317): Espacio Total: 3060MB[153b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 14:54:19:841 Filesystem/(7303:7303): Espacio Total: 3060MB[153b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 14:54:21:816 Filesystem/(7303:7303): Espacio Total: 3060MB[153b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 2040MB[102b].
+[INFO] 14:54:28:481 Filesystem/(7303:7303): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 3060MB[153b].
+[INFO] 15:03:49:291 Filesystem/(7303:7303): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1500MB[75b].
+[INFO] 15:06:31:708 Filesystem/(7320:7320): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:06:31:737 Filesystem/(7320:7320): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:06:55:787 Filesystem/(7320:7325): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:06:55:791 Filesystem/(7320:7325): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:06:56:592 Filesystem/(7320:7329): Se ha conectado un nodo. ID = 3, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:06:56:593 Filesystem/(7320:7329): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:07:03:769 Filesystem/(7320:7331): Se ha conectado un nodo. ID = 2, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:07:03:770 Filesystem/(7320:7331): Espacio Total: 3060MB[153b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:07:12:859 Filesystem/(7320:7320): Espacio Total: 3060MB[153b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 500MB[25b].
+[INFO] 15:07:19:776 Filesystem/(7320:7320): Espacio Total: 3060MB[153b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1000MB[50b].
+[INFO] 15:07:27:877 Filesystem/(7320:7320): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1500MB[75b].
+[INFO] 15:08:14:176 Filesystem/(7334:7334): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:08:14:206 Filesystem/(7334:7334): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:08:15:454 Filesystem/(7334:7339): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:08:15:455 Filesystem/(7334:7339): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:08:16:454 Filesystem/(7334:7341): Se ha conectado un nodo. ID = 3, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:08:16:455 Filesystem/(7334:7341): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:08:17:310 Filesystem/(7334:7345): Se ha conectado un nodo. ID = 2, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:08:17:311 Filesystem/(7334:7345): Espacio Total: 3060MB[153b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:08:55:74 Filesystem/(7334:7334): Espacio Total: 3060MB[153b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 500MB[25b].
+[INFO] 15:08:58:273 Filesystem/(7334:7334): Espacio Total: 3060MB[153b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1000MB[50b].
+[INFO] 15:09:02:440 Filesystem/(7334:7334): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1500MB[75b].
+[INFO] 15:09:59:918 Filesystem/(7355:7355): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:09:59:949 Filesystem/(7355:7355): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:10:00:661 Filesystem/(7355:7360): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:10:00:662 Filesystem/(7355:7360): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:10:01:254 Filesystem/(7355:7362): Se ha conectado un nodo. ID = 3, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:10:01:255 Filesystem/(7355:7362): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:10:01:870 Filesystem/(7355:7366): Se ha conectado un nodo. ID = 2, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:10:01:871 Filesystem/(7355:7366): Espacio Total: 3060MB[153b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:10:04:556 Filesystem/(7355:7355): Espacio Total: 3060MB[153b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 500MB[25b].
+[INFO] 15:10:10:104 Filesystem/(7355:7355): Espacio Total: 3060MB[153b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1000MB[50b].
+[INFO] 15:10:12:797 Filesystem/(7355:7355): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1500MB[75b].
+[INFO] 15:11:54:300 Filesystem/(7369:7369): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:11:54:328 Filesystem/(7369:7369): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:11:56:633 Filesystem/(7369:7374): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:11:56:636 Filesystem/(7369:7374): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:12:00:962 Filesystem/(7369:7369): Espacio Total: 0MB[0b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 500MB[25b].
+[INFO] 15:14:35:619 Filesystem/(7395:7395): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:14:35:619 Filesystem/(7395:7395): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:14:58:189 Filesystem/(7395:7398): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:14:58:189 Filesystem/(7395:7398): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:14:58:853 Filesystem/(7395:7402): Se ha conectado un nodo. ID = 3, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:14:58:853 Filesystem/(7395:7402): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:14:59:676 Filesystem/(7395:7406): Se ha conectado un nodo. ID = 2, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:14:59:676 Filesystem/(7395:7406): Espacio Total: 3060MB[153b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 0MB[0b].
+[INFO] 15:15:03:653 Filesystem/(7395:7395): Espacio Total: 3060MB[153b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 500MB[25b].
+[INFO] 15:15:06:227 Filesystem/(7395:7395): Espacio Total: 3060MB[153b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1000MB[50b].
+[INFO] 15:15:08:969 Filesystem/(7395:7395): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1500MB[75b].
+[INFO] 16:24:37:964 Filesystem/(7395:7395): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 1480MB[74b].
+[INFO] 16:26:09:205 Filesystem/(7395:7395): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1560MB[78b] - Espacio Libre: 1500MB[75b].
+[INFO] 16:28:14:440 Filesystem/(7395:7395): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 1480MB[74b].
+[INFO] 16:31:35:50 Filesystem/(7668:7668): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 16:31:35:50 Filesystem/(7668:7668): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:32:25:954 Filesystem/(7714:7714): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 16:32:25:954 Filesystem/(7714:7714): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:33:51:397 Filesystem/(7757:7757): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 16:33:51:397 Filesystem/(7757:7757): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:50:18:199 Filesystem/(7824:7824): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 16:50:18:199 Filesystem/(7824:7824): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:51:56:641 Filesystem/(7863:7863): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 16:51:56:643 Filesystem/(7863:7863): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:53:23:869 Filesystem/(7942:7942): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 16:53:23:870 Filesystem/(7942:7942): Escuchando nuevos clientes en puerto 43002.
+[INFO] 16:57:39:905 Filesystem/(8068:8068): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[ERROR] 16:57:39:909 Filesystem/(8068:8068): Error al crear escucha en puerto 43002.
+[INFO] 16:57:53:45 Filesystem/(8089:8089): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 16:57:53:45 Filesystem/(8089:8089): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:03:19:900 Filesystem/(8318:8318): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[ERROR] 17:03:19:901 Filesystem/(8318:8318): Error al crear escucha en puerto 43002.
+[INFO] 17:03:56:52 Filesystem/(8347:8347): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:03:56:52 Filesystem/(8347:8347): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:06:44:291 Filesystem/(8371:8371): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[ERROR] 17:06:44:323 Filesystem/(8371:8371): Error al crear escucha en puerto 43002.
+[INFO] 17:06:53:254 Filesystem/(8372:8372): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:06:53:281 Filesystem/(8372:8372): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:08:15:96 Filesystem/(8419:8419): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:08:15:125 Filesystem/(8419:8419): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:31:07:287 Filesystem/(8820:8820): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:31:07:315 Filesystem/(8820:8820): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:37:53:585 Filesystem/(9006:9006): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:37:53:612 Filesystem/(9006:9006): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:39:38:196 Filesystem/(9063:9063): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:39:38:224 Filesystem/(9063:9063): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:40:10:890 Filesystem/(9111:9111): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:40:10:894 Filesystem/(9111:9111): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:49:25:517 Filesystem/(9188:9188): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[ERROR] 17:49:25:518 Filesystem/(9188:9188): Error al crear escucha en puerto 43002.
+[INFO] 17:49:30:644 Filesystem/(9196:9196): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[ERROR] 17:49:30:677 Filesystem/(9196:9196): Error al crear escucha en puerto 43002.
+[INFO] 17:49:48:211 Filesystem/(9212:9212): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:49:48:214 Filesystem/(9212:9212): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:50:34:215 Filesystem/(9266:9266): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[ERROR] 17:50:34:220 Filesystem/(9266:9266): Error al crear escucha en puerto 43002.
+[INFO] 17:50:40:133 Filesystem/(9293:9293): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[ERROR] 17:50:40:133 Filesystem/(9293:9293): Error al crear escucha en puerto 43002.
+[INFO] 17:50:43:622 Filesystem/(9320:9320): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[ERROR] 17:50:43:622 Filesystem/(9320:9320): Error al crear escucha en puerto 43002.
+[INFO] 17:50:55:391 Filesystem/(9341:9341): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:50:55:391 Filesystem/(9341:9341): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:52:02:760 Filesystem/(9350:9350): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:52:02:790 Filesystem/(9350:9350): Escuchando nuevos clientes en puerto 43002.
+[INFO] 17:52:49:263 Filesystem/(9350:9382): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:52:49:266 Filesystem/(9350:9382): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:52:50:199 Filesystem/(9350:9384): Se ha conectado un nodo. ID = 3, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:52:50:200 Filesystem/(9350:9384): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:52:51:311 Filesystem/(9350:9388): Se ha conectado un nodo. ID = 2, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 17:52:51:312 Filesystem/(9350:9388): Espacio Total: 3060MB[153b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 17:52:58:60 Filesystem/(9350:9350): Espacio Total: 3060MB[153b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 500MB[25b].
+[INFO] 17:53:00:318 Filesystem/(9350:9350): Espacio Total: 3060MB[153b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 1000MB[50b].
+[INFO] 17:53:02:574 Filesystem/(9350:9350): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 1480MB[74b].
+[INFO] 17:54:16:516 Filesystem/(9350:9350): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1640MB[82b] - Espacio Libre: 1420MB[71b].
+[INFO] 17:54:57:371 Filesystem/(9350:9350): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1700MB[85b] - Espacio Libre: 1360MB[68b].
+[INFO] 17:56:59:29 Filesystem/(9350:9350): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 3060MB[153b].
+[INFO] 18:02:13:976 Filesystem/(9804:9804): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:02:13:976 Filesystem/(9804:9804): Escuchando nuevos clientes en puerto 43002.
+[INFO] 18:02:22:319 Filesystem/(9804:9809): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:02:22:320 Filesystem/(9804:9809): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:02:22:829 Filesystem/(9804:9813): Se ha conectado un nodo. ID = 3, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:02:22:829 Filesystem/(9804:9813): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:02:23:349 Filesystem/(9804:9817): Se ha conectado un nodo. ID = 2, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:02:23:349 Filesystem/(9804:9817): Espacio Total: 3060MB[153b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:03:31:838 Filesystem/(9804:9804): Espacio Total: 3060MB[153b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 18:04:00:166 Filesystem/(9832:9832): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:04:00:166 Filesystem/(9832:9832): Escuchando nuevos clientes en puerto 43002.
+[INFO] 18:04:03:965 Filesystem/(9832:9836): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:04:03:965 Filesystem/(9832:9836): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:04:04:741 Filesystem/(9832:9840): Se ha conectado un nodo. ID = 3, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:04:04:741 Filesystem/(9832:9840): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:04:05:244 Filesystem/(9832:9844): Se ha conectado un nodo. ID = 2, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:04:05:245 Filesystem/(9832:9844): Espacio Total: 3060MB[153b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:04:07:952 Filesystem/(9832:9832): Espacio Total: 3060MB[153b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 500MB[25b].
+[INFO] 18:04:09:832 Filesystem/(9832:9832): Espacio Total: 3060MB[153b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 1000MB[50b].
+[INFO] 18:04:11:544 Filesystem/(9832:9832): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 1480MB[74b].
+[INFO] 18:07:14:704 Filesystem/(9932:9932): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:07:14:704 Filesystem/(9932:9932): Escuchando nuevos clientes en puerto 43002.
+[INFO] 18:07:18:255 Filesystem/(9932:9937): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:07:18:255 Filesystem/(9932:9937): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:07:18:750 Filesystem/(9932:9941): Se ha conectado un nodo. ID = 3, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:07:18:750 Filesystem/(9932:9941): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:07:19:398 Filesystem/(9932:9945): Se ha conectado un nodo. ID = 2, Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 18:07:19:398 Filesystem/(9932:9945): Espacio Total: 3060MB[153b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:07:21:515 Filesystem/(9932:9932): Espacio Total: 3060MB[153b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 500MB[25b].
+[INFO] 18:07:28:841 Filesystem/(9932:9932): Espacio Total: 3060MB[153b] - Espacio Online: 2040MB[102b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 1000MB[50b].
+[INFO] 18:07:31:516 Filesystem/(9932:9932): Espacio Total: 3060MB[153b] - Espacio Online: 3060MB[153b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 1480MB[74b].
+[INFO] 18:49:41:103 Filesystem/(10267:10267): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 18:49:41:103 Filesystem/(10267:10267): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:30:33:287 Filesystem/(3365:3365): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 23:30:33:309 Filesystem/(3365:3365): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:33:12:75 Filesystem/(3365:3375): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:33:12:75 Filesystem/(3365:3375): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 0MB[0b].
+[INFO] 23:33:14:750 Filesystem/(3365:3365): Espacio Total: 0MB[0b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 1580MB[79b] - Espacio Libre: 500MB[25b].
+[INFO] 23:34:51:988 Filesystem/(3365:3390): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:35:04:325 Filesystem/(3365:3365): Espacio Total: 0MB[0b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:35:06:794 Filesystem/(3365:3390): Se ha desconectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:35:28:606 Filesystem/(3365:3456): Se ha conectado Marta. Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:35:30:610 Filesystem/(3365:3375): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:35:30:610 Filesystem/(3365:3375): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:35:57:661 Filesystem/(3365:3521): Se ha conectado un nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:35:57:661 Filesystem/(3365:3521): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:36:02:44 Filesystem/(3365:3365): Espacio Total: 0MB[0b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:36:03:401 Filesystem/(3365:3456): Se ha desconectado Marta. Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:36:05:301 Filesystem/(3365:3537): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:36:07:304 Filesystem/(3365:3521): Se ha desconectado un Nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:36:07:304 Filesystem/(3365:3521): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:37:11:172 Filesystem/(3690:3690): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:37:11:174 Filesystem/(3690:3690): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:37:19:143 Filesystem/(3730:3730): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:37:19:145 Filesystem/(3730:3730): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:37:57:533 Filesystem/(3730:3738): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:37:57:533 Filesystem/(3730:3738): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:37:57:534 Filesystem/(3730:3738): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:37:57:534 Filesystem/(3730:3738): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:37:57:535 Filesystem/(3730:3751): Se ha conectado un nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:37:57:535 Filesystem/(3730:3751): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:38:19:153 Filesystem/(3730:3730): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:38:32:140 Filesystem/(3730:3754): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:38:57:807 Filesystem/(3730:3751): Se ha desconectado un Nodo. ID = 1, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:38:57:807 Filesystem/(3730:3751): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:40:17:374 Filesystem/(3900:3900): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:40:17:374 Filesystem/(3900:3900): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:40:21:465 Filesystem/(3900:3937): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:40:21:465 Filesystem/(3900:3937): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:40:27:552 Filesystem/(3900:3942): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:41:22:842 Filesystem/(3900:3942): Se ha desconectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:41:24:437 Filesystem/(3900:4062): Se ha conectado Marta. Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:41:45:68 Filesystem/(3900:3937): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:41:45:68 Filesystem/(3900:3937): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:42:51:363 Filesystem/(4252:4252): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:42:51:363 Filesystem/(4252:4252): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:42:52:635 Filesystem/(4252:4255): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:42:52:635 Filesystem/(4252:4255): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:42:55:194 Filesystem/(4252:4252): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:42:56:524 Filesystem/(4252:4259): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:42:58:530 Filesystem/(4252:4255): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:42:58:530 Filesystem/(4252:4255): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:43:44:914 Filesystem/(4300:4300): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:43:44:914 Filesystem/(4300:4300): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:44:04:707 Filesystem/(4300:4337): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:44:04:707 Filesystem/(4300:4337): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:44:12:138 Filesystem/(4300:4342): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:44:37:734 Filesystem/(4300:4337): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:44:37:734 Filesystem/(4300:4337): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:45:15:23 Filesystem/(4511:4511): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:45:15:23 Filesystem/(4511:4511): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:45:23:263 Filesystem/(4511:4546): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:45:23:263 Filesystem/(4511:4546): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:45:27:807 Filesystem/(4511:4511): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:45:30:384 Filesystem/(4511:4552): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:45:32:386 Filesystem/(4511:4546): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:45:32:386 Filesystem/(4511:4546): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:45:48:223 Filesystem/(4593:4593): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:45:48:223 Filesystem/(4593:4593): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:45:53:37 Filesystem/(4593:4629): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:45:53:37 Filesystem/(4593:4629): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:45:55:982 Filesystem/(4593:4593): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:45:57:479 Filesystem/(4593:4634): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:45:59:481 Filesystem/(4593:4629): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:45:59:481 Filesystem/(4593:4629): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:46:39:85 Filesystem/(4729:4729): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:46:39:85 Filesystem/(4729:4729): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:46:45:127 Filesystem/(4729:4765): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:46:45:127 Filesystem/(4729:4765): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:46:59:557 Filesystem/(4729:4729): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:47:01:334 Filesystem/(4729:4770): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:48:18:372 Filesystem/(4908:4908): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:48:18:372 Filesystem/(4908:4908): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:48:27:618 Filesystem/(4908:4963): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:48:38:453 Filesystem/(4908:4963): Se ha desconectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:48:47:852 Filesystem/(4990:4990): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:48:47:852 Filesystem/(4990:4990): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:48:50:769 Filesystem/(4990:5024): Se ha conectado Marta. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:49:01:58 Filesystem/(5038:5038): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:49:01:58 Filesystem/(5038:5038): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:49:15:419 Filesystem/(5038:5075): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:49:15:419 Filesystem/(5038:5075): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:49:18:282 Filesystem/(5038:5038): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:49:23:275 Filesystem/(5038:5080): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:49:31:345 Filesystem/(5038:5075): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:49:31:345 Filesystem/(5038:5075): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:50:18:20 Filesystem/(5207:5207): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:50:18:20 Filesystem/(5207:5207): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:50:30:142 Filesystem/(5207:5278): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:50:30:142 Filesystem/(5207:5278): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:50:34:584 Filesystem/(5207:5207): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:50:51:890 Filesystem/(5207:5283): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:52:00:176 Filesystem/(5207:5278): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:52:00:176 Filesystem/(5207:5278): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:52:06:327 Filesystem/(5479:5479): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:52:06:327 Filesystem/(5479:5479): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:52:15:849 Filesystem/(5479:5515): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:52:15:849 Filesystem/(5479:5515): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:52:27:838 Filesystem/(5479:5479): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:52:30:599 Filesystem/(5479:5520): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:52:58:573 Filesystem/(5479:5479): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:52:58:645 Filesystem/(5479:5515): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:53:25:374 Filesystem/(5645:5645): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:53:25:374 Filesystem/(5645:5645): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:53:27:661 Filesystem/(5645:5648): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:53:27:661 Filesystem/(5645:5648): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:53:30:524 Filesystem/(5645:5645): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:53:32:205 Filesystem/(5645:5654): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:55:03:644 Filesystem/(5883:5883): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 20MB[1b] - Espacio Libre: 0MB[0b].
+[INFO] 23:55:03:644 Filesystem/(5883:5883): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:55:05:187 Filesystem/(5883:5886): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:55:05:187 Filesystem/(5883:5886): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 20MB[1b] - Espacio Libre: 0MB[0b].
+[INFO] 23:55:08:434 Filesystem/(5883:5883): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 20MB[1b] - Espacio Libre: 1000MB[50b].
+[INFO] 23:55:13:651 Filesystem/(5883:5890): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:55:20:586 Filesystem/(5883:5883): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:56:14:360 Filesystem/(5883:5886): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:56:14:360 Filesystem/(5883:5886): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:56:17:26 Filesystem/(6037:6037): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:56:17:26 Filesystem/(6037:6037): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:56:22:969 Filesystem/(6065:6065): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:56:22:969 Filesystem/(6065:6065): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:56:27:905 Filesystem/(6065:6068): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:56:27:905 Filesystem/(6065:6068): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 23:56:33:136 Filesystem/(6065:6065): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 23:56:41:66 Filesystem/(6065:6072): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:59:25:191 Filesystem/(6477:6477): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 20MB[1b] - Espacio Libre: 0MB[0b].
+[INFO] 23:59:25:191 Filesystem/(6477:6477): Escuchando nuevos clientes en puerto 43002.
+[INFO] 23:59:27:958 Filesystem/(6477:6480): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 23:59:27:958 Filesystem/(6477:6480): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 20MB[1b] - Espacio Libre: 0MB[0b].
+[INFO] 23:59:33:277 Filesystem/(6477:6477): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 20MB[1b] - Espacio Libre: 1000MB[50b].
+[INFO] 00:00:00:389 Filesystem/(6477:6486): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:00:05:908 Filesystem/(6477:6477): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 00:00:08:801 Filesystem/(6477:6486): Se ha desconectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:00:09:854 Filesystem/(6477:6509): Se ha conectado Marta. Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:01:36:106 Filesystem/(6477:6477): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 00:01:36:945 Filesystem/(6477:6480): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 00:01:39:611 Filesystem/(6733:6733): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 00:01:39:611 Filesystem/(6733:6733): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:01:40:987 Filesystem/(6733:6736): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:01:40:987 Filesystem/(6733:6736): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 0MB[0b].
+[INFO] 00:01:43:242 Filesystem/(6733:6733): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 00:01:48:155 Filesystem/(6733:6740): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:32:46:921 Filesystem/(10722:10722): Espacio Total: 0MB[0b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 20MB[1b] - Espacio Libre: 0MB[0b].
+[INFO] 00:32:46:921 Filesystem/(10722:10722): Escuchando nuevos clientes en puerto 43002.
+[INFO] 00:32:49:218 Filesystem/(10722:10725): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:32:49:218 Filesystem/(10722:10725): Espacio Total: 1020MB[51b] - Espacio Online: 0MB[0b] - Espacio Utilizado: 20MB[1b] - Espacio Libre: 0MB[0b].
+[INFO] 00:32:53:576 Filesystem/(10722:10722): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 20MB[1b] - Espacio Libre: 1000MB[50b].
+[INFO] 00:33:11:521 Filesystem/(10722:10730): Se ha conectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:33:17:193 Filesystem/(10722:10722): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 0MB[0b] - Espacio Libre: 1020MB[51b].
+[INFO] 00:33:20:51 Filesystem/(10722:10730): Se ha desconectado Marta. Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:33:21:25 Filesystem/(10722:10752): Se ha conectado Marta. Socket = 7, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 00:33:23:33 Filesystem/(10722:10725): Espacio Total: 1020MB[51b] - Espacio Online: 1020MB[51b] - Espacio Utilizado: 20MB[1b] - Espacio Libre: 1000MB[50b].

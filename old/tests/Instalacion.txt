@@ -1,0 +1,67 @@
+echo ****************************************************
+echo ********** Instalacion de Commons Library **********
+echo ****************************************************
+
+cd ..
+mkdir workspace
+mv tp-2015-1c-power-rangers /home/utnso/workspace
+cd workspace/
+
+git clone https://github.com/sisoputnfrba/so-commons-library
+cd so-commons-library/
+sudo make install
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/workspace/so-commons-library/
+
+echo Commons Library se ha clonado e instalado correctamente en el directorio /home/utnso/workspace
+
+cd ..
+
+echo *********************************************
+echo ********** Compilacion de Includes **********
+echo *********************************************
+
+cd tp-2015-1c-power-rangers/Includes/
+gcc -c -fpic socket.c utils.c
+gcc -shared -o libincludes.so socket.o utils.o
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/workspace/tp-2015-1c-power-rangers/Includes/
+
+echo Includes se ha compilado correctamente
+
+cd ..
+cd ..
+
+cd filesystem2/src/
+gcc -L/home/utnso/workspace/tp-2015-1c-power-rangers/Includes -L/home/utnso/workspace/so-commons-library -o fileSystem.c commands.c persistence.c -lincludes -lcommons
+
+cd ..
+
+cp fileSystem.txt /home/utnso/
+
+cd ..
+
+cd nodo/src/
+gcc -L/home/utnso/workspace/tp-2015-1c-power-rangers/Includes -L/home/utnso/workspace/so-commons-library -o nodo.c -lincludes -lcommons
+
+cd ..
+
+cp nodo.txt /home/utnso/
+
+cd ..
+
+cd marta/
+gcc -L/home/utnso/workspace/tp-2015-1c-power-rangers/Includes -L/home/utnso/workspace/so-commons-library -o marta.c connections.c planning.c scheduler.c shared.c -lincludes -lcommons
+
+cp marta.txt /home/utnso/
+
+cd ..
+
+cd job/
+gcc -L/home/utnso/workspace/tp-2015-1c-power-rangers/Includes -L/home/utnso/workspace/so-commons-library -o job.c -lincludes -lcommons
+
+cp job.txt /home/utnso/
+
+cd ..
+cd ..
+cd ..

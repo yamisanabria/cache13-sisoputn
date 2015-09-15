@@ -1,0 +1,7 @@
+[INFO] 15:52:35:423 Swap/(15007:15007): A la escucha de algún proceso Administrador de Memoria el puerto: 6000.
+[INFO] 16:21:34:232 Swap/(15295:15295): El archivo swap.data, de 131072, fue creado exitosamente
+[ERROR] 16:21:34:232 Swap/(15295:15295): Error al crear un socket_server en el puerto: 6000.
+[INFO] 16:21:55:965 Swap/(15363:15363): El archivo swap.data, de 131072 bytes, fue creado exitosamente
+[ERROR] 16:21:55:965 Swap/(15363:15363): Error al crear un socket_server en el puerto: 6000.
+[INFO] 16:22:30:280 Swap/(15415:15415): El archivo swap.data, de 131072 bytes, fue creado exitosamente
+[INFO] 16:22:30:280 Swap/(15415:15415): A la escucha de algún proceso Administrador de Memoria el puerto: 6001.

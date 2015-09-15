@@ -1,0 +1,6 @@
+[ERROR] 13:01:30:609 Job/(29163:29163): Error al conectar a marta(127.0.0.1:42428).
+[INFO] 13:03:04:543 Job/(29197:29197): Se ha conectado exitosamente a marta en ip 127.0.0.1 en puerto 42428 en socket n°4.
+[INFO] 13:06:05:323 Job/(29312:29312): Se ha conectado exitosamente a marta en ip 127.0.0.1 en puerto 42428 en socket n°4.
+[INFO] 13:11:17:938 Job/(29382:29382): Se ha conectado exitosamente a marta en ip 127.0.0.1 en puerto 42428 en socket n°4.
+[INFO] 13:14:08:37 Job/(29470:29470): Se ha conectado exitosamente a marta en ip 127.0.0.1 en puerto 42428 en socket n°4.
+[INFO] 13:17:41:288 Job/(29646:29646): Se ha conectado exitosamente a marta en ip 127.0.0.1 en puerto 42428 en socket n°4.

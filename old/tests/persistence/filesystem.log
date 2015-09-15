@@ -1,0 +1,196 @@
+[INFO] 20:48:35:807 Filesystem/(26781:26781): Escuchando nuevos clientes en puerto 43001.
+
+[INFO] 21:24:45:742 Filesystem/(27500:27500): Escuchando nuevos clientes en puerto 43001.
+
+[INFO] 21:45:13:676 Filesystem/(27942:27942): Escuchando nuevos clientes en puerto 43001.
+[ERROR] 23:01:27:354 Filesystem/(28565:28565): Error al crear escucha en puerto 43001.
+[ERROR] 00:38:47:390 Filesystem/(29869:29869): Error al crear escucha en puerto 43001.
+[INFO] 16:19:50:152 Filesystem/(8322:8322): Escuchando nuevos clientes en puerto 43001.
+[INFO] 16:20:13:994 Filesystem/(8346:8346): Escuchando nuevos clientes en puerto 43001.
+[INFO] 16:49:24:916 Filesystem/(9484:9484): Escuchando nuevos clientes en puerto 43001.
+[INFO] 16:49:49:522 Filesystem/(9496:9496): Escuchando nuevos clientes en puerto 43001.
+[INFO] 16:50:29:636 Filesystem/(9586:9586): Escuchando nuevos clientes en puerto 43001.
+[INFO] 16:53:01:25 Filesystem/(9664:9664): Escuchando nuevos clientes en puerto 43001.
+[INFO] 16:55:22:739 Filesystem/(9773:9773): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:00:52:228 Filesystem/(10064:10064): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:01:01:730 Filesystem/(10067:10067): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:13:50:923 Filesystem/(10261:10261): Escuchando nuevos clientes en puerto 43001.
+[ERROR] 17:13:54:638 Filesystem/(10269:10269): Error al crear escucha en puerto 43001.
+[INFO] 17:20:28:940 Filesystem/(10380:10380): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:23:55:309 Filesystem/(10477:10477): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:26:35:235 Filesystem/(10563:10563): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:27:07:946 Filesystem/(10572:10572): Escuchando nuevos clientes en puerto 43001.
+[ERROR] 17:29:24:651 Filesystem/(10717:10717): Error al crear escucha en puerto 43001.
+[INFO] 17:29:46:77 Filesystem/(10764:10764): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:30:23:485 Filesystem/(10795:10795): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:36:43:516 Filesystem/(11122:11122): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:36:57:788 Filesystem/(11131:11131): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:54:41:666 Filesystem/(11762:11762): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:57:34:253 Filesystem/(12069:12069): Escuchando nuevos clientes en puerto 43001.
+[INFO] 17:57:39:862 Filesystem/(12069:12072): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+
+[INFO] 18:01:32:304 Filesystem/(12127:12127): Escuchando nuevos clientes en puerto 43001.
+[INFO] 18:01:37:392 Filesystem/(12127:12130): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+
+[INFO] 18:04:19:884 Filesystem/(12244:12244): Escuchando nuevos clientes en puerto 43001.
+[INFO] 18:04:26:21 Filesystem/(12244:12247): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 18:06:04:961 Filesystem/(12293:12293): Escuchando nuevos clientes en puerto 43001.
+[INFO] 18:06:09:362 Filesystem/(12293:12296): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 18:07:18:592 Filesystem/(12347:12347): Escuchando nuevos clientes en puerto 43001.
+[INFO] 18:07:20:136 Filesystem/(12347:12350): Se ha conectado un nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 18:07:39:399 Filesystem/(12347:12350): Se ha desconectado un Nodo. ID = 1, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 18:12:14:225 Filesystem/(12347:12372): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 18:14:02:190 Filesystem/(12389:12389): Escuchando nuevos clientes en puerto 43001.
+[INFO] 18:14:05:790 Filesystem/(12389:12392): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 18:14:52:283 Filesystem/(12449:12449): Escuchando nuevos clientes en puerto 43001.
+[INFO] 18:15:00:347 Filesystem/(12449:12460): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 18:15:54:132 Filesystem/(12495:12495): Escuchando nuevos clientes en puerto 43001.
+[INFO] 18:15:56:4 Filesystem/(12495:12498): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 18:18:44:913 Filesystem/(12586:12586): Escuchando nuevos clientes en puerto 43001.
+[INFO] 18:18:58:908 Filesystem/(12586:12602): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 18:21:28:828 Filesystem/(12625:12625): Escuchando nuevos clientes en puerto 43001.
+[INFO] 18:21:30:884 Filesystem/(12625:12628): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 19:28:26:24 Filesystem/(13527:13527): Escuchando nuevos clientes en puerto 43001.
+[INFO] 19:28:27:488 Filesystem/(13527:13530): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 19:28:45:126 Filesystem/(13527:13530): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 19:29:05:71 Filesystem/(13527:13535): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 19:31:07:54 Filesystem/(13527:13599): Se ha desconectado un NN. Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 19:34:33:127 Filesystem/(13607:13607): Escuchando nuevos clientes en puerto 43001.
+[INFO] 19:34:41:788 Filesystem/(13607:13648): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 19:36:06:970 Filesystem/(13726:13726): Escuchando nuevos clientes en puerto 43001.
+[INFO] 19:36:19:280 Filesystem/(13726:13737): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[ERROR] 19:36:41:748 Filesystem/(13741:13741): Error al crear escucha en puerto 43001.
+[INFO] 20:11:00:150 Filesystem/(13944:13944): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:11:01:670 Filesystem/(13944:13947): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:14:33:504 Filesystem/(14024:14024): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:14:35:697 Filesystem/(14024:14027): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:15:13:824 Filesystem/(14024:14033): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:17:43:157 Filesystem/(14024:14033): Se ha desconectado un Nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:17:47:492 Filesystem/(14045:14045): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:17:48:486 Filesystem/(14045:14048): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:24:55:979 Filesystem/(14311:14311): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:24:57:171 Filesystem/(14311:14314): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:26:03:729 Filesystem/(14352:14352): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:26:06:585 Filesystem/(14352:14355): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:27:16:879 Filesystem/(14359:14359): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:27:18:544 Filesystem/(14359:14362): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:28:25:550 Filesystem/(14365:14365): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:28:27:230 Filesystem/(14365:14368): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:30:06:91 Filesystem/(14444:14444): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:30:07:348 Filesystem/(14444:14447): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:32:08:553 Filesystem/(14489:14489): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:32:10:129 Filesystem/(14489:14492): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:32:12:209 Filesystem/(14489:14492): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:32:12:209 Filesystem/(14489:14492): Se ha desconectado un NN. Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:32:14:986 Filesystem/(14489:14496): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43001.
+[ERROR] 20:33:28:422 Filesystem/(14534:14534): Error al crear escucha en puerto 43001.
+[INFO] 20:33:37:71 Filesystem/(14573:14573): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:33:41:17 Filesystem/(14573:14582): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:35:32:461 Filesystem/(14605:14605): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:35:33:949 Filesystem/(14605:14608): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 20:37:09:150 Filesystem/(14639:14639): Escuchando nuevos clientes en puerto 43001.
+[INFO] 20:37:20:948 Filesystem/(14639:14649): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 10:34:03:355 Filesystem/(2519:2519): Escuchando nuevos clientes en puerto 43001.
+[INFO] 10:34:28:167 Filesystem/(2519:2523): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 10:36:49:0 Filesystem/(2519:2598): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43001.
+[INFO] 10:38:59:730 Filesystem/(2650:2650): Escuchando nuevos clientes en puerto 43001.
+[INFO] 10:40:02:439 Filesystem/(2699:2699): Escuchando nuevos clientes en puerto 43001.
+[INFO] 10:42:07:417 Filesystem/(2789:2789): Escuchando nuevos clientes en puerto 43001.
+[INFO] 10:42:09:681 Filesystem/(2789:2792): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43001.
+[ERROR] 10:46:03:472 Filesystem/(2846:2846): Error al crear escucha en puerto 43001.
+[ERROR] 10:46:15:462 Filesystem/(2848:2848): Error al crear escucha en puerto 43001.
+[ERROR] 10:46:20:990 Filesystem/(2849:2849): Error al crear escucha en puerto 43001.
+[ERROR] 10:47:22:223 Filesystem/(2852:2852): Error al crear escucha en puerto 43001.
+[ERROR] 10:48:41:626 Filesystem/(2860:2860): Error al crear escucha en puerto 43001.
+[INFO] 10:50:24:147 Filesystem/(2877:2877): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:50:27:459 Filesystem/(2877:2880): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:51:57:885 Filesystem/(2941:2941): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:52:01:181 Filesystem/(2941:2944): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:52:58:780 Filesystem/(2981:2981): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:53:01:340 Filesystem/(2981:2984): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:54:09:969 Filesystem/(3047:3047): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:54:27:871 Filesystem/(3052:3052): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:54:51:285 Filesystem/(3105:3105): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:54:52:270 Filesystem/(3105:3108): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 10:55:12:120 Filesystem/(3112:3112): Escuchando nuevos clientes en puerto 43002.
+[INFO] 10:55:15:0 Filesystem/(3112:3115): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:03:36:5 Filesystem/(3222:3222): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:04:18:310 Filesystem/(3278:3278): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:04:20:45 Filesystem/(3278:3281): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:05:17:532 Filesystem/(3350:3350): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:05:19:573 Filesystem/(3350:3353): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:06:57:840 Filesystem/(3417:3417): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:07:03:135 Filesystem/(3417:3426): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:09:07:731 Filesystem/(3476:3476): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:09:12:312 Filesystem/(3476:3485): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:09:38:803 Filesystem/(3476:3485): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:10:10:48 Filesystem/(3523:3523): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:10:13:460 Filesystem/(3523:3532): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:11:08:661 Filesystem/(3604:3604): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:11:25:289 Filesystem/(3604:3613): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:12:19:229 Filesystem/(3658:3658): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:12:26:581 Filesystem/(3658:3668): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:15:47:310 Filesystem/(3725:3725): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:15:49:774 Filesystem/(3725:3728): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 11:16:11:955 Filesystem/(3774:3774): Error al crear escucha en puerto 43002.
+[INFO] 11:16:22:432 Filesystem/(3780:3780): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:16:43:606 Filesystem/(3780:3783): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:17:47:628 Filesystem/(3823:3823): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:17:57:835 Filesystem/(3823:3826): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:20:22:506 Filesystem/(3823:3826): Se ha desconectado un NN. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:20:42:954 Filesystem/(3863:3863): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:20:45:97 Filesystem/(3863:3866): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:21:01:559 Filesystem/(3863:3870): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:25:19:529 Filesystem/(3939:3939): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:25:22:482 Filesystem/(3939:3942): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:25:27:999 Filesystem/(3939:3942): Se ha desconectado un NN. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:26:18:726 Filesystem/(3939:3946): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:27:04:889 Filesystem/(3996:3996): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:27:07:329 Filesystem/(3996:3999): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:27:30:6 Filesystem/(3996:3999): Se ha desconectado un NN. Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:27:43:470 Filesystem/(3996:4002): Se ha conectado un nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:27:47:717 Filesystem/(3996:4002): Se ha desconectado un Nodo. ID = 4, Socket = 6, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:28:19:890 Filesystem/(4045:4045): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:28:21:866 Filesystem/(4045:4048): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:40:01:330 Filesystem/(4366:4366): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:40:04:516 Filesystem/(4366:4369): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 11:40:59:886 Filesystem/(4404:4404): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:41:05:307 Filesystem/(4427:4427): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 11:41:13:352 Filesystem/(4463:4463): Error al crear escucha en puerto 43002.
+[ERROR] 11:41:34:754 Filesystem/(4508:4508): Error al crear escucha en puerto 43002.
+[ERROR] 11:41:42:843 Filesystem/(4516:4516): Error al crear escucha en puerto 43002.
+[ERROR] 11:41:44:771 Filesystem/(4517:4517): Error al crear escucha en puerto 43002.
+[INFO] 11:42:15:866 Filesystem/(4523:4523): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:42:23:58 Filesystem/(4553:4553): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:44:08:24 Filesystem/(4636:4636): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:44:24:834 Filesystem/(4676:4676): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:44:47:803 Filesystem/(4715:4715): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:45:43:156 Filesystem/(4804:4804): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:47:04:324 Filesystem/(4890:4890): Escuchando nuevos clientes en puerto 43002.
+[INFO] 11:50:08:490 Filesystem/(5015:5015): Escuchando nuevos clientes en puerto 43002.
+[ERROR] 12:02:30:100 Filesystem/(5626:5626): Error al crear escucha en puerto 43002.
+[INFO] 12:02:42:723 Filesystem/(5628:5628): Escuchando nuevos clientes en puerto 43002.
+[INFO] 12:02:45:787 Filesystem/(5628:5632): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 12:03:56:125 Filesystem/(5635:5635): Escuchando nuevos clientes en puerto 43002.
+[INFO] 13:53:13:784 Filesystem/(7053:7053): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:01:31:999 Filesystem/(10504:10504): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:02:07:381 Filesystem/(10600:10600): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:09:54:198 Filesystem/(10814:10814): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:09:57:102 Filesystem/(10814:10817): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 15:13:00:960 Filesystem/(10964:10964): Error al crear escucha en puerto 43002.
+[INFO] 15:13:06:882 Filesystem/(10969:10969): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:14:52:36 Filesystem/(10974:10974): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:15:45:263 Filesystem/(10974:10988): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:16:03:50 Filesystem/(10974:10988): Se ha desconectado un Nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:17:22:878 Filesystem/(11002:11002): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:17:25:326 Filesystem/(11002:11005): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:19:00:678 Filesystem/(11090:11090): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:19:15:905 Filesystem/(11090:11098): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:25:36:819 Filesystem/(11237:11237): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:25:43:716 Filesystem/(11237:11248): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:31:15:585 Filesystem/(11284:11284): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:31:18:441 Filesystem/(11284:11287): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[INFO] 15:32:01:92 Filesystem/(11366:11366): Escuchando nuevos clientes en puerto 43002.
+[INFO] 15:32:03:372 Filesystem/(11366:11369): Se ha conectado un nodo. ID = 4, Socket = 5, IP = 127.0.0.1, Puerto = 43002.
+[ERROR] 18:56:48:57 Filesystem/(14302:14302): Error al crear escucha en puerto 43002.
+[INFO] 18:56:56:839 Filesystem/(14323:14323): Escuchando nuevos clientes en puerto 43002.
