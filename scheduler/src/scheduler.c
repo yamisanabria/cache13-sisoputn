@@ -18,15 +18,16 @@
 
 #include "connections.h"
 #include "shared.h"
+#include "console.h"
 
 pthread_mutex_t mx_main;
 
 /** Config info **/
-char* 	fileConfigDir = "config.cfg";	// Ruta a archivo config por defecto
-t_config* schedulerConfig;				// Objeto de configuración de marta
+char* 				fileConfigDir = "config.cfg";	// Ruta a archivo config por defecto
+t_config* 			schedulerConfig;				// Objeto de configuración de marta
 
-t_log* logger;							//Declarado extern en shared.h
-char log_buffer[1024];					//Declarado extern en shared.h
+t_log* 				logger;							//Declarado extern en shared.h
+char 				log_buffer[1024];				//Declarado extern en shared.h
 
 t_config* readFileConfig()
 {
@@ -61,7 +62,7 @@ void initializeLogger(int argc, char* argv[]){
 			}
 		}
 	}
-	logger = log_create("scheduler.log", "SCHEDULER", showLogInConsole, LOG_LEVEL_INFO);
+	logger = log_create("scheduler.log", "SCHEDULER", 1, LOG_LEVEL_INFO);
 }
 
 int main(int argc, char* argv[])
@@ -76,11 +77,9 @@ int main(int argc, char* argv[])
 
 	listenStart();
 
-	pthread_mutex_init(&mx_main, NULL);
-	pthread_mutex_lock(&mx_main);
-	pthread_mutex_lock(&mx_main);
+	startConsole(); //Acá se queda en un while(1)
 
-	config_destroy(schedulerConfig);
+	//config_destroy(schedulerConfig);
 
 	return EXIT_SUCCESS;
 }
