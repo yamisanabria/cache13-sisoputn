@@ -1,3 +1,9 @@
+/**
+Compilar usando;
+gcc -Wall -v main.c -lcunit -L/usr/local/lib -I/usr/local/include
+
+Idea tomada de https://docs.google.com/document/d/17li9WRr3VLbuFI18EBmgYuTmLnj3wushlLf4vODwjzg/edit
+*/
 #include "CUnit/Basic.h"
 #include <unistd.h>
 
@@ -17,6 +23,13 @@ void test3() {
 }
 
 int main() {
+  CU_pSuite pSuite = NULL;
+
+   /* initialize the CUnit test registry */
+  if (CUE_SUCCESS != CU_initialize_registry()){
+    return CU_get_error();
+  }
+
   CU_initialize_registry();
 
   CU_pSuite prueba = CU_add_suite("Suite de prueba", NULL, NULL);
