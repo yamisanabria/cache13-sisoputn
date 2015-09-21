@@ -17,6 +17,7 @@
 #include <socket.h>
 #include <utils.h>
 #include <ctype.h>
+#include <time.h>
 
 #ifndef SHARED_H_
 #define SHARED_H_
@@ -31,5 +32,17 @@
 		int args;
 		char * description;
 	} Command;
+
+	typedef enum {P_NEW, P_READY, P_RUNNING, P_WAITING, P_BLOCKED, P_FAILED, P_FINISHED} PCBStatus;
+
+	typedef struct
+	{
+		int PID;
+		char* path;
+		PCBStatus status;
+		int counter;		//Número de próxima línea a ejecutar
+		clock_t start;
+		clock_t end;
+	} PCBItem;
 
 #endif

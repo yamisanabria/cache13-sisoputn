@@ -23,15 +23,9 @@ void cpuNew(socket_connection* socketInfo)
 	log_info(logger, log_buffer);
 }
 
-void listenStart(){
+void listenStart()
+{
 	createListen(schedulerPort, &cpuNew, callableRemoteFunctions, &cpuDisconnected, NULL);
 	sprintf(log_buffer, "Nos ponemos en escucha de CPUs en puerto %d...", schedulerPort);
 	log_info(logger, log_buffer);
-}
-
-void initializeRemoteFunctions()
-{
-	/* Agregamos las funciones que podrán ser llamadas por mis conexiones */
-	callableRemoteFunctions = dictionary_create();
-
 }
