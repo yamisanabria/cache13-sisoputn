@@ -1,22 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <commons/log.h>
-#include <commons/string.h>
-#include <commons/config.h>
-#include <commons/temporal.h>
-#include <commons/bitarray.h>
-#include <commons/temporal.h>
-#include <commons/process.h>
-#include <commons/txt.h>
-#include <commons/collections/list.h>
-#include <commons/collections/dictionary.h>
-#include <commons/collections/queue.h>
-#include <string.h>
-#include <pthread.h>
-#include <errno.h>
-#include <socket.h>
-#include <utils.h>
-
 #include "shared.h"
 
 /** Variables generales que usaremos **/
@@ -42,15 +23,9 @@ void cpuNew(socket_connection* socketInfo)
 	log_info(logger, log_buffer);
 }
 
-void listenStart(){
+void listenStart()
+{
 	createListen(schedulerPort, &cpuNew, callableRemoteFunctions, &cpuDisconnected, NULL);
 	sprintf(log_buffer, "Nos ponemos en escucha de CPUs en puerto %d...", schedulerPort);
 	log_info(logger, log_buffer);
-}
-
-void initializeRemoteFunctions()
-{
-	/* Agregamos las funciones que podrán ser llamadas por mis conexiones */
-	callableRemoteFunctions = dictionary_create();
-
 }
