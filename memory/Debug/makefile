@@ -26,13 +26,13 @@ endif
 all: memory
 
 dependents:
-	-cd /home/utnso/workspace/temp/includes/Debug && $(MAKE) all
+	-cd /home/utnso/workspace/tp-2015-2c-Aprobados/includes/Debug && $(MAKE) all
 
 # Tool invocations
-memory: $(OBJS) $(USER_OBJS) /home/utnso/workspace/temp/includes/Debug/libIncludes.so
+memory: $(OBJS) $(USER_OBJS) /home/utnso/workspace/tp-2015-2c-Aprobados/includes/Debug/libIncludes.so
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc -lcommons -pthread -L"/home/utnso/workspace/temp/includes/Debug" -o "memory" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -lcommons -pthread -L"/home/utnso/workspace/tp-2015-2c-Aprobados/includes/Debug" -o "memory" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -43,6 +43,6 @@ clean:
 
 .PHONY: all clean dependents
 .SECONDARY:
-/home/utnso/workspace/temp/includes/Debug/libIncludes.so:
+/home/utnso/workspace/tp-2015-2c-Aprobados/includes/Debug/libIncludes.so:
 
 -include ../makefile.targets

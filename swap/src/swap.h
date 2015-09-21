@@ -16,6 +16,9 @@ void readFileConfig();
 /* Función que inicializa el log */
 void initLog();
 
+/* Función que creará el swap.data con su configuración correspondiente */
+void initDisk();
+
 /* Función dummy que imprime por pantalla el programa */
 void runProgram(char *mCod);
 

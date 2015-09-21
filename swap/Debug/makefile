@@ -29,7 +29,7 @@ all: swap
 swap: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc -lcommons -pthread -L"/home/utnso/workspace/temp/includes/Debug" -o "swap" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc -lcommons -pthread -L"/home/utnso/workspace/tp-2015-2c-Aprobados/includes/Debug" -o "swap" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

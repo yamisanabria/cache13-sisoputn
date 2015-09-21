@@ -34,6 +34,7 @@ char *swapName;						/* Nombre del archivo swap */
 int   pageQuan;						/* Cantidad de páginas */
 int   pageSize;						/* Tamaño de la página */
 int   t_compaction;                 /* Tiempo del retardo de compactación */
+int   pageDisp;                    	/* Páginas disponibles en el swap */
 
 t_log *logg;						/* Variable para el log (tambien definida como extern en "shared.h) */
 pthread_mutex_t mx_main;            /* Mutex para el proceso main */
@@ -82,7 +83,9 @@ void initDisk() {
 	string_append(&command, " count=");
 	string_append(&command, string_itoa(pageQuan));
 
-	system(command);
+	system(command);	  /* Ejecuto el comando */
+
+	pageDisp = pageQuan;  /* Disponibilidad total del swap */
 
 	log_info(logg, "El archivo %s, de %d bytes, fue creado exitosamente", swapName, pageSize*pageQuan);
 

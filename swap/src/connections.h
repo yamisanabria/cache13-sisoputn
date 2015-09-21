@@ -13,7 +13,7 @@
 /* Función que obtiene el puerto desde el archivo de configuración */
 void setSwapPort(t_config *config);
 
-/* Función que inicializa el diccionario de funciones a ser llamadas por algún proceso "clientes" */
+/* Función que inicializa el diccionario de funciones a ser llamadas por algún proceso "cliente" */
 void initDictionary();
 
 /* Función que me avisa que se ha conectado un proceso Administrador de Memoria */
