@@ -1,11 +1,10 @@
 TARGET = all
 
-all:
+all: libs
 	- cd cpu && $(MAKE) $(TARGET)
 	- cd memory && $(MAKE) $(TARGET)
 	- cd scheduler && $(MAKE) $(TARGET)
 	- cd swap && $(MAKE) $(TARGET)
-	- echo 'maked'
 
 libs:
 	- cd includes && $(MAKE) $(TARGET)
@@ -13,5 +12,5 @@ libs:
 debug: TARGET = debug
 debug: all
 
-clean:
-	- echo 'TODO'
+clean: TARGET = clean
+clean: all
