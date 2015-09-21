@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <signal.h>
 #include <commons/log.h>
 #include <commons/string.h>
 #include <commons/config.h>
@@ -72,19 +73,47 @@ void initializeLogger(int argc, char* argv[]){
 	logger = log_create("cpu.log", "CPU", showLogInConsole, LOG_LEVEL_INFO);
 }
 
+//Escucha las 3 señales (se envian con kill -s SIG**** %pid%)
+void listenSignal(int signal)
+{
+	switch (signal)
+	{
+		case SIGUSR1:
+			printf("Limpiar TLB..\n");
+			break;
+		case SIGUSR2:
+			printf("Limpiar Memoria..\n");
+			break;
+		case SIGPOLL:
+			printf("Imprimir Memoria..\n");
+			break;
+	}
+}
+
 int main(int argc, char* argv[])
 {
+	//inicializo loger
 	initializeLogger(argc, argv);
 
+	//leo archivo de configuracion
 	memoryConfig = readFileConfig();
 
+	//Inicializo modulos
 	initMemory(memoryConfig);
 	initConnections(memoryConfig);
 
+	//Me pongo a la escucha de CPUs
 	listenStart();
+
+	//Me conecto al Swap
 	connectSwap();
 
+	//Pongo a la escucha las 3 señales
+	signal(SIGUSR1, listenSignal);
+	signal(SIGUSR2, listenSignal);
+	signal(SIGPOLL, listenSignal);
 
+	//Dejo bloqueado el main
 	pthread_mutex_init(&mx_main, NULL);
 	pthread_mutex_lock(&mx_main);
 	pthread_mutex_lock(&mx_main);

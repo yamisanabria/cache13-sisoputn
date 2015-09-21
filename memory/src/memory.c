@@ -35,6 +35,7 @@ void initMemory(t_config* memoryConfig)
 
 	//reservo la memoria necesaria
 	memory = malloc(frames_q * frame_size + 1);
+	frames = list_create();
 
 	//Inicializacion de frames
 	int i;
@@ -43,6 +44,7 @@ void initMemory(t_config* memoryConfig)
 	{
 		frame = malloc(sizeof(t_frame));
 		frame->pid = -1;
+		frame->num = 0;
 		list_add(frames, frame);
 	}
 }
