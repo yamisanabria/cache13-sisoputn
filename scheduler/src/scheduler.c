@@ -73,9 +73,9 @@ int main(int argc, char* argv[])
 
 	setConnectionsParameters(schedulerConfig);
 
-	initializeRemoteFunctions();
-
 	listenStart();
+
+	createPCB();
 
 	startConsole(); //Acá se queda en un while(1)
 
