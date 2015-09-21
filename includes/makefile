@@ -14,5 +14,9 @@ all:
 includes.so: $(OBJS)
 	$(CC) -shared -o "libincludes.so" $(OBJS) $(LIBFLAGS)
 
+# Add debug parameters and compile
+debug: CC += -DDEBUG -g
+debug: all
+
 clean:
 	rm -f socket.d socket.o utils.d utils.o includes.so
