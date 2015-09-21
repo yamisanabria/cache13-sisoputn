@@ -1,3 +1,5 @@
+/includes/socket.d
+/includes/utils.d
 # Object files
 *.o
 *.ko
