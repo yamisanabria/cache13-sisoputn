@@ -15,80 +15,36 @@
 #include <pthread.h>
 #include <errno.h>
 #include <socket.h>
+#include <utils.h>
 
-#include "connections.h"
 #include "shared.h"
+#include "memory.h"
 
-pthread_mutex_t mx_main;
+int frames_max;		// Cantidad máxima de marcos por proceso
+int frames_q;    	// Cantidad de frames
+int frame_size; 	// Tamaño de frame
 
-/** Config info **/
-char* 	fileConfigDir = "config.cfg";	// Ruta a archivo config por defecto
-t_config* memoryConfig;				    // Objeto de configuración de marta
+char * memory;		// Memoria reservada
+t_list * frames;	// Frames de la memoria
 
-t_log* logger;							//Declarado extern en shared.h
-char log_buffer[1024];					//Declarado extern en shared.h
-
-t_config* readFileConfig()
+void initMemory(t_config* memoryConfig)
 {
-	t_config* config;
-	config = config_create(fileConfigDir);
+	frames_max 		= config_get_int_value(memoryConfig, "MAXIMO_MARCOS_POR_PROCESO");
+	frames_q 		= config_get_int_value(memoryConfig, "CANTIDAD_MARCOS");
+	frame_size 		= config_get_int_value(memoryConfig, "TAMANIO_MARCOS");
 
-	int configElements;
-	configElements = config_keys_amount(config);
+	//reservo la memoria necesaria
+	memory = malloc(frames_q * frame_size + 1);
 
-	if(configElements == 0){
-		log_error(logger, "Archivo de configuración inválido.");
-		exit(1);
+	//Inicializacion de frames
+	int i;
+	t_frame * frame;
+	for(i = 0; i < frames_q; i++)
+	{
+		frame = malloc(sizeof(t_frame));
+		frame->pid = -1;
+		list_add(frames, frame);
 	}
-
-	if(!config_has_property(config, "PUERTO_ESCUCHA") ||
-		!config_has_property(config, "IP_SWAP") ||
-		!config_has_property(config, "PUERTO_SWAP") ||
-		!config_has_property(config, "MAXIMO_MARCOS_POR_PROCESO") ||
-		!config_has_property(config, "CANTIDAD_MARCOS") ||
-		!config_has_property(config, "TAMANIO_MARCOS") ||
-		!config_has_property(config, "ENTRADAS_TLB") ||
-		!config_has_property(config, "RETARDO_MEMORIA")){
-		log_error(logger, "Parámetros inválidos en archivo de configuración.");
-		exit(1);
-	}
-
-	return config;
 }
 
-void initializeLogger(int argc, char* argv[]){
-	int showLogInConsole = 0;
-	if(argc > 0){
-		int i = 0;
-		for(i = 0; i < argc; i++){
-			if(strcmp(argv[i], "--show_log") == 0){
-				showLogInConsole = 1;
-				break;
-			}
-		}
-	}
-	logger = log_create("cpu.log", "CPU", showLogInConsole, LOG_LEVEL_INFO);
-}
 
-int main(int argc, char* argv[])
-{
-	initializeLogger(argc, argv);
-
-	memoryConfig = readFileConfig();
-
-	setConnectionsParameters(memoryConfig);
-
-	initializeRemoteFunctions();
-
-	listenStart();
-	connectSwap();
-
-
-	pthread_mutex_init(&mx_main, NULL);
-	pthread_mutex_lock(&mx_main);
-	pthread_mutex_lock(&mx_main);
-
-	config_destroy(memoryConfig);
-
-	return EXIT_SUCCESS;
-}
