@@ -1,7 +1,10 @@
 CC=gcc
 CFLAGS= -Wall -O0 -g3
 LIBFLAGS=-lcommons -pthread -L"../includes" -I"../includes" -lincludes -I"src"
-OBJS=build/connections.o build/scheduler.o
+
+C_SRCS=$(shell find ./src -iname "*.c" | sed -e 's/.*\/src\/*/.\//g' | tr '\n' ' ')
+OBJS=$(C_SRCS:./%.c=build/%.o)
+
 MAIN=scheduler
 
 all:

@@ -1,7 +1,10 @@
 CC=gcc
 CFLAGS= -Wall -O0 -g3
 LIBFLAGS=-lcommons -pthread -L"../includes" -I"../includes" -lincludes -I"src"
-OBJS=build/connections.o build/swap.o
+
+C_SRCS=$(shell find ./src -iname "*.c" | sed -e 's/.*\/src\/*/.\//g' | tr '\n' ' ')
+OBJS=$(C_SRCS:./%.c=build/%.o)
+
 MAIN=swap
 
 all:
@@ -10,6 +13,7 @@ all:
 	$(MAKE) main
 
 build/%.o: src/%.c
+	@echo "building $(@)"
 	$(CC) $(CFLAGS) -c -fmessage-length=0 -fPIC -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<" $(LIBFLAGS)
 
 main: $(OBJS)
