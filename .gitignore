@@ -1,7 +1,19 @@
+# build de modulos
+/swap/build
+/scheduler/build
+/memory/build
 /cpu/build
+
+# main de modulos
+/swap/swap
+/scheduler/scheduler
+/memory/memory
 /cpu/cpu
+
+# lib Includes
 /includes/socket.d
 /includes/utils.d
+
 # Object files
 *.o
 *.ko
