@@ -29,11 +29,14 @@ int		memoryPort;
 int 	swapPort;
 char* 	swapIP;
 
-void setConnectionsParameters(t_config* memoryConfig)
+void initConnections(t_config* memoryConfig)
 {
 	memoryPort 		= config_get_int_value(memoryConfig, "PUERTO_ESCUCHA");
 	swapPort 		= config_get_int_value(memoryConfig, "PUERTO_SWAP");
 	swapIP 			= config_get_string_value(memoryConfig, "IP_SWAP");
+
+	/* Agregamos las funciones que podrán ser llamadas por mis conexiones */
+	callableRemoteFunctions = dictionary_create();
 }
 
 void cpuDisconnected(socket_connection* socketInfo)
@@ -74,11 +77,4 @@ void connectSwap(){
 			log_info(logger, log_buffer);
 		}
 	}
-}
-
-void initializeRemoteFunctions()
-{
-	/* Agregamos las funciones que podrán ser llamadas por mis conexiones */
-	callableRemoteFunctions = dictionary_create();
-
 }
