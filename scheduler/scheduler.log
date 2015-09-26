@@ -16,3 +16,28 @@
 [INFO] 23:45:03:928 SCHEDULER/(5774:5775): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°6
 [INFO] 23:45:24:737 SCHEDULER/(5900:5900): Nos ponemos en escucha de CPUs en puerto 4000...
 [INFO] 23:45:26:343 SCHEDULER/(5900:5901): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°5
+[INFO] 18:15:31:56 SCHEDULER/(7089:7089): Nos ponemos en escucha de CPUs en puerto 4000...
+[INFO] 18:15:47:65 SCHEDULER/(7089:7089): El archivo ("hola") no existe.
+
+[INFO] 18:16:36:681 SCHEDULER/(7089:7089): El archivo (/vmlinuz.old4) no existe.
+
+[INFO] 18:22:37:779 SCHEDULER/(7353:7353): Nos ponemos en escucha de CPUs en puerto 4000...
+[INFO] 18:22:41:87 SCHEDULER/(7353:7353): El archivo (hola) no existe.
+
+[INFO] 18:23:00:200 SCHEDULER/(7353:7353): El archivo (scheduler) no existe.
+
+[INFO] 18:23:43:399 SCHEDULER/(7353:7353): PROCESO PID-1 NUEVO.
+
+[INFO] 18:23:53:335 SCHEDULER/(7353:7353): PROCESO PID-1 NUEVO.
+
+[INFO] 18:24:22:511 SCHEDULER/(7353:7353): PROCESO PID-1 NUEVO.
+
+[INFO] 18:24:53:569 SCHEDULER/(7404:7404): Nos ponemos en escucha de CPUs en puerto 4000...
+[INFO] 18:25:10:975 SCHEDULER/(7404:7404): PROCESO PID-1 NUEVO.
+
+[INFO] 18:27:13:838 SCHEDULER/(7475:7475): Nos ponemos en escucha de CPUs en puerto 4000...
+[INFO] 18:28:06:525 SCHEDULER/(7549:7549): Nos ponemos en escucha de CPUs en puerto 4000...
+[INFO] 18:28:18:374 SCHEDULER/(7549:7549): PROCESO PID-1 NUEVO.
+
+[INFO] 18:28:24:814 SCHEDULER/(7549:7549): PROCESO PID-2 NUEVO.
+

@@ -1,9 +1,14 @@
 #include "shared.h"
+#include "pcb.h"
 
 void cmd_run(char ** args)
 {
 	char* path = string_duplicate(args[1]);
-	printf("\nRUN %s called\n", path);
+	printf("\nEjecutar nuevo proceso de ruta (%s)\n", path);
+	if(!runNewProcess(path)){
+		printf("Ha ocurrido un error al correr el proceso, revise el log.\n");
+	}
+
 	free(path);
 }
 

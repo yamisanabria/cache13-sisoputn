@@ -3,7 +3,11 @@
 
 void createPCB();
 
-void pcbAddNewProcess(PCBItem* item);
+int validateCodFile(char* path);
+
+int pcbAddNewProcess(PCBItem* item);
+
+int runNewProcess(char* path);
 
 PCBItem* pcbGetByPID(int pid);
 
