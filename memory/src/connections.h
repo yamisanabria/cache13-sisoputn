@@ -1,7 +1,7 @@
 #ifndef CONNECTIONS_H_
 #define CONNECTIONS_H_
 
-	void setConnectionsParameters(t_config* memoryConfig);
+	void initConnections(t_config* memoryConfig);
 
 	void cpuDisconnected(socket_connection* socketInfo);
 
@@ -12,7 +12,5 @@
 	void swDisconnected(socket_connection* socketInfo);
 
 	void connectSwap();
-
-	void initializeRemoteFunctions();
 
 #endif

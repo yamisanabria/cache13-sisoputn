@@ -73,7 +73,10 @@ void startListener() {
 
 //FUNCIONES DE COMUNICACIÓN
 
-void mem_runProgram(socket_connection * conn, char** args){
+void mem_sw_startProcess(socket_connection *conn, char **args){
 
-	runProgram(args[0]);
+		int pid = atoi(args[0]);
+		int pq  = atoi(args[1]);
+
+		startProcess(pid,pq);
 }

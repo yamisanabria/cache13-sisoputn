@@ -15,10 +15,15 @@
 #include <pthread.h>
 #include <errno.h>
 #include <socket.h>
+#include <semaphore.h>
 
 #include "connections.h"
 #include "shared.h"
 #include "console.h"
+#include "pcb.h"
+#include "cpu.h"
+#include "ioqueue.h"
+#include "pqueue.h"
 
 pthread_mutex_t mx_main;
 
@@ -76,6 +81,8 @@ int main(int argc, char* argv[])
 	listenStart();
 
 	createPCB();
+
+	createProcessQueue();
 
 	startConsole(); //Acá se queda en un while(1)
 

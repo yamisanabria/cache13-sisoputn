@@ -28,7 +28,8 @@ void startListener();
 
 //DEFINICIONES DE LAS FUNCIONES DE COMUNICACIÓN
 
-/* Función de comunicación que llama a la función runProgram */
-void mem_runProgram(socket_connection * conn, char** args);
+/* El administrador de memoria nos indica que comenzó un proceso */
+void mem_sw_startProcess(socket_connection *conn, char **args);
+
 
 #endif	/* CONNECTIONS_H_ */

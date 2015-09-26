@@ -33,7 +33,7 @@
 		char * description;
 	} Command;
 
-	typedef enum {P_NEW, P_READY, P_RUNNING, P_WAITING, P_BLOCKED, P_FAILED, P_FINISHED} PCBStatus;
+	typedef enum {P_NEW, P_READY, P_RUNNING, P_BLOCKED, P_FAILED, P_FINISHED} PCBStatus;
 
 	typedef struct
 	{
@@ -45,4 +45,14 @@
 		clock_t end;
 	} PCBItem;
 
+	typedef enum {CPU_AVAILABLE, CPU_BUSY} CPUStatus;
+
+	typedef struct
+	{
+		int id;
+		CPUStatus status;
+		socket_connection* socket;
+		clock_t last_start;
+		clock_t last_end;
+	} CPU;
 #endif
