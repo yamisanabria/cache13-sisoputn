@@ -86,4 +86,5 @@ void initializeRemoteFunctions()
 	/* Agregamos las funciones que podrán ser llamadas por mis conexiones */
 	callableRemoteFunctions = dictionary_create();
 
+	//dictionary_put(callableRemoteFunctions, "sc_cpu_startProcess", &startProcess);
 }
