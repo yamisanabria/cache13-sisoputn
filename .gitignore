@@ -14,6 +14,9 @@
 /includes/socket.d
 /includes/utils.d
 
+# archivo de logs
+/cpu/cpu.log
+
 # Object files
 *.o
 *.ko

@@ -55,9 +55,9 @@ void connectScheduler(){
 		return;
 	} else {
 		/* Me conecto al FileSystem; si hay error, informo y finalizo*/
-		if((socket_scheduler = connectServer(schedulerIP, schedulerPort, callableRemoteFunctions, &scDisconnected, NULL)) == -1)
-		{
-			log_error(logger, "Error al intentar conectar con el scheduler");
+		if((socket_scheduler = connectServer(schedulerIP, schedulerPort, callableRemoteFunctions, &scDisconnected, NULL)) == -1) {
+			sprintf(log_buffer, "Error al intentar conectar con el scheduler en IP %s en puerto %d", schedulerIP, schedulerPort);
+			log_error(logger, log_buffer);
 		} else {
 			sprintf(log_buffer, "Se ha conectado exitosamente al Scheduler en IP %s en puerto %d por socket n° %d", schedulerIP, schedulerPort, socket_scheduler);
 			log_info(logger, log_buffer);
@@ -66,14 +66,13 @@ void connectScheduler(){
 }
 
 void connectMemory(){
-	if(socket_memory != -1){
+	if (socket_memory != -1){
 		return;
 	} else {
 		/* Me conecto al FileSystem; si hay error, informo y finalizo*/
-		if((socket_memory = connectServer(memoryIP, memoryPort, callableRemoteFunctions, &memDisconnected, NULL)) == -1)
-		{
-			log_error(logger, "Error al intentar conectar con el memory");
-
+		if ((socket_memory = connectServer(memoryIP, memoryPort, callableRemoteFunctions, &memDisconnected, NULL)) == -1) {
+			sprintf(log_buffer, "Error al intentar conectar con el Memory en IP %s en puerto %d", memoryIP, memoryPort);
+			log_error(logger, log_buffer);
 		} else {
 			sprintf(log_buffer, "Se ha conectado exitosamente al Memory en IP %s en puerto %d por socket n° %d", memoryIP, memoryPort, socket_memory);
 			log_info(logger, log_buffer);
@@ -86,4 +85,5 @@ void initializeRemoteFunctions()
 	/* Agregamos las funciones que podrán ser llamadas por mis conexiones */
 	callableRemoteFunctions = dictionary_create();
 
+	//dictionary_put(callableRemoteFunctions, "sc_cpu_startProcess", &startProcess);
 }
