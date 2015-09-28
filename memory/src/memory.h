@@ -23,8 +23,9 @@
 	typedef struct
 	{
 		int pid;
-		int page_num;
+		int page;
 		char * data;
+		bool arriving;
 		socket_connection * connection;
 
 	} t_write_petition;
@@ -32,8 +33,16 @@
 	typedef struct
 	{
 		int pid;
-		int page_num;
+		int page;
+		bool arriving;
 		socket_connection * connection;
 	} t_read_petition;
+
+	typedef struct
+	{
+		int pid;
+		int page;
+		int frame;
+	} t_translation;
 
 #endif

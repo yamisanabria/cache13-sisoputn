@@ -29,6 +29,8 @@ int		memoryPort;
 int 	swapPort;
 char* 	swapIP;
 
+
+
 void initConnections(t_config* memoryConfig)
 {
 	memoryPort 		= config_get_int_value(memoryConfig, "PUERTO_ESCUCHA");
@@ -39,30 +41,39 @@ void initConnections(t_config* memoryConfig)
 	callableRemoteFunctions = dictionary_create();
 }
 
+//-###############################################################################################-//
+//-###-[GENERAL]-#################################################################################-//
+//-###############################################################################################-//
+
+// CPU se desconecta
 void cpuDisconnected(socket_connection* socketInfo)
 {
 	sprintf(log_buffer, "CPU (socket n°%d) se ha desconectado.\n", socketInfo->socket);
 	log_info(logger, log_buffer);
 }
 
+// CPU se conecta
 void cpuNew(socket_connection* socketInfo)
 {
 	sprintf(log_buffer, "Se ha conectado un nuevo CPU con ip %s en socket n°%d", socketInfo->ip, socketInfo->socket);
 	log_info(logger, log_buffer);
 }
 
+// Comeinza escucha de CPUs
 void listenStart(){
 	createListen(memoryPort, &cpuNew, callableRemoteFunctions, &cpuDisconnected, NULL);
 	sprintf(log_buffer, "Nos ponemos en escucha de CPUs en puerto %d...", memoryPort);
 	log_info(logger, log_buffer);
 }
 
+// Swap se desconecta
 void swDisconnected(socket_connection* socketInfo)
 {
 	sprintf(log_buffer, "Swap (socket n°%d) se ha desconectado.\n", socketInfo->socket);
 	log_info(logger, log_buffer);
 }
 
+// Se conecta al swap
 void connectSwap(){
 	if(socket_swap != -1){
 		return;
@@ -78,3 +89,14 @@ void connectSwap(){
 		}
 	}
 }
+
+//-###############################################################################################-//
+//-###-[OUTPUT]-##################################################################################-//
+//-###############################################################################################-//
+
+void sw_startProcess(int pid, int pages)
+{
+
+}
+
+void sw_swapping(int pid, page, data,)
