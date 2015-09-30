@@ -14,3 +14,7 @@ debug: all
 
 clean: TARGET = clean
 clean: all
+
+#.EXPORT_ALL_VARIABLES:
+#LD_LIBRARY_PATH:=./includes
+
