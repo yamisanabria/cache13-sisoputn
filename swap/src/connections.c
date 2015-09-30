@@ -78,5 +78,17 @@ void mem_sw_startProcess(socket_connection *conn, char **args){
 		int pid = atoi(args[0]);
 		int pq  = atoi(args[1]);
 
-		startProcess(pid,pq);
+		startProcess(conn,pid,pq);
+}
+
+void mem_sw_getPage(socket_connection *conn, char **args){
+
+}
+
+void mem_sw_setPage(socket_connection *conn, char **args) {
+
+}
+
+void mem_sw_endProcess(socket_connection *conn, char **args){
+
 }

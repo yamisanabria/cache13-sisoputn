@@ -40,7 +40,7 @@ void initSwap();
 void initList();
 
 /* Función que asignará tamaño necesario para que el proceso cuya id es "pid" sea guardado */
-void startProcess(int pid, int pageQty);
+void startProcess(socket_connection *conn, int pid, int pageQty);
 
 
 #endif /* SWAP_H_ */

@@ -31,5 +31,14 @@ void startListener();
 /* El administrador de memoria nos indica que comenzó un proceso */
 void mem_sw_startProcess(socket_connection *conn, char **args);
 
+//El administrador de memoria nos solicita una página (lectura)
+void mem_sw_getPage(socket_connection *conn, char **args);
+
+//El administrador de memoria nos pide escribir una página
+void mem_sw_setPage(socket_connection *conn, char **args);
+
+//El administrador de memoria indica que finalizó un proceso
+void mem_sw_endProcess(socket_connection *conn, char **args);
+
 
 #endif	/* CONNECTIONS_H_ */
