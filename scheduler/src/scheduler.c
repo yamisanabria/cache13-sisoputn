@@ -37,7 +37,16 @@ char 				log_buffer[1024];				//Declarado extern en shared.h
 t_config* readFileConfig()
 {
 	t_config* config;
+	char auxmsg[1024];
 	config = config_create(fileConfigDir);
+	char cwd[1024];
+
+	if(!config){
+		getcwd(cwd, sizeof(cwd));
+        sprintf(auxmsg, "Archivo de configuracion inexistente: %s\nCurrent working dir: %s\n", fileConfigDir, cwd);
+		log_error(logger, "Archivo de configuracion inexistente.");
+		exit(1);
+	}
 
 	int configElements;
 	configElements = config_keys_amount(config);

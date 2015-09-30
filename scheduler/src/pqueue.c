@@ -2,7 +2,7 @@
 
 //Asumimos FIFO
 
-t_queue pQueue;
+t_queue* pQueue;
 pthread_mutex_t mutex_checkReadyProcesses;
 
 void createProcessQueue(){
@@ -12,7 +12,22 @@ void createProcessQueue(){
 void pQueueAddProcess(PCBItem* process){
 
 	process->status = P_READY;
-	queue_push(process);
+	queue_push(pQueue, process);
+}
+
+bool isAnyCPUAvailable() {
+	// TODO
+	return false;
+}
+
+CPU* findCPUAvailable(){
+	CPU* _cpu;
+	// TODO
+	return _cpu;
+}
+
+void assignProcessToCPU() {
+	// TODO
 }
 
 void checkReadyProcesses(){
