@@ -76,14 +76,12 @@ void executeCommand(char * c)
 
 	cmd = list_find(commands,(void*) _get);
 
-	if(cmd == NULL)
+	if(cmd == NULL) {
 		printf("Comando inexistente.\n");
-	else
-	{
-		if(charArray_length(args) - 1 == cmd->args)
-			cmd->fn(args);
-		else
-			printf("La cantidad de parametros no coincide [%d/%d].\n", charArray_length(args) - 1, cmd->args);
+	} else if(charArray_length(args) - 1 != cmd->args) {
+		printf("La cantidad de parametros no coincide [%d/%d].\n", charArray_length(args) - 1, cmd->args);
+	} else {
+		cmd->fn(args);
 	}
 
 	freeCharArray(args);
@@ -100,8 +98,7 @@ void startConsole(){
 		if(input[0] != '\n'){
 			executeCommand(input);
 			printf("\nIngrese comando o enter para ver el menú:\n");
-		}
-		else{
+		} else {
 			printMenu();
 		}
 
