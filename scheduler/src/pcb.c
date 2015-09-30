@@ -7,6 +7,10 @@ void createPCB(){
 	pcb = list_create();
 }
 
+t_list* getPCBlist() {
+	return pcb;
+}
+
 int validateCodFile(char* path){
 	if(access(path, F_OK) == -1){
 		sprintf(log_buffer, "El archivo (%s) no existe.\n", path);

@@ -1,6 +1,9 @@
 #include "shared.h"
 #include "pcb.h"
 
+PCBItem* _item;
+void __printpcb();
+
 void cmd_run(char ** args)
 {
 	char* path = string_duplicate(args[1]);
@@ -19,12 +22,27 @@ void cmd_end(char ** args)
 	free(pid);
 }
 
+void __printpcb(void* item) {
+	printf('print datos del pcb');
+	// todo, debbuguear estas lineas por que me tiran seg fault
+	//_item = item;
+	//printf("%d,%d,%s,%d,%s",_item->PID, _item->counter, _item->path, _item->status, _item->start);
+}
+/* TODO si se pasa de argumento el id estaria bueno mostrar ese solo*/
 void cmd_ps()
 {
-	printf("\nPS called\n");
+	printf("\n********************************\n");
+	printf("**   Listado de procesos\n");
+	printf("********************************\n");
+	printf("pid,counter,status,start,path\n\n");
+	
+	
+	list_iterate(getPCBlist(), &__printpcb);
 }
 
 void cmd_cpu()
 {
+	// TODO
 	printf("\nCPU called\n");
 }
+
