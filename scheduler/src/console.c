@@ -1,6 +1,15 @@
 #include "shared.h"
 #include "commands.h"
 
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_YELLOW  "\x1b[33m"
+#define ANSI_COLOR_BLUE    "\x1b[34m"
+#define ANSI_COLOR_MAGENTA "\x1b[35m"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
+
+
 Command* 	cmd;
 t_list* 	commands;
 
@@ -41,7 +50,7 @@ void printMenu()
 		cmd = list_get(commands, i);
 		printf("   %-20s (%d)   %s\n", cmd->name, cmd->args, cmd->description);
 	}
-	puts("\nIngrese comando:");
+	puts("\n");
 }
 
 // Valida y ejecuta comando especifico
@@ -84,6 +93,7 @@ void startConsole(){
 
 	loadCommands();
 	printMenu();
+	printf(ANSI_COLOR_BLUE "utn@cache13"ANSI_COLOR_CYAN" ~ $ " ANSI_COLOR_RESET);
 
 	while(1){
 		getline (&input, &inputLength, stdin);
@@ -94,5 +104,7 @@ void startConsole(){
 		else{
 			printMenu();
 		}
+
+		printf(ANSI_COLOR_BLUE "utn@cache13"ANSI_COLOR_CYAN" ~ $ " ANSI_COLOR_RESET);
 	}
 }
