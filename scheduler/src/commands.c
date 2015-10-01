@@ -22,22 +22,21 @@ void cmd_end(char ** args)
 	free(pid);
 }
 
-void __printpcb(void* item) {
-	printf('print datos del pcb');
-	// todo, debbuguear estas lineas por que me tiran seg fault
-	//_item = item;
-	//printf("%d,%d,%s,%d,%s",_item->PID, _item->counter, _item->path, _item->status, _item->start);
-}
 /* TODO si se pasa de argumento el id estaria bueno mostrar ese solo*/
 void cmd_ps()
 {
 	printf("\n********************************\n");
 	printf("**   Listado de procesos\n");
 	printf("********************************\n");
-	printf("pid,counter,status,start,path\n\n");
+	printf("\n\n");
 	
 	
-	list_iterate(getPCBlist(), &__printpcb);
+	void __printpcb(PCBItem* item) {
+		printf("PID: %d\ncounter: %d, file: %s\n**********\n" ,item->PID, item->counter, item->path);
+		//printf("%d,%d,%s,%d,%s",item->PID, item->counter, item->path, item->status, item->start);
+	}
+
+	list_iterate(getPCBlist(), (void*)__printpcb);
 }
 
 void cmd_cpu()

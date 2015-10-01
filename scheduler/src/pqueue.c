@@ -1,4 +1,5 @@
 #include "shared.h"
+#include "cpu.h"
 
 //Asumimos FIFO
 
@@ -15,18 +16,8 @@ void pQueueAddProcess(PCBItem* process){
 	queue_push(pQueue, process);
 }
 
-bool isAnyCPUAvailable() {
-	// TODO
-	return false;
-}
 
-CPU* findCPUAvailable(){
-	CPU* _cpu;
-	// TODO
-	return _cpu;
-}
-
-void assignProcessToCPU() {
+void assignProcessToCPU(CPU* cpu, PCBItem* item) {
 	// TODO
 }
 
