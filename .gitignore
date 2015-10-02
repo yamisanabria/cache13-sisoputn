@@ -1,3 +1,6 @@
+/cpu/tests/build/commons-unit-test
+/cpu/tests/build/test_main.d
+/scheduler/scheduler.log
 # build de modulos
 /swap/build
 /scheduler/build
