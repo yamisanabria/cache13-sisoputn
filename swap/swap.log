@@ -1,0 +1,4 @@
+[INFO] 22:32:22:780 Swap/(20385:20385): El archivo swap.data, de 9 bytes, fue creado exitosamente
+[INFO] 22:32:23:478 Swap/(20385:20385): A la escucha de algún proceso Administrador de Memoria el puerto: 6000.
+[INFO] 22:35:02:346 Swap/(20385:20385): Compactación iniciada por fragmentación externa
+[INFO] 22:35:36:91 Swap/(20385:20385): Compactación finalizada

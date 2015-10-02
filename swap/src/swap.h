@@ -39,8 +39,11 @@ void initSwap();
 /* Función inicializa la lita para administrar el espacio utilizado y el libre */
 void initList();
 
-/* Función que asignará tamaño necesario para que el proceso cuya id es "pid" sea guardado */
+/* Función que asignará tamaño necesario para que el proceso cuya id "pid" sea guardado */
 void startProcess(socket_connection *conn, int pid, int pageQty);
+
+/* Función que terminará y liberará el proceso con id: pid */
+void endProcess(socket_connection *conn, int pid);
 
 
 #endif /* SWAP_H_ */

@@ -83,6 +83,10 @@ void mem_sw_startProcess(socket_connection *conn, char **args){
 
 void mem_sw_getPage(socket_connection *conn, char **args){
 
+	int pid = atoi(args[0]);
+	int pag = atoi(args[1]);
+
+	pageReadRequest(conn,pid,pag);
 }
 
 void mem_sw_setPage(socket_connection *conn, char **args) {
@@ -90,5 +94,9 @@ void mem_sw_setPage(socket_connection *conn, char **args) {
 }
 
 void mem_sw_endProcess(socket_connection *conn, char **args){
+
+	int pid = atoi(args[0]);
+
+	endProcess(conn,pid);
 
 }
