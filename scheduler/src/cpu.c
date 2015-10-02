@@ -1,6 +1,7 @@
 #include "shared.h"
 
 t_list* cpus;
+int _cpuindex = 0;
 
 void createCPUsList(){
 	cpus = list_create();
@@ -12,9 +13,9 @@ t_list* getCPUsList(){
 
 void addNewCPU(CPU* cpu)
 {
-	int id = list_size(cpus) + 1;
-	cpu->id = id;
-	list_add_in_index(cpus, cpu->id, cpu);
+	_cpuindex ++;
+	cpu->id = _cpuindex;
+	list_add(cpus, cpu);
 }
 
 CPU* getCPUByID(int id)
