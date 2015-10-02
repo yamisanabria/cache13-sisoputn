@@ -19,6 +19,8 @@
 #include "connections.h"
 #include "shared.h"
 
+#include "filereader.h"
+
 pthread_mutex_t mx_main;
 
 /** Config info **/
