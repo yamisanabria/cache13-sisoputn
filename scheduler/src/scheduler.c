@@ -85,6 +85,8 @@ int main(int argc, char* argv[])
 
 	schedulerConfig = readFileConfig();
 
+	createCPUsList();
+
 	setConnectionsParameters(schedulerConfig);
 
 	listenStart();
