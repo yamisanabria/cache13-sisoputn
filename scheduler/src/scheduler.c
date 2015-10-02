@@ -37,7 +37,16 @@ char 				log_buffer[1024];				//Declarado extern en shared.h
 t_config* readFileConfig()
 {
 	t_config* config;
+	char auxmsg[1024];
 	config = config_create(fileConfigDir);
+	char cwd[1024];
+
+	if(!config){
+		getcwd(cwd, sizeof(cwd));
+        sprintf(auxmsg, "Archivo de configuracion inexistente: %s\nCurrent working dir: %s\n", fileConfigDir, cwd);
+		log_error(logger, "Archivo de configuracion inexistente.");
+		exit(1);
+	}
 
 	int configElements;
 	configElements = config_keys_amount(config);
@@ -57,17 +66,17 @@ t_config* readFileConfig()
 }
 
 void initializeLogger(int argc, char* argv[]){
-	int showLogInConsole = 0;
+	bool showLogInConsole = false;
 	if(argc > 0){
 		int i = 0;
 		for(i = 0; i < argc; i++){
 			if(strcmp(argv[i], "--show_log") == 0){
-				showLogInConsole = 1;
+				showLogInConsole = true;
 				break;
 			}
 		}
 	}
-	logger = log_create("scheduler.log", "SCHEDULER", 1, LOG_LEVEL_INFO);
+	logger = log_create("scheduler.log", "SCHEDULER", showLogInConsole, LOG_LEVEL_INFO);
 }
 
 int main(int argc, char* argv[])
@@ -75,6 +84,8 @@ int main(int argc, char* argv[])
 	initializeLogger(argc, argv);
 
 	schedulerConfig = readFileConfig();
+
+	createCPUsList();
 
 	setConnectionsParameters(schedulerConfig);
 

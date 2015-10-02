@@ -1,10 +1,15 @@
 #include "shared.h"
 #include "unistd.h"
+#include "pqueue.h"
 
 t_list* pcb;
 
 void createPCB(){
 	pcb = list_create();
+}
+
+t_list* getPCBlist() {
+	return pcb;
 }
 
 int validateCodFile(char* path){
@@ -26,9 +31,11 @@ int pcbAddNewProcess(PCBItem* item)
 	return pid;
 }
 
-void checkReadyProcesses(){
+/*
+  YA DEFINIDO EN pqueue.c
+  void checkReadyProcesses(){
 
-}
+}*/
 
 int runNewProcess(char* path){
 
@@ -40,7 +47,7 @@ int runNewProcess(char* path){
 		item->start 	= clock();
 
 		int pid = pcbAddNewProcess(item);
-		pQueueAddProcess(PCBItem);
+		//pQueueAddProcess(PCBItem);
 		sprintf(log_buffer, "PROCESO PID-%d READY.\n", pid);
 		log_info(logger, log_buffer);
 

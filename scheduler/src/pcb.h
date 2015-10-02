@@ -3,6 +3,8 @@
 
 void createPCB();
 
+t_list* getPCBlist();
+
 int validateCodFile(char* path);
 
 int pcbAddNewProcess(PCBItem* item);

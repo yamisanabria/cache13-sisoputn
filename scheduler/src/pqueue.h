@@ -5,4 +5,6 @@ void createProcessQueue();
 
 void pQueueAddProcess(PCBItem* process);
 
+void checkReadyProcesses();
+
 #endif

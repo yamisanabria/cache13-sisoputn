@@ -1,8 +1,9 @@
 #include "shared.h"
+#include "cpu.h"
 
 //Asumimos FIFO
 
-t_queue pQueue;
+t_queue* pQueue;
 pthread_mutex_t mutex_checkReadyProcesses;
 
 void createProcessQueue(){
@@ -12,7 +13,12 @@ void createProcessQueue(){
 void pQueueAddProcess(PCBItem* process){
 
 	process->status = P_READY;
-	queue_push(process);
+	queue_push(pQueue, process);
+}
+
+
+void assignProcessToCPU(CPU* cpu, PCBItem* item) {
+	// TODO
 }
 
 void checkReadyProcesses(){
