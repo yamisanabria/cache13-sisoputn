@@ -66,17 +66,17 @@ t_config* readFileConfig()
 }
 
 void initializeLogger(int argc, char* argv[]){
-	int showLogInConsole = 0;
+	bool showLogInConsole = false;
 	if(argc > 0){
 		int i = 0;
 		for(i = 0; i < argc; i++){
 			if(strcmp(argv[i], "--show_log") == 0){
-				showLogInConsole = 1;
+				showLogInConsole = true;
 				break;
 			}
 		}
 	}
-	logger = log_create("scheduler.log", "SCHEDULER", 1, LOG_LEVEL_INFO);
+	logger = log_create("scheduler.log", "SCHEDULER", showLogInConsole, LOG_LEVEL_INFO);
 }
 
 int main(int argc, char* argv[])
