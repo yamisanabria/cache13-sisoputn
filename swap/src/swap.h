@@ -42,6 +42,9 @@ void initList();
 /* Función que asignará tamaño necesario para que el proceso cuya id "pid" sea guardado */
 void startProcess(socket_connection *conn, int pid, int pageQty);
 
+/* Función que leerá la pagina requerida y le devolverá el contenido al proceso adm. de mem. */
+void pageReadRequest(socket_connection *conn, int pid, int page);
+
 /* Función que terminará y liberará el proceso con id: pid */
 void endProcess(socket_connection *conn, int pid);
 

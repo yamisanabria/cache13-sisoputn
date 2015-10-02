@@ -40,5 +40,8 @@ void mem_sw_setPage(socket_connection *conn, char **args);
 //El administrador de memoria indica que finalizó un proceso
 void mem_sw_endProcess(socket_connection *conn, char **args);
 
+//El administrador de memoria nos solicita un intercambio (lectura + escritura)
+void mem_sw_swapping(socket_connection *conn, char **args);
+
 
 #endif	/* CONNECTIONS_H_ */

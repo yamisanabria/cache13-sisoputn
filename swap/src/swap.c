@@ -88,7 +88,7 @@ void initSwap() {
 	string_append(&command, string_itoa(pageQuan));
 
 	system(command); /* Ejecuto el comando */
-	swap = fopen(swapName, "r+"); /* Abro el archivo para lectura y escritura */
+	swap = fopen(swapName, "w+"); /* Abro el archivo para lectura y escritura */
 	fseek(swap, 0, SEEK_SET); /* Pongo el puntero al comienzo del archivo */
 	pageDisp = pageQuan; /* Inicialmente tengo todas las páginas disponibles */
 	initList(); /* Inicializo la lista */
@@ -117,13 +117,12 @@ list_proc *createNode(int pid, int pos, int pages) {
 
 char *readSwap(int procStart, int pages) {
 
-	int whence = procStart * pageSize; //desde donde comienzo a leer
-	int offset = pages * pageSize;    //cuanto leo
-	char *process = malloc(sizeof(offset));
+	int offset = procStart * pageSize;      //desde donde comienzo a leer
+	int size = pages * pageSize;		    //cuanto leo
+	char *process = malloc(sizeof(char)*size);
 
-
-	fseek(swap,offset,whence);
-	fread(process,1,pages,swap);
+	fseek(swap,offset,SEEK_SET);
+	fread(process,1,size,swap);
 
 	return process;
 
@@ -131,11 +130,11 @@ char *readSwap(int procStart, int pages) {
 
 void writeSwap(int procStart, int pages, char *data) {
 
-	int whence = procStart * pageSize; //desde donde comienzo a leer
-	int offset = pages * pageSize;    //cuanto leo
+	int offset = procStart * pageSize;      //desde donde comienzo a leer
 
-	fseek(swap,offset,whence);
+	fseek(swap,offset,SEEK_SET);
 	fwrite(data,1,strlen(data),swap);
+	fflush(swap);
 
 	free(data);
 
@@ -274,22 +273,22 @@ void endProcess(socket_connection *conn, int pid){
 
 	writeSwap(procStart,size,empty);
 
+	pageDisp += size;
+
 	free(empty);
 
 	log_info(logg, "Proceso liberado exitosamente.. PID: %d, N° de byte inicial"
 			" %d, Tamaño: %d bytes", pid, procStart*pageSize, size*pageSize);
 }
 
-void pageReadRequest(socket_connection *conn, int pid, int pagNum){
+void pageReadRequest(socket_connection *conn, int pid, int pageNum){
 
-	int size  = 1;
 	int procStart = 0;
 	char *data;
 
 	bool _getPage(list_proc *l){
 		if(l->pid == pid){
-			procStart = l->offset;
-			size = l->pageQty;
+			procStart = l->offset + pageNum;
 			return 1;
 		}else{
 			return 0;
@@ -297,17 +296,40 @@ void pageReadRequest(socket_connection *conn, int pid, int pagNum){
 	}
 
 	list_find(lp, (void*)_getPage);
-	data =readSwap(procStart,size);
+	data =readSwap(procStart,1);
 
 	log_info(logg, "Lectura solicitada.. PID: %d, N° de byte inicial"
 				" %d, Tamaño: %d bytes, Contenido: %d",
-				pid, procStart*pageSize, size*pageSize, data);
+				pid, procStart*pageSize, strlen(data), data);
 
 	runFunction(conn->socket, "sw_mem_page", 1, data);
 
 	free(data);
 
 
+}
+
+void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data){
+
+		int procStart = 0;
+
+		bool _setPage(list_proc *l){
+			if(l->pid == pid){
+				procStart = l->offset + pageNum;
+				return 1;
+			}else{
+				return 0;
+			}
+		}
+
+		list_find(lp, (void*)_setPage);
+		writeSwap(procStart,1,data);
+
+		log_info(logg, "Escritura solicitada.. PID: %d, N° de byte inicial"
+					" %d, Tamaño: %d bytes, Contenido: %d",
+					pid, procStart*pageSize, strlen(data), data);
+
+		free(data);
 }
 
 
@@ -336,19 +358,26 @@ int main(int argc, char *argv[]) {
 	 startProcess(conn, 3, 2);*/
 	//FIN DE ESE CASO DE USO
 	// BUSCAR, COMPACTAR E INSERTAR
-/*	socket_connection *conn = malloc(sizeof(socket_connection));
+	socket_connection *conn = malloc(sizeof(socket_connection));
 	list_proc *nodo1 = malloc(sizeof(list_proc));
 	list_proc *nodo2 = malloc(sizeof(list_proc));
 	nodo1->pid = 1;
 	nodo1->offset = 0;
 	nodo1->pageQty = 4;
 	list_add_in_index(lp, 0, nodo1);
+	//char *process1= malloc(sizeof(char)*16);
+	char *process1 = string_duplicate("La casa de JuanC");
+	writeSwap(0,4,process1);
 	nodo2->pid = 2;
 	nodo2->offset = 6;
 	nodo2->pageQty = 2;
 	list_add(lp, nodo2);
+	char *process2=	string_duplicate("marrana8");
+	writeSwap(6,2,process2);
 	pageDisp = 3;
-	startProcess(conn, 3, 3);*/
+	startProcess(conn, 3, 3);
+	char *process3=	string_duplicate("lamitadmas1");
+	writeSwap(6,3,process3);
 	//FIN DE ESE CASO DE USO
 
 
