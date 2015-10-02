@@ -83,12 +83,37 @@ void mem_sw_startProcess(socket_connection *conn, char **args){
 
 void mem_sw_getPage(socket_connection *conn, char **args){
 
+	int pid = atoi(args[0]);
+	int pag = atoi(args[1]);
+
+	pageReadRequest(conn,pid,pag);
 }
 
 void mem_sw_setPage(socket_connection *conn, char **args) {
 
+	int pid = atoi(args[0]);
+	int pag = atoi(args[1]);
+	char *data = string_duplicate(args[2]);
+
+	pageWriteRequest(conn,pid,pag,data);
+
+
 }
 
 void mem_sw_endProcess(socket_connection *conn, char **args){
+
+	int pid = atoi(args[0]);
+
+	endProcess(conn,pid);
+
+}
+
+void mem_sw_swapping(socket_connection *conn, char **args){
+
+	int pid = atoi(args[0]);
+	int pag = atoi(args[1]);
+	char *data = string_duplicate(args[2]);
+	pageReadRequest(conn,pid,pag);
+	pageWriteRequest(conn,pid,pag,data);
 
 }
