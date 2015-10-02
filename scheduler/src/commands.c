@@ -1,8 +1,8 @@
 #include "shared.h"
 #include "pcb.h"
+#include "cpu.h"
 
 PCBItem* _item;
-void __printpcb();
 
 void cmd_run(char ** args)
 {
@@ -28,13 +28,11 @@ void cmd_ps()
 	printf("\n********************************\n");
 	printf("**   Listado de procesos\n");
 	printf("********************************\n");
-	printf("\n\n");
-	
+	printf("\n\n");	
 	
 	void __printpcb(PCBItem* item) {
 		char* _status[6] = {"NEW", "READY", "RUNNING", "BLOCKED", "FAILED", "FINISHED"};
-		printf("PID: %d\ncounter: %d\nfile: %s\nstatus:%s\n**********\n" ,item->PID, item->counter, item->path, _status[item->status]);
-
+		printf("PID: %d\ncounter: %d\nfile: %s\nstatus:%s\n**********\n", item->PID, item->counter, item->path, _status[item->status]);
 		//printf("%d,%d,%s,%d,%s",item->PID, item->counter, item->path, item->status, item->start);
 	}
 
@@ -43,7 +41,19 @@ void cmd_ps()
 
 void cmd_cpu()
 {
-	// TODO
-	printf("\nCPU called\n");
+
+	void __printcpu(CPU* item) {
+		char* _status[2] = {"AVAILABLE", "BUSY"};
+		
+		printf("ID: %d\nstatus:%s\n**********\n", item->id, _status[item->status]);
+		//printf("%d,%d,%s,%d,%s",item->PID, item->counter, item->path, item->status, item->start);
+	}
+
+	printf("\n********************************\n");
+	printf("**   Listado de Cpus\n");
+	printf("********************************\n");
+	printf("\n\n");	
+	list_iterate(getCPUsList(), (void*)__printcpu);
+
 }
 
