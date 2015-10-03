@@ -9,6 +9,8 @@
 #include <commons/string.h>
 #include <commons/collections/list.h>
 #include <commons/collections/queue.h>
+#include <pthread.h>
+#include <time.h>
 #include "utils.h"
 
 
@@ -215,4 +217,56 @@ void free_nodoFile(nodoFile* nf){
 	free(nf->ip);
 	free(nf->fileNameInicial);
 	free(nf);
+}
+
+
+int getTimestamp()
+{
+	return time(NULL);
+}
+
+//-###############################################################################################-//
+//-###-[SINCRONIZACIÓN]-##########################################################################-//
+//-###############################################################################################-//
+
+pthread_mutex_t 	mx_write;
+pthread_mutex_t 	mx_readCount;
+int					readCount;
+
+// Inicialización de semaforos y contador
+void initSyn()
+{
+	pthread_mutex_init(&mx_write, NULL);
+	pthread_mutex_init(&mx_readCount, NULL);
+	readCount = 0;
+}
+
+// Comienzo de lectura
+void read_start()
+{
+	pthread_mutex_lock(&mx_readCount);
+	if(readCount++ == 0)
+		pthread_mutex_lock(&mx_write);
+	pthread_mutex_unlock(&mx_readCount);
+}
+
+// Finalizacion de lectura
+void read_end()
+{
+	pthread_mutex_lock(&mx_readCount);
+	if(readCount-- == 1)
+		pthread_mutex_unlock(&mx_write);
+	pthread_mutex_unlock(&mx_readCount);
+}
+
+// Comienzo de escritura
+void write_start()
+{
+	pthread_mutex_lock(&mx_write);
+}
+
+// Finalizacion de escritura
+void write_end()
+{
+	pthread_mutex_unlock(&mx_write);
 }

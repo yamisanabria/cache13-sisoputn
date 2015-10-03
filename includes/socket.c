@@ -25,7 +25,7 @@
 
 
 //Recibe y procesa un mensaje recibido
-void receiptMessage(void * arguments) //@todo Esto debería ser receive, no receipt
+void receiptMessage(void * arguments)
 {
 	args_receiptMessage * args = arguments;
 
