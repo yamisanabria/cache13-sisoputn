@@ -20,17 +20,18 @@
 #include "shared.h"
 #include "memory.h"
 
-int frames_max;			// Cantidad máxima de marcos por proceso
-int frames_q;    		// Cantidad de frames
-int frame_size; 		// Tamaño de frame
-int frames_free;		// Frames libres
+int frames_max;				// Cantidad máxima de marcos por proceso
+int frames_q;    			// Cantidad de frames
+int frame_size; 			// Tamaño de frame
+int frames_free;			// Frames libres
+char * frame_algorithm; 	// Algoritmo de seleccion de frame
 
-int TLB_q;				// Cantidad de traduciones de la TLB
+int TLB_q;					// Cantidad de traduciones de la TLB
 
-char * memory;			// Memoria reservada
-bool * frames;			// Estados de los Frames (Libres/Ocupados)
-t_list * processes;		// Lista de procesos
-t_queue * TLB;			// Lista de traducciones de la TLB
+char * memory;				// Memoria reservada
+bool * frames;				// Estados de los Frames (Libres/Ocupados)
+t_list * processes;			// Lista de procesos
+t_queue * TLB;				// Lista de traducciones de la TLB
 
 t_queue * write_petitions;	// Cola de peticiones de escritura
 t_queue * read_petitions;	// Cola de peticion de lectura
@@ -43,6 +44,7 @@ void initMemory(t_config* memoryConfig)
 	frames_max 				= config_get_int_value(memoryConfig, "MAXIMO_MARCOS_POR_PROCESO");
 	frames_q 				= config_get_int_value(memoryConfig, "CANTIDAD_MARCOS");
 	frame_size 				= config_get_int_value(memoryConfig, "TAMANIO_MARCOS");
+	frame_algorithm			= config_get_string_value(memoryConfig, "ALGORITMO_REEMPLAZO");
 	frames_free = frames_q;
 
 	TLB_q					= config_get_int_value(memoryConfig, "ENTRADAS_TLB");
@@ -66,7 +68,7 @@ void initMemory(t_config* memoryConfig)
 //-###-[PROCESSES]-###############################################################################-//
 //-###############################################################################################-//
 
-void startProcess(int id, int pages_q)
+void addProcess(int id, int pages_q, socket_connection * connection)
 {
 	//Creo tabla de paginas
 	t_list * pages = list_create();
@@ -78,6 +80,8 @@ void startProcess(int id, int pages_q)
 		page->present = false;
 		page->modified = false;
 		page->frame = -1;
+		page->frame_timestamp = 0;
+		page->modified_timestamp = 0;
 		list_add(pages, page);
 	}
 
@@ -85,6 +89,7 @@ void startProcess(int id, int pages_q)
 	t_process * process = malloc(sizeof(t_process));
 	process->id = id;
 	process->pages = pages;
+	process->connection = connection;
 	list_add(processes, process);
 }
 
@@ -199,6 +204,65 @@ t_page * getPage(int pid, int num)
 	return list_find(process->pages, (void*)_get);
 }
 
+// Selecciona la pagina que debe salir por FIFO
+t_page * selectFrame_FIFO(t_list * presents)
+{
+	int i;
+	int smallTime = 2000000000;
+	t_page * selected;
+	t_page * page;
+	for(i = 0; i < list_size(presents); i++)
+	{
+		page = list_get(presents, i);
+		if(page->frame_timestamp < smallTime)
+		{
+			smallTime = page->frame_timestamp;
+			selected = page;
+		}
+	}
+
+	return selected;
+}
+
+// Selecciona la pagina que debe salir por LRU
+t_page * selectFrame_LRU(t_list * presents)
+{
+	int i;
+	int smallTime = 2000000000;
+	t_page * selected;
+	t_page * page;
+	for(i = 0; i < list_size(presents); i++)
+	{
+		page = list_get(presents, i);
+		if(page->modified_timestamp < smallTime)
+		{
+			smallTime = page->modified_timestamp;
+			selected = page;
+		}
+	}
+
+	return selected;
+}
+
+// Selecciona la pagina que debe salir por CLOCK
+t_page * selectFrame_CLOCK_M(t_list * presents)
+{
+
+}
+
+// Selecciona la pagina que debe salir
+t_page * selectFrame(t_list * presents)
+{
+	if(frame_algorithm == "FIFO")
+		return selectFrame_FIFO(presents);
+
+	if(frame_algorithm == "LRU")
+		return selectFrame_LRU(presents);
+
+	if(frame_algorithm == "CLOCK-M")
+		return selectFrame_CLOCK_M(presents);
+}
+
 // Devuelve numero de frame si no esta disponible devuelve -1
 int getNumFrame(int pid, int page_num)
 {
@@ -208,13 +272,8 @@ int getNumFrame(int pid, int page_num)
 
 	t_page * page = getPage(pid, page_num);
 	if(page != NULL)
-	{
 		if(page->present)
-		{
-			sleepAccessMemory();
 			return page->frame;
-		}
-	}
 
 	return -1;
 }
@@ -240,6 +299,9 @@ bool assignFrame(int pid, t_page * page)
 	int _filter(t_page * page)
 	{return page->present;}
 
+	page->frame_timestamp = getTimestamp();
+	page->modified_timestamp = getTimestamp();
+
 	t_process * process = getProcess(pid);
 
 	t_list presents = list_filter(process->pages, (void*)_filter);
@@ -249,21 +311,26 @@ bool assignFrame(int pid, t_page * page)
 	{
 		page->frame = getFreeFrame();
 		page->present = true;
+		page->modified = false;
 		return true;
 	}
 	else
 	{
 		// Selecciono frame
 		t_page * select = selectFrame(presents);
+
+		//Si esta podificado hago swapping caso contrario solo asigno la pagina
 		if(select->modified)
 		{
-			//swapping
+			char * data = getMemoryData(select->frame);
+			sw_swapping(pid, select->num, data, page->num);
 			return false;
 		}
 		else
 		{
 			page->frame = select->frame;
 			page->present = true;
+			page->modified = false;
 			return true;
 		}
 	}
@@ -279,13 +346,16 @@ bool write(t_write_petition * write_petition)
 	t_page * page = getPage(write_petition->pid, write_petition->page);
 	if(page->present)
 	{
+		//seteo datos de pagina y aviso que se realizo ok
 		setMemoryData(page->frame, write_petition->data);
-		//todo: decirle al CPU que se escribio bien
+		page->modified = true;
+		page->modified_timestamp = getTimestamp();
+		cpu_writeOk(write_petition->connection->socket);
 		return true;
 	}
 	else if(!write_petition->arriving)
 	{
-		//todo: llamar pagina
+		assignFrame(write_petition->pid, page);
 		write_petition->arriving = true;
 	}
 
@@ -298,13 +368,14 @@ bool read(t_read_petition * read_petition)
 	t_page * page = getPage(read_petition->pid, read_petition->page);
 	if(page->present)
 	{
-		getMemoryData(page->frame);
-		//todo: enviarle la data al CPU
+		//obtengo datos de pagina y los envio
+		char * data = getMemoryData(page->frame);
+		cpu_frameData(read_petition->connection->socket, page->frame, data);
 		return true;
 	}
 	else if(!read_petition->arriving)
 	{
-		//todo: llamar pagina
+		assignFrame(read_petition->pid, page);
 		read_petition->arriving = true;
 	}
 
@@ -359,6 +430,7 @@ void addWritePetition(int pid, int page, char * data, socket_connection * connec
 	write->arriving = false;
 	queue_push(write_petitions, write);
 
+	sleepAccessMemory();
 	runWritePetitions();
 }
 
@@ -372,6 +444,7 @@ void addReadPetition(int pid, int page, socket_connection * connection)
 	read->arriving = false;
 	queue_push(read_petitions, read);
 
+	sleepAccessMemory();
 	runReadPetitions();
 }
 

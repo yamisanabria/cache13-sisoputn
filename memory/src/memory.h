@@ -9,6 +9,7 @@
 	{
 		int id;
 		t_list * pages;
+		socket_connection * connection;
 
 	} t_process;
 
@@ -18,6 +19,8 @@
 		bool present;
 		bool modified;
 		int frame;
+		int frame_timestamp;		// timestamp en que se asigno frame
+		int modified_timestamp;		// timestamp de ultima modificacion
 	} t_page;
 
 	typedef struct
