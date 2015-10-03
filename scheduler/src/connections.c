@@ -36,6 +36,12 @@ void cpuNew(socket_connection* socketInfo)
 	addNewCPU(cpu);
 }
 
+void cpuRunProcess(CPU* cpu){
+	sprintf(log_buffer, "Llamando a startProcess en CPU %d con (%s, %d, %d) en socket n°%d", cpu->id, cpu->process->path, cpu->process->counter, P_QUANTUM, cpu->socket->socket);
+	log_info(logger, log_buffer);
+	runFunction(cpu->socket->socket, "sc_cpu_startProcess", 3, cpu->process->path, string_itoa(cpu->process->counter), string_itoa(P_QUANTUM));
+}
+
 void listenStart()
 {
 	createListen(schedulerPort, &cpuNew, callableRemoteFunctions, &cpuDisconnected, NULL);
