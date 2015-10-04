@@ -4,4 +4,11 @@
 	extern t_log* logger;
 	extern char log_buffer[1024];
 
+	typedef struct
+	{
+		int socketIdScheduler;
+		int socketIdMemory;
+		char* execResponseBuffer;
+	} CPU;
+
 #endif

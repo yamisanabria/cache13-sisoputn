@@ -20,6 +20,7 @@
 #include "shared.h"
 
 #include "filereader.h"
+#include "cpumanager.h"
 
 pthread_mutex_t mx_main;
 
@@ -80,8 +81,14 @@ int main(int argc, char* argv[])
 
 	initializeRemoteFunctions();
 
-	connectScheduler();
-	connectMemory();
+	initCpuManager();
+
+
+	int procesadores = config_get_int_value(cpuConfig, "CANTIDAD_HILOS");
+	int i;
+	for(i = 0; i < procesadores; i++){
+		createCpu();
+	}
 
 	pthread_mutex_init(&mx_main, NULL);
 	pthread_mutex_lock(&mx_main);

@@ -8,9 +8,9 @@
 	void memDisconnected(int socket);
 
 	/*** FUNCIONES COMO CLIENTE ***/
-	void connectScheduler();
+	int connectScheduler();
 
-	void connectMemory();
+	int connectMemory();
 
 	/*** FUNCIONES INTERNAS ***/
 

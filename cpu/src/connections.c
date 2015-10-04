@@ -21,8 +21,6 @@
 
 /** Variables generales que usaremos **/
 t_dictionary * callableRemoteFunctions;	/* Diccionario de funciones que pueden ser llamadas por mis conexiones (FUNCIONES SERVIDOR)*/
-int		socket_scheduler= -1;
-int		socket_memory 	= -1;
 
 /** Datos de configuración **/
 int 	schedulerPort;
@@ -30,54 +28,56 @@ char* 	schedulerIP;
 int 	memoryPort;
 char* 	memoryIP;
 
-void setConnectionsParameters(t_config* martaConfig)
+void setConnectionsParameters(t_config* config)
 {
-	schedulerPort 	= config_get_int_value(martaConfig, "PUERTO_PLANIFICADOR");
-	schedulerIP 	= config_get_string_value(martaConfig, "IP_PLANIFICADOR");
-	memoryPort 		= config_get_int_value(martaConfig, "PUERTO_MEMORIA");
-	memoryIP 		= config_get_string_value(martaConfig, "IP_MEMORIA");
+	schedulerPort 	= config_get_int_value(config, "PUERTO_PLANIFICADOR");
+	schedulerIP 	= config_get_string_value(config, "IP_PLANIFICADOR");
+	memoryPort 		= config_get_int_value(config, "PUERTO_MEMORIA");
+	memoryIP 		= config_get_string_value(config, "IP_MEMORIA");
 }
 
 void scDisconnected(socket_connection* socketInfo)
 {
 	sprintf(log_buffer, "Scheduler (socket n°%d) se ha desconectado.\n", socketInfo->socket);
 	log_info(logger, log_buffer);
+	exit(1);
 }
 
 void memDisconnected(socket_connection* socketInfo)
 {
 	sprintf(log_buffer, "Memory (socket n°%d) se ha desconectado.\n", socketInfo->socket);
 	log_info(logger, log_buffer);
+	exit(1);
 }
 
-void connectScheduler(){
-	if(socket_scheduler != -1){
-		return;
+int connectScheduler(){
+	/* Me conecto al FileSystem; si hay error, informo y finalizo*/
+	int socket_scheduler = connectServer(schedulerIP, schedulerPort, callableRemoteFunctions, &scDisconnected, NULL);
+	if(socket_scheduler == -1) {
+		sprintf(log_buffer, "Error al intentar conectar con el scheduler en IP %s en puerto %d", schedulerIP, schedulerPort);
+		log_error(logger, log_buffer);
+		exit(1);
 	} else {
-		/* Me conecto al FileSystem; si hay error, informo y finalizo*/
-		if((socket_scheduler = connectServer(schedulerIP, schedulerPort, callableRemoteFunctions, &scDisconnected, NULL)) == -1) {
-			sprintf(log_buffer, "Error al intentar conectar con el scheduler en IP %s en puerto %d", schedulerIP, schedulerPort);
-			log_error(logger, log_buffer);
-		} else {
-			sprintf(log_buffer, "Se ha conectado exitosamente al Scheduler en IP %s en puerto %d por socket n° %d", schedulerIP, schedulerPort, socket_scheduler);
-			log_info(logger, log_buffer);
-		}
+		sprintf(log_buffer, "Se ha conectado exitosamente al Scheduler en IP %s en puerto %d por socket n° %d", schedulerIP, schedulerPort, socket_scheduler);
+		log_info(logger, log_buffer);
 	}
+
+	return socket_scheduler;
+
 }
 
-void connectMemory(){
-	if (socket_memory != -1){
-		return;
+int connectMemory(){
+	/* Me conecto al FileSystem; si hay error, informo y finalizo*/
+	int socket_memory = connectServer(memoryIP, memoryPort, callableRemoteFunctions, &memDisconnected, NULL);
+	if (socket_memory == -1) {
+		sprintf(log_buffer, "Error al intentar conectar con el Memory en IP %s en puerto %d", memoryIP, memoryPort);
+		log_error(logger, log_buffer);
+		exit(1);
 	} else {
-		/* Me conecto al FileSystem; si hay error, informo y finalizo*/
-		if ((socket_memory = connectServer(memoryIP, memoryPort, callableRemoteFunctions, &memDisconnected, NULL)) == -1) {
-			sprintf(log_buffer, "Error al intentar conectar con el Memory en IP %s en puerto %d", memoryIP, memoryPort);
-			log_error(logger, log_buffer);
-		} else {
-			sprintf(log_buffer, "Se ha conectado exitosamente al Memory en IP %s en puerto %d por socket n° %d", memoryIP, memoryPort, socket_memory);
-			log_info(logger, log_buffer);
-		}
+		sprintf(log_buffer, "Se ha conectado exitosamente al Memory en IP %s en puerto %d por socket n° %d", memoryIP, memoryPort, socket_memory);
+		log_info(logger, log_buffer);
 	}
+	return socket_memory;
 }
 
 void initializeRemoteFunctions()
