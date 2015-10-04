@@ -4,6 +4,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 char *get_nth_line( FILE *fp, int line_no )
 {
