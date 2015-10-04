@@ -19,7 +19,8 @@ void createCpu(){
 
 	_cpu->socketIdScheduler = connectScheduler();
 	_cpu->socketIdMemory = connectMemory();
-
+	_cpu->status = CPU_AVAILABLE;
+	
 	list_add(cpuList, _cpu);
 }
 
