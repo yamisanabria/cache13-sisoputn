@@ -33,6 +33,8 @@ t_config* 			schedulerConfig;				// Objeto de configuración de marta
 
 t_log* 				logger;							//Declarado extern en shared.h
 char 				log_buffer[1024];				//Declarado extern en shared.h
+int					P_QUANTUM;						//Declarado extern en shared.h
+char* 				P_METHOD;						//Declarado extern en shared.h
 
 t_config* readFileConfig()
 {
@@ -60,6 +62,9 @@ t_config* readFileConfig()
 		!config_has_property(config, "ALGORITMO_PLANIFICACION")){
 		log_error(logger, "Parámetros inválidos en archivo de configuración.");
 		exit(1);
+	} else {
+		P_QUANTUM 	= config_get_int_value(config, "QUANTUM");
+		P_METHOD	= config_get_string_value(config, "ALGORITMO_PLANIFICACION");
 	}
 
 	return config;

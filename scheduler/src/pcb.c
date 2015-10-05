@@ -47,7 +47,8 @@ int runNewProcess(char* path){
 		item->start 	= clock();
 
 		int pid = pcbAddNewProcess(item);
-		//pQueueAddProcess(PCBItem);
+		pQueueAddProcess(item);
+
 		sprintf(log_buffer, "PROCESO PID-%d READY.\n", pid);
 		log_info(logger, log_buffer);
 

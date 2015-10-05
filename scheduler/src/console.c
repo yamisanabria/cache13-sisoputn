@@ -91,7 +91,7 @@ void startConsole(){
 
 	loadCommands();
 	printMenu();
-	printf(ANSI_COLOR_BLUE "utn@cache13"ANSI_COLOR_CYAN" ~ $ " ANSI_COLOR_RESET);
+	printf(ANSI_COLOR_BLUE "aprobados@cache13"ANSI_COLOR_CYAN" ~ $ " ANSI_COLOR_RESET);
 
 	while(1){
 		getline (&input, &inputLength, stdin);
@@ -102,6 +102,6 @@ void startConsole(){
 			printMenu();
 		}
 
-		printf(ANSI_COLOR_BLUE "utn@cache13"ANSI_COLOR_CYAN" ~ $ " ANSI_COLOR_RESET);
+		printf(ANSI_COLOR_BLUE "aprobados@cache13"ANSI_COLOR_CYAN" ~ $ " ANSI_COLOR_RESET);
 	}
 }
