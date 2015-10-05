@@ -27,6 +27,7 @@
 #include "connections.h"
 #include "shared.h"
 #include "swap.h"
+#include "utils.h"
 
 //VARIABLES GLOABLES
 
@@ -222,7 +223,9 @@ int initProc(int pid, int requiredPages) {
 }
 
 void startProcess(socket_connection *conn, int pid, int requiredPages) {
-	//startWrite
+
+	write_start();
+
 	int initialByte;
 	char *procID = string_itoa(pid);
 
@@ -243,8 +246,8 @@ void startProcess(socket_connection *conn, int pid, int requiredPages) {
 
 	free(procID);
 
-	/* Si hay un hueco disponible, lo agrego a la lista de espacio utilizado */
-	//endWrite
+	write_end();
+
 }
 
 void endProcess(socket_connection *conn, int pid) {
@@ -285,6 +288,8 @@ void endProcess(socket_connection *conn, int pid) {
 
 void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
 
+	read_start();
+
 	int procStart = 0;
 	char *id = string_itoa(pid);
 	char *pn = string_itoa(pn);
@@ -313,9 +318,12 @@ void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
 	free(pn);
 	free(data);
 
+	read_end();
 }
 
 void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data) {
+
+	write_start();
 
 	int procStart = 0;
 
@@ -336,15 +344,18 @@ void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data)
 			strlen(data), data);
 
 	free(data);
+
+	write_end();
 }
 
 int main(int argc, char *argv[]) {
 
 	readFileConfig(); /* Leo archivo de configuracion */
-	initLog(); /* Inicializo el log */
-	initSwap(); /* Creo el archivo de swap */
+	initLog(); 		  /* Inicializo el log */
+	initSwap();       /* Creo el archivo de swap */
+	initSyn();		  /* Inicializo semáforos */
 	initDictionary(); /* Inicializo el diccionario de funciones remotas */
-	startListener(); /* Me pongo a la escucha de conexiones provenientes del Adm. de Memoria */
+	startListener();  /* Me pongo a la escucha de conexiones provenientes del Adm. de Memoria */
 
 	//DEBUG
 	// BUSCAR ESPACIO E INSERTAR EN LA LISTA
