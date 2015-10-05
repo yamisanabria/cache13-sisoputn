@@ -24,6 +24,8 @@
 
 	extern t_log* logger;
 	extern char log_buffer[1024];
+	extern int P_QUANTUM;
+	extern char* P_METHOD; //FIFO / RR
 
 	typedef struct
 	{
@@ -54,5 +56,6 @@
 		socket_connection* socket;
 		clock_t last_start;
 		clock_t last_end;
+		PCBItem* process; //Proceso que está corriendo
 	} CPU;
 #endif

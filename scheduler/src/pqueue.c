@@ -18,7 +18,11 @@ void pQueueAddProcess(PCBItem* process){
 
 
 void assignProcessToCPU(CPU* cpu, PCBItem* item) {
-	// TODO
+	item->status = P_RUNNING;
+	cpu->status = CPU_BUSY;
+	cpu->process = item;
+
+	cpuRunProcess(cpu);
 }
 
 void checkReadyProcesses(){
@@ -29,6 +33,9 @@ void checkReadyProcesses(){
 
 		CPU* cpu = findCPUAvailable();
 		PCBItem* item = queue_pop(pQueue);
+
+		sprintf(log_buffer, "PROCESO PID-%d RUNNING.\n", item->PID);
+		log_info(logger, log_buffer);
 
 		assignProcessToCPU(cpu, item);
 	}

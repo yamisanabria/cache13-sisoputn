@@ -54,4 +54,25 @@
 	//char ** nodoFiles_deserialize (char* str);
 	t_list* nodoFiles_deserialize (char* str);
 
+	int getTimestamp();
+
+	//-###############################################################################################-//
+	//-###-[SINCRONIZACIÓN]-##########################################################################-//
+	//-###############################################################################################-//
+
+	// Inicialización de semaforos y contador
+	void initSyn();
+
+	// Comienzo de lectura
+	void read_start();
+
+	// Finalizacion de lectura
+	void read_end();
+
+	// Comienzo de escritura
+	void write_start();
+
+	// Finalizacion de escritura
+	void write_end();
+
 #endif

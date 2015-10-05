@@ -16,6 +16,7 @@
 #include <pthread.h>
 #include <errno.h>
 #include <socket.h>
+#include <stdbool.h>
 
 #include "memory.h"
 #include "connections.h"
@@ -92,6 +93,7 @@ void listenSignal(int signal)
 
 int main(int argc, char* argv[])
 {
+
 	//inicializo loger
 	initializeLogger(argc, argv);
 

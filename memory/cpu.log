@@ -5,3 +5,9 @@
 [INFO] 19:15:58:979 CPU/(4543:4543): Nos ponemos en escucha de CPUs en puerto 6000...
 [INFO] 19:15:58:982 CPU/(4543:4544): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°5
 [INFO] 19:15:58:983 CPU/(4543:4543): Se ha conectado exitosamente al Swap en IP 127.0.0.1 en puerto 6000 por socket n° 6
+[INFO] 20:31:49:766 CPU/(3032:3032): Nos ponemos en escucha de CPUs en puerto 6000...
+[INFO] 20:31:50:562 CPU/(3032:3043): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°5
+[INFO] 20:31:50:580 CPU/(3032:3032): Se ha conectado exitosamente al Swap en IP 127.0.0.1 en puerto 6000 por socket n° 6
+[INFO] 20:32:01:763 CPU/(3068:3068): Nos ponemos en escucha de CPUs en puerto 6000...
+[INFO] 20:32:01:766 CPU/(3068:3069): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°6
+[INFO] 20:32:01:766 CPU/(3068:3068): Se ha conectado exitosamente al Swap en IP 127.0.0.1 en puerto 6000 por socket n° 5

@@ -18,28 +18,18 @@
 #include <utils.h>
 
 #include "shared.h"
+#include "memory.h"
 
 /** Variables generales que usaremos **/
 t_dictionary * callableRemoteFunctions;	/* Diccionario de funciones que pueden ser llamadas por mis conexiones (FUNCIONES SERVIDOR)*/
 int		socket_swap = -1;
-int		socket_cpu 	= -1;
+
 
 /** Datos de configuración **/
 int		memoryPort;
 int 	swapPort;
 char* 	swapIP;
 
-
-
-void initConnections(t_config* memoryConfig)
-{
-	memoryPort 		= config_get_int_value(memoryConfig, "PUERTO_ESCUCHA");
-	swapPort 		= config_get_int_value(memoryConfig, "PUERTO_SWAP");
-	swapIP 			= config_get_string_value(memoryConfig, "IP_SWAP");
-
-	/* Agregamos las funciones que podrán ser llamadas por mis conexiones */
-	callableRemoteFunctions = dictionary_create();
-}
 
 //-###############################################################################################-//
 //-###-[GENERAL]-#################################################################################-//
@@ -90,13 +80,207 @@ void connectSwap(){
 	}
 }
 
+
 //-###############################################################################################-//
 //-###-[OUTPUT]-##################################################################################-//
 //-###############################################################################################-//
 
-void sw_startProcess(int pid, int pages)
-{
+//-###########################################-//
+//-###-[CPU]-#################################-//
+//-###########################################-//
 
+// Indicamos que se comenzo correctamente el proceso
+void cpu_startProcessOk(int socket, int pid)
+{
+	char * pid_str = string_itoa(pid);
+	runFunction(socket, "mem_cpu_startProcessOk", 1, pid_str);
+	free(pid_str);
 }
 
-void sw_swapping(int pid, page, data,)
+// Indicamos que no hay frames suficientes para comenzar un proceso
+void cpu_noFrames(int socket, int pid)
+{
+	char * pid_str = string_itoa(pid);
+	runFunction(socket, "mem_cpu_noFrames", 1, pid_str);
+	free(pid_str);
+}
+
+// Indicamos que no hay suficiente espacio para comenzar un proceso
+void cpu_noSpace(int socket, int pid)
+{
+	char * pid_str = string_itoa(pid);
+	runFunction(socket, "mem_cpu_noSpace", 1, pid_str);
+	free(pid_str);
+}
+
+// Enviamos contenido de un frame
+void cpu_frameData(int socket, int frame, char * data)
+{
+	char * frame_str = string_itoa(frame);
+	runFunction(socket, "mem_cpu_frameData", 2, frame_str, data);
+	free(frame_str);
+}
+
+// Indicamos que se realizo la escritura
+void cpu_writeOk(int socket)
+{
+	runFunction(socket, "mem_cpu_writeOk", 0);
+}
+
+
+//-###########################################-//
+//-###-[SWAP]-################################-//
+//-###########################################-//
+
+//Le indicamos que comienza un proceso con la necesidad de páginas
+void sw_startProcess(int pid, int pages)
+{
+	char * pid_str = string_itoa(pid);
+	char * pages_str = string_itoa(pages);
+	runFunction(socket_swap, "mem_sw_startProcess", 2, pid_str, pages_str);
+	free(pid_str);
+	free(pages_str);
+}
+
+//Solicitamos una pagina
+void sw_getPage(int pid, int page)
+{
+	char * pid_str = string_itoa(pid);
+	char * page_str = string_itoa(page);
+	runFunction(socket_swap, "mem_sw_getPage", 2, pid_str, page_str);
+	free(pid_str);
+	free(page_str);
+}
+
+//Escribimos una pagina
+void sw_setPage(int pid, int page, char *data)
+{
+	char * pid_str = string_itoa(pid);
+	char * page_str = string_itoa(page);
+	runFunction(socket_swap, "mem_sw_setPage", 3, pid_str, page_str, data);
+	free(pid_str);
+	free(page_str);
+}
+
+//Hacemos intercambio de paginas
+void sw_swapping(int pid, int setPage, char * data, int getPage)
+{
+	char * pid_str = string_itoa(pid);
+	char * setPage_str = string_itoa(setPage);
+	char * getPage_str = string_itoa(getPage);
+	runFunction(socket_swap, "mem_sw_swapping", 4, pid_str, setPage_str, data, getPage_str);
+	free(pid_str);
+	free(setPage_str);
+	free(getPage_str);
+}
+
+//Indicamos la finalizacion de un proceso
+void sw_endProcess(int pid)
+{
+	char * pid_str = string_itoa(pid);
+	runFunction(socket_swap, "mem_sw_endProcess", 1, pid_str);
+	free(pid_str);
+}
+
+//-###############################################################################################-//
+//-###-[INPUT]-###################################################################################-//
+//-###############################################################################################-//
+
+//-###########################################-//
+//-###-[CPU]-#################################-//
+//-###########################################-//
+
+// Nos indica que comienza un proceso
+void cpu_startProcess(socket_connection * connection, char ** args)
+{
+	int pid = atoi(args[0]);		// pid del proceso
+	int pages = atoi(args[1]);		// cantidad de páginas necesarios para el proceso
+
+	addProcess(pid, pages, connection);
+	sw_startProcess(pid, pages);
+}
+
+// Nos solicita la lectura de un frame
+void cpu_read(socket_connection * connection, char ** args)
+{
+	int pid = atoi(args[0]);		// pid del proceso
+	int page = atoi(args[1]);		// número de página a leer
+
+	addReadPetition(pid, page, connection);
+}
+
+// Nos indica escribir un frame
+void cpu_write(socket_connection * connection, char ** args)
+{
+	int pid = atoi(args[0]);		// pid del proceso
+	int page = atoi(args[1]);		// número de página a escribir
+	char * data = args[2];			// página a escribir en el frame
+
+	addWritePetition(pid, page, data, connection);
+}
+
+// Nos indica que finalizo un proceso
+void cpu_endProcess(socket_connection * connection, char ** args)
+{
+	int pid = atoi(args[0]);		// pid del proceso
+
+	sw_endProcess(pid);
+	deleteProcess(pid);
+}
+
+//-###########################################-//
+//-###-[SWAP]-################################-//
+//-###########################################-//
+
+// Nos indica que comenzo correctamente el proceso
+void sw_startProcessOk(socket_connection * connection, char ** args)
+{
+	int pid = atoi(args[0]);		// pid del proceso
+
+	t_process * process = getProcess(pid);
+	cpu_startProcessOk(process->connection->socket, pid);
+}
+
+// Nos indica que no tiene suficiente espacio pra el proceso a comenzar
+void sw_noSpace(socket_connection * connection, char ** args)
+{
+	int pid = atoi(args[0]);		// pid del proceso
+
+	t_process * process = getProcess(pid);
+	deleteProcess(pid);
+	cpu_noSpace(process->connection->socket, pid);
+}
+
+// Nos devuelve el conenido de una pagina
+void sw_page(socket_connection * connection, char ** args)
+{
+	int pid = atoi(args[0]);		// pid del proceso
+	int page_num = atoi(args[1]);	// número de página a escribir
+	char * data = args[2];			// datos de la pagina
+
+	t_page * page = getPage(pid, page_num);
+	setMemoryData(page->frame, data, false);
+	page->present = true;
+	runPetitions();
+}
+
+
+
+void initConnections(t_config* memoryConfig)
+{
+	memoryPort 		= config_get_int_value(memoryConfig, "PUERTO_ESCUCHA");
+	swapPort 		= config_get_int_value(memoryConfig, "PUERTO_SWAP");
+	swapIP 			= config_get_string_value(memoryConfig, "IP_SWAP");
+
+	/* Agregamos las funciones que podrán ser llamadas por mis conexiones */
+	callableRemoteFunctions = dictionary_create();
+	//cpu
+	dictionary_put(callableRemoteFunctions, "cpu_mem_startProcess", &cpu_startProcess);
+	dictionary_put(callableRemoteFunctions, "cpu_mem_read", &cpu_read);
+	dictionary_put(callableRemoteFunctions, "cpu_mem_write", &cpu_write);
+	dictionary_put(callableRemoteFunctions, "cpu_mem_endProcess", &cpu_endProcess);
+	//swap
+	dictionary_put(callableRemoteFunctions, "sw_mem_startProcessOk", &sw_startProcessOk);
+	dictionary_put(callableRemoteFunctions, "sw_mem_noSpace", &sw_noSpace);
+	dictionary_put(callableRemoteFunctions, "sw_mem_page", &sw_page);
+}
