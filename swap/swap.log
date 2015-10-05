@@ -93,3 +93,13 @@
 [INFO] 16:40:58:804 Swap/(30355:30355): Compactación iniciada por fragmentación externa
 [INFO] 16:42:41:556 Swap/(30355:30355): Compactación finalizada
 [INFO] 16:42:50:37 Swap/(30355:30355): Proceso asignado exitosamente.. PID: 3, N° de byte inicial 32, Tamaño: 12 bytes
+[INFO] 17:04:38:29 Swap/(30672:30672): El archivo swap.data, de 36 bytes, fue creado exitosamente
+[INFO] 17:04:38:292 Swap/(30672:30672): A la escucha de algún proceso Administrador de Memoria el puerto: 6000.
+[INFO] 17:04:41:62 Swap/(30672:30672): Compactación iniciada por fragmentación externa
+[INFO] 17:05:41:62 Swap/(30672:30672): Compactación finalizada
+[INFO] 17:05:49:787 Swap/(30672:30672): Proceso asignado exitosamente.. PID: 3, N° de byte inicial 32, Tamaño: 12 bytes
+[INFO] 10:28:57:982 Swap/(2376:2376): El archivo swap.data, de 36 bytes, fue creado exitosamente
+[INFO] 10:28:58:267 Swap/(2376:2376): A la escucha de algún proceso Administrador de Memoria el puerto: 6000.
+[INFO] 10:29:04:612 Swap/(2376:2376): Compactación iniciada por fragmentación externa
+[INFO] 10:30:04:612 Swap/(2376:2376): Compactación finalizada
+[INFO] 10:30:28:356 Swap/(2376:2376): Proceso asignado exitosamente.. PID: 3, N° de byte inicial 32, Tamaño: 12 bytes
