@@ -17,8 +17,8 @@
 #include <socket.h>
 #include <semaphore.h>
 
-#include "connections.h"
 #include "shared.h"
+#include "connections.h"
 #include "console.h"
 #include "pcb.h"
 #include "cpu.h"

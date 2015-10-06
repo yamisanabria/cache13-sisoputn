@@ -23,28 +23,33 @@ CPU* getCPUByID(int id)
 	return list_get(cpus, id);
 }
 
+void markCPUAsAvailable(CPU* cpu)
+{
+	cpu->status 	= CPU_AVAILABLE;
+	cpu->process	= NULL;
+}
+
 bool _cpuIsAvailable(void *cpu) {
     return ((CPU *)cpu)->status == CPU_AVAILABLE;
 }
 
 bool isAnyCPUAvailable() {
-	/*
-	 Tomado de;
-	 https://github.com/sisoputnfrba/so-commons-library/blob/5534cd0ff2d2b0ce28c22434e59c9bb0e37131a3/tests/unit-tests/test_list.c#L331
-	*/
 	return list_any_satisfy(cpus, (void*)_cpuIsAvailable);
 }
 
+CPU* findCPUBySocketConnection(socket_connection* socket){
+	bool _find(CPU* cpu) { return cpu->socket->socket == socket->socket; }
+	return list_find(cpus, (void*) _find);
+}
+
 CPU* findCPUAvailable(){
-	CPU* _cpu;
-	int i;
+	return list_find(cpus, (void*)_cpuIsAvailable);
+}
 
-	for(i = 0; i < list_size(cpus); i++){
-		_cpu = list_get(cpus, i);
-		if (_cpuIsAvailable(_cpu)) {
-			break;
-		}
-	}
+void cpuPrintMessages(CPU* cpu, PCBItem* process, char* messages)
+{
+	sprintf(log_buffer, "Imprimimos mensajes del CPU %d, PID %d", cpu->id, process->PID);
+	log_info(logger, log_buffer);
 
-	return _cpu;
+	printf(messages);
 }
