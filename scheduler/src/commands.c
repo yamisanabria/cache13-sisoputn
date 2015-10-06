@@ -25,9 +25,10 @@ void cmd_end(char ** args)
 /* TODO si se pasa de argumento el id estaria bueno mostrar ese solo*/
 void cmd_ps()
 {
-	printf("\n********************************\n");
-	printf("**   Listado de procesos\n");
-	printf("********************************\n");
+	printf("\n");
+	printf("+----------------------------+"); printf("\n");
+	printf("+     Listado de procesos    +"); printf("\n");
+	printf("+----------------------------+");
 	printf("\n\n");	
 	
 	void __printpcb(PCBItem* item) {
@@ -49,9 +50,10 @@ void cmd_cpu()
 		//printf("%d,%d,%s,%d,%s",item->PID, item->counter, item->path, item->status, item->start);
 	}
 
-	printf("\n********************************\n");
-	printf("**   Listado de Cpus\n");
-	printf("********************************\n");
+	printf("\n");
+	printf("+----------------------------+"); printf("\n");
+	printf("+       Listado de CPUs      +"); printf("\n");
+	printf("+----------------------------+");
 	printf("\n\n");	
 	list_iterate(getCPUsList(), (void*)__printcpu);
 

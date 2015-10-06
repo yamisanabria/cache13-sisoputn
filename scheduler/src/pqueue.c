@@ -1,5 +1,6 @@
 #include "shared.h"
 #include "cpu.h"
+#include "connections.h"
 
 //Asumimos FIFO
 

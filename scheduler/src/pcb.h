@@ -13,4 +13,14 @@ int runNewProcess(char* path);
 
 PCBItem* pcbGetByPID(int pid);
 
+void processHasFinished(PCBItem* item);
+
+void processHasFinishedBurst(PCBItem* item);
+
+void processHasFailed(PCBItem* item);
+
+void processHasFinished(PCBItem* item);
+
+void processHasBeenBlocked(PCBItem* item);
+
 #endif
