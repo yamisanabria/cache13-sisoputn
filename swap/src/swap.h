@@ -15,6 +15,8 @@ typedef struct list_proc {
 	int pid;
 	int offset;
 	int pageQty;
+	int reads;
+	int writes;
 } list_proc;
 
 /* Estructura para adminsitrar el espacio libre */

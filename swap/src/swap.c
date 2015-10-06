@@ -112,6 +112,8 @@ list_proc *createNode(int pid, int pos, int pages) {
 	nodo->pid = pid;
 	nodo->offset = pos;
 	nodo->pageQty = pages;
+	nodo->reads = 0;
+	nodo->writes = 0;
 
 	return nodo;
 }
@@ -255,12 +257,16 @@ void endProcess(socket_connection *conn, int pid) {
 	int index = 0;
 	int size = 1;
 	int procStart = 0;
+	int rp = 0;
+	int wp = 0;
 	char *empty;
 
 	bool _getEnd(list_proc *l) {
 		if (l->pid == pid) {
 			procStart = l->offset;
 			size = l->pageQty;
+			rp = l->reads;
+			wp = l->writes;
 			return 1;
 		} else {
 			index++;
@@ -282,8 +288,8 @@ void endProcess(socket_connection *conn, int pid) {
 	free(empty);
 
 	log_info(logg, "Proceso liberado exitosamente.. PID: %d, N° de byte inicial"
-			" %d, Tamaño: %d bytes", pid, procStart * pageSize,
-			size * pageSize);
+			" %d, Tamaño: %d bytes, Páginas leídas: %d, Páginas escritas: %d"
+			, pid, procStart * pageSize, size * pageSize, rp, wp );
 }
 
 void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
@@ -298,6 +304,7 @@ void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
 	bool _getPage(list_proc *l) {
 		if (l->pid == pid) {
 			procStart = l->offset + pageNum;
+			l->reads++;
 			return 1;
 		} else {
 			return 0;
@@ -330,6 +337,7 @@ void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data)
 	bool _setPage(list_proc *l) {
 		if (l->pid == pid) {
 			procStart = l->offset + pageNum;
+			l->writes++;
 			return 1;
 		} else {
 			return 0;
@@ -357,44 +365,8 @@ int main(int argc, char *argv[]) {
 	initDictionary(); /* Inicializo el diccionario de funciones remotas */
 	startListener();  /* Me pongo a la escucha de conexiones provenientes del Adm. de Memoria */
 
-	//DEBUG
-	// BUSCAR ESPACIO E INSERTAR EN LA LISTA
-	/*socket_connection *conn = malloc(sizeof(socket_connection));
-	 list_proc *nodo1 = malloc(sizeof(list_proc));
-	 list_proc *nodo2 = malloc(sizeof(list_proc));
-	 nodo1->pid = 1;
-	 nodo1->offset = 0;
-	 nodo1->pageQty = 5;
-	 list_add_in_index(lp,0, nodo1);
-	 nodo2->pid = 2;
-	 nodo2->offset = 7;
-	 nodo2->pageQty = 2;
-	 list_add(lp, nodo2);
-	 pageDisp = 2;
-	 startProcess(conn, 3, 2);*/
-	//FIN DE ESE CASO DE USO
-	// BUSCAR, COMPACTAR E INSERTAR
-	socket_connection *conn = malloc(sizeof(socket_connection));
-	list_proc *nodo1 = malloc(sizeof(list_proc));
-	list_proc *nodo2 = malloc(sizeof(list_proc));
-	nodo1->pid = 1;
-	nodo1->offset = 0;
-	nodo1->pageQty = 4;
-	list_add_in_index(lp, 0, nodo1);
-	//char *process1= malloc(sizeof(char)*16);
-	char *process1 = string_duplicate("La casa de JuanC");
-	writeSwap(0, 4, process1);
-	nodo2->pid = 2;
-	nodo2->offset = 6;
-	nodo2->pageQty = 2;
-	list_add(lp, nodo2);
-	char *process2 = string_duplicate("marrana8");
-	writeSwap(6, 2, process2);
-	pageDisp = 3;
-	startProcess(conn, 3, 3);
-	char *process3 = string_duplicate("lamitadmas1");
-	writeSwap(6, 3, process3);
-	readSwap(6, 3);
+	//TEST
+
 	//FIN DE ESE CASO DE USO
 
 	pthread_mutex_init(&mx_main, NULL);
