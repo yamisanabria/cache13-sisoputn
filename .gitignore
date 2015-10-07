@@ -1,3 +1,9 @@
+/.cproject
+/.project
+/.settings/org.eclipse.cdt.core.prefs
+/scheduler.launch
+/scheduler.log
+/cpu.log
 /cpu/tests/build/commons-unit-test
 /cpu/tests/build/test_main.d
 /scheduler/scheduler.log
