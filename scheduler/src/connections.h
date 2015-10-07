@@ -10,6 +10,7 @@
 
 	/*** FUNCIONES COMO CLIENTE ***/
 
+	void cpuRunProcess(CPU* cpu);
 
 	/*** FUNCIONES INTERNAS ***/
 

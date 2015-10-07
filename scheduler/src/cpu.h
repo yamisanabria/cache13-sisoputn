@@ -13,4 +13,10 @@ bool isAnyCPUAvailable();
 
 CPU* findCPUAvailable();
 
+CPU* findCPUBySocketConnection(socket_connection* socket);
+
+void markCPUAsAvailable(CPU* cpu);
+
+void cpuPrintMessages(CPU* cpu, PCBItem* process, char* messages);
+
 #endif

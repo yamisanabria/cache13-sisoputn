@@ -27,6 +27,7 @@
 #include "connections.h"
 #include "shared.h"
 #include "swap.h"
+#include "utils.h"
 
 //VARIABLES GLOABLES
 
@@ -111,6 +112,8 @@ list_proc *createNode(int pid, int pos, int pages) {
 	nodo->pid = pid;
 	nodo->offset = pos;
 	nodo->pageQty = pages;
+	nodo->reads = 0;
+	nodo->writes = 0;
 
 	return nodo;
 }
@@ -119,10 +122,10 @@ char *readSwap(int procStart, int pages) {
 
 	int offset = procStart * pageSize;      //desde donde comienzo a leer
 	int size = pages * pageSize;		    //cuanto leo
-	char *process = malloc(sizeof(char)*size);
+	char *process = malloc(sizeof(char) * size);
 
-	fseek(swap,offset,SEEK_SET);
-	fread(process,1,size,swap);
+	fseek(swap, offset, SEEK_SET);
+	fread(process, 1, size, swap);
 
 	return process;
 
@@ -132,8 +135,8 @@ void writeSwap(int procStart, int pages, char *data) {
 
 	int offset = procStart * pageSize;      //desde donde comienzo a leer
 
-	fseek(swap,offset,SEEK_SET);
-	fwrite(data,1,strlen(data),swap);
+	fseek(swap, offset, SEEK_SET);
+	fwrite(data, 1, strlen(data), swap);
 	fflush(swap);
 
 	free(data);
@@ -148,16 +151,15 @@ int compact() {
 	char *process;
 
 	void _set(list_proc *l) {
-            /* Obtengo el proceso, leyéndolo desde el swap */
-			process = readSwap(l->offset,l->pageQty);
-			/* Le asigno su nuva ubicación */
-			l->offset = beginPos;
-			/* Escribo en swap el proceso en su nueva ubicación */
-			writeSwap(beginPos,l->pageQty,process);
-			/* Preparo la nueva ubicación para el siguiente proceso */
-			beginPos += l->pageQty;
-		}
-
+		/* Obtengo el proceso, leyéndolo desde el swap */
+		process = readSwap(l->offset, l->pageQty);
+		/* Le asigno su nuva ubicación */
+		l->offset = beginPos;
+		/* Escribo en swap el proceso en su nueva ubicación */
+		writeSwap(beginPos, l->pageQty, process);
+		/* Preparo la nueva ubicación para el siguiente proceso */
+		beginPos += l->pageQty;
+	}
 
 	list_iterate(lp, (void*) _set);
 
@@ -173,7 +175,7 @@ int initProc(int pid, int requiredPages) {
 
 	int beginPos = 0;  // Posición inicial(offset del proc)
 	int acum = 0;	   // Huecos libres acumulados
-	int dif = 0; 	   // Dif entre el lugar donde termina un proc y empieza otro
+	int dif = 0; 	  // Dif entre el lugar donde termina un proc y empieza otro
 	int index = 0;     // Índice de la lista donde se insertará un nuevo nodo
 	list_proc *nodo;
 
@@ -223,7 +225,9 @@ int initProc(int pid, int requiredPages) {
 }
 
 void startProcess(socket_connection *conn, int pid, int requiredPages) {
-	//startWrite
+
+	write_start();
+
 	int initialByte;
 	char *procID = string_itoa(pid);
 
@@ -231,155 +235,139 @@ void startProcess(socket_connection *conn, int pid, int requiredPages) {
 		initialByte = initProc(pid, requiredPages);
 		log_info(logg,
 				"Proceso asignado exitosamente.. PID: %d, N° de byte inicial"
-						" %d, Tamaño: %d bytes", pid, initialByte*pageSize,
-				requiredPages*pageSize);
+						" %d, Tamaño: %d bytes", pid, initialByte * pageSize,
+				requiredPages * pageSize);
+
+		sw_mem_startProcessOk(conn, procID);
 	} else {
 		log_info(logg,
 				"Proceso rechazado. Espacio en swap insufuciente.. PID: %d",
 				pid);
-		runFunction(conn->socket, "sw_mem_noSpace", 1, procID);
+		sw_mem_noSpace(conn, procID);
 	}
 
 	free(procID);
 
-	/* Si hay un hueco disponible, lo agrego a la lista de espacio utilizado */
-	//endWrite
+	write_end();
+
 }
 
-void endProcess(socket_connection *conn, int pid){
+void endProcess(socket_connection *conn, int pid) {
 
 	int index = 0;
-	int size  = 1;
+	int size = 1;
 	int procStart = 0;
+	int rp = 0;
+	int wp = 0;
 	char *empty;
 
-	bool _getEnd(list_proc *l){
-		if(l->pid == pid){
+	bool _getEnd(list_proc *l) {
+		if (l->pid == pid) {
 			procStart = l->offset;
 			size = l->pageQty;
+			rp = l->reads;
+			wp = l->writes;
 			return 1;
-		}else{
+		} else {
 			index++;
 			return 0;
 		}
 	}
 
-	list_find(lp,(void*) _getEnd);
-	list_remove(lp,index);
+	list_find(lp, (void*) _getEnd);
+	list_remove(lp, index);
 
 	/* lleno mi array de \0 para "eliminar" mi proceso del swap */
 	empty = malloc(sizeof(pageSize * size));
-	memset(empty,'\0',pageSize * size);
+	memset(empty, '\0', pageSize * size);
 
-	writeSwap(procStart,size,empty);
+	writeSwap(procStart, size, empty);
 
 	pageDisp += size;
 
 	free(empty);
 
 	log_info(logg, "Proceso liberado exitosamente.. PID: %d, N° de byte inicial"
-			" %d, Tamaño: %d bytes", pid, procStart*pageSize, size*pageSize);
+			" %d, Tamaño: %d bytes, Páginas leídas: %d, Páginas escritas: %d"
+			, pid, procStart * pageSize, size * pageSize, rp, wp );
 }
 
-void pageReadRequest(socket_connection *conn, int pid, int pageNum){
+void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
+
+	read_start();
 
 	int procStart = 0;
+	char *id = string_itoa(pid);
+	char *pn = string_itoa(pn);
 	char *data;
 
-	bool _getPage(list_proc *l){
-		if(l->pid == pid){
+	bool _getPage(list_proc *l) {
+		if (l->pid == pid) {
 			procStart = l->offset + pageNum;
+			l->reads++;
 			return 1;
-		}else{
+		} else {
 			return 0;
 		}
 	}
 
-	list_find(lp, (void*)_getPage);
-	data =readSwap(procStart,1);
+	list_find(lp, (void*) _getPage);
+
+	data = readSwap(procStart, 1);
 
 	log_info(logg, "Lectura solicitada.. PID: %d, N° de byte inicial"
-				" %d, Tamaño: %d bytes, Contenido: %d",
-				pid, procStart*pageSize, strlen(data), data);
+			" %d, Tamaño: %d bytes, Contenido: %d", pid, procStart * pageSize,
+			strlen(data), data);
 
-	runFunction(conn->socket, "sw_mem_page", 1, data);
+	sw_mem_page(conn, id, pn, data);
+
+	free(id);
+	free(pn);
+	free(data);
+
+	read_end();
+}
+
+void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data) {
+
+	write_start();
+
+	int procStart = 0;
+
+	bool _setPage(list_proc *l) {
+		if (l->pid == pid) {
+			procStart = l->offset + pageNum;
+			l->writes++;
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+	list_find(lp, (void*) _setPage);
+	writeSwap(procStart, 1, data);
+
+	log_info(logg, "Escritura solicitada.. PID: %d, N° de byte inicial"
+			" %d, Tamaño: %d bytes, Contenido: %d", pid, procStart * pageSize,
+			strlen(data), data);
 
 	free(data);
 
-
+	write_end();
 }
-
-void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data){
-
-		int procStart = 0;
-
-		bool _setPage(list_proc *l){
-			if(l->pid == pid){
-				procStart = l->offset + pageNum;
-				return 1;
-			}else{
-				return 0;
-			}
-		}
-
-		list_find(lp, (void*)_setPage);
-		writeSwap(procStart,1,data);
-
-		log_info(logg, "Escritura solicitada.. PID: %d, N° de byte inicial"
-					" %d, Tamaño: %d bytes, Contenido: %d",
-					pid, procStart*pageSize, strlen(data), data);
-
-		free(data);
-}
-
 
 int main(int argc, char *argv[]) {
 
 	readFileConfig(); /* Leo archivo de configuracion */
-	initLog(); /* Inicializo el log */
-	initSwap(); /* Creo el archivo de swap */
+	initLog(); 		  /* Inicializo el log */
+	initSwap();       /* Creo el archivo de swap */
+	initSyn();		  /* Inicializo semáforos */
 	initDictionary(); /* Inicializo el diccionario de funciones remotas */
-	startListener(); /* Me pongo a la escucha de conexiones provenientes del Adm. de Memoria */
+	startListener();  /* Me pongo a la escucha de conexiones provenientes del Adm. de Memoria */
 
-	//DEBUG
-	// BUSCAR ESPACIO E INSERTAR EN LA LISTA
-	/*socket_connection *conn = malloc(sizeof(socket_connection));
-	 list_proc *nodo1 = malloc(sizeof(list_proc));
-	 list_proc *nodo2 = malloc(sizeof(list_proc));
-	 nodo1->pid = 1;
-	 nodo1->offset = 0;
-	 nodo1->pageQty = 5;
-	 list_add_in_index(lp,0, nodo1);
-	 nodo2->pid = 2;
-	 nodo2->offset = 7;
-	 nodo2->pageQty = 2;
-	 list_add(lp, nodo2);
-	 pageDisp = 2;
-	 startProcess(conn, 3, 2);*/
-	//FIN DE ESE CASO DE USO
-	// BUSCAR, COMPACTAR E INSERTAR
-	socket_connection *conn = malloc(sizeof(socket_connection));
-	list_proc *nodo1 = malloc(sizeof(list_proc));
-	list_proc *nodo2 = malloc(sizeof(list_proc));
-	nodo1->pid = 1;
-	nodo1->offset = 0;
-	nodo1->pageQty = 4;
-	list_add_in_index(lp, 0, nodo1);
-	//char *process1= malloc(sizeof(char)*16);
-	char *process1 = string_duplicate("La casa de JuanC");
-	writeSwap(0,4,process1);
-	nodo2->pid = 2;
-	nodo2->offset = 6;
-	nodo2->pageQty = 2;
-	list_add(lp, nodo2);
-	char *process2=	string_duplicate("marrana8");
-	writeSwap(6,2,process2);
-	pageDisp = 3;
-	startProcess(conn, 3, 3);
-	char *process3=	string_duplicate("lamitadmas1");
-	writeSwap(6,3,process3);
-	//FIN DE ESE CASO DE USO
+	//TEST
 
+	//FIN DE ESE CASO DE USO
 
 	pthread_mutex_init(&mx_main, NULL);
 	pthread_mutex_lock(&mx_main);

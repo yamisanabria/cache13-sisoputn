@@ -1,5 +1,6 @@
 #include "shared.h"
 #include "cpu.h"
+#include "pcb.h"
 
 /** Variables generales que usaremos **/
 t_dictionary * callableRemoteFunctions;	/* Diccionario de funciones que pueden ser llamadas por mis conexiones (FUNCIONES SERVIDOR)*/
@@ -36,6 +37,53 @@ void cpuNew(socket_connection* socketInfo)
 	addNewCPU(cpu);
 }
 
+/* ################### SERVIDOR ################### */
+/**
+ *
+ */
+void cpuProcessIsBack(socket_connection * connection, char ** args)
+{
+	int pid = atoi(args[0]);
+	int status = atoi(args[1]);
+	char* messages = string_duplicate(args[2]);
+
+	CPU* cpu = findCPUBySocketConnection(connection);
+	PCBItem* process = pcbGetByPID(pid);
+
+	sprintf(log_buffer, "El proceso %d ha vuelto del CPU %d", pid, cpu->id);
+	log_info(logger, log_buffer);
+
+	cpuPrintMessages(cpu, process, messages);
+
+	switch(status){
+		case 1: //Ráfaga ok
+			processHasFinishedBurst(process);
+			break;
+		case 2: //Falló
+			processHasFailed(process);
+			break;
+		case 3: //Terminó
+			processHasFinished(process);
+			break;
+		case 4: //Bloqueado
+			processHasBeenBlocked(process);
+			break;
+		default:
+			sprintf(log_buffer, "El estado %d es inválido", status);
+			log_error(logger, log_buffer);
+			exit(1);
+	}
+
+	markCPUAsAvailable(cpu);
+
+}
+
+/* ################### CLIENTE ################### */
+
+/**
+ * Le informamos a un CPU que tiene que ejecutar un proceso
+ * Si el quantum es 0 es que tiene que ejecutar hasta que corte (FIFO)
+ */
 void cpuRunProcess(CPU* cpu){
 	sprintf(log_buffer, "Llamando a startProcess en CPU %d con (%d, %s, %d, %d) en socket n°%d", cpu->id, cpu->process->PID, cpu->process->path, cpu->process->counter, P_QUANTUM, cpu->socket->socket);
 	log_info(logger, log_buffer);
@@ -44,6 +92,9 @@ void cpuRunProcess(CPU* cpu){
 
 void listenStart()
 {
+	callableRemoteFunctions = dictionary_create();
+	dictionary_put(callableRemoteFunctions, "cpu_sc_process_back", &cpuProcessIsBack);
+
 	createListen(schedulerPort, &cpuNew, callableRemoteFunctions, &cpuDisconnected, NULL);
 	sprintf(log_buffer, "Nos ponemos en escucha de CPUs en puerto %d...", schedulerPort);
 	log_info(logger, log_buffer);
