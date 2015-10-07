@@ -62,6 +62,9 @@ void initMemory(t_config* memoryConfig)
 
 	//Inicializacion de la TLB
 	TLB = queue_create();
+
+	//Inicializacion de lista de procesos
+	processes = list_create();
 }
 
 //-###############################################################################################-//
@@ -183,6 +186,14 @@ t_translation * getTranslation(int pid, int page)
 	return list_find(TLB->elements, (void*) _get);
 }
 
+// Elimina todos los registros de la TLB
+void clearTLB()
+{
+	void _destroyer(t_translation * translation)
+	{free(translation);}
+	queue_destroy_and_destroy_elements(TLB, (void*)_destroyer);
+}
+
 //-###############################################################################################-//
 //-###-[MEMORY]-##################################################################################-//
 //-###############################################################################################-//
@@ -190,7 +201,9 @@ t_translation * getTranslation(int pid, int page)
 // Corre retardo de acceso a memoria
 void sleepAccessMemory()
 {
+	write_end();
 	sleep(sleep_access_memory);
+	write_start();
 }
 
 // Ingresa datos en un frame
@@ -199,8 +212,8 @@ void setMemoryData(int frame, char * data, bool sleep)
 	if(sleep)
 		sleepAccessMemory();
 
-	free(memory[frame * frame_size]);
-	memory[frame * frame_size] = string_duplicate(data);
+	free(memory[frame]);
+	memory[frame] = string_duplicate(data);
 }
 
 // devuelve los datos de un frame
@@ -210,6 +223,30 @@ char * getMemoryData(int frame, bool sleep)
 		sleepAccessMemory();
 
 	return memory[frame * frame_size];
+}
+
+// Vacia la memoria y deja los frames sin modificar
+void clearMemory()
+{
+	int i, j;
+	for(i = 0; i < frames_q; i++)
+		free(memory[i]);
+
+	t_list * ps;
+	for(i = 0; i < list_size(processes); i++)
+	{
+		ps = ((t_process*)list_get(processes, i))->pages;
+		for(j = 0; j < list_size(ps); j++)
+			((t_page*)list_get(ps, j))->modified = false;
+	}
+}
+
+// Imprime la memoria en el LOG
+void printMemory()
+{
+	int i;
+	for(i = 0; i < frames_q; i++)
+		log_info(logger, getMemoryData(i, false));
 }
 
 //-###############################################################################################-//

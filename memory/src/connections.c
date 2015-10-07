@@ -196,8 +196,12 @@ void cpu_startProcess(socket_connection * connection, char ** args)
 	int pid = atoi(args[0]);		// pid del proceso
 	int pages = atoi(args[1]);		// cantidad de páginas necesarios para el proceso
 
+	write_start();
+
 	addProcess(pid, pages, connection);
 	sw_startProcess(pid, pages);
+
+	write_end();
 }
 
 // Nos solicita la lectura de un frame
@@ -206,7 +210,11 @@ void cpu_read(socket_connection * connection, char ** args)
 	int pid = atoi(args[0]);		// pid del proceso
 	int page = atoi(args[1]);		// número de página a leer
 
+	write_start();
+
 	addReadPetition(pid, page, connection);
+
+	write_end();
 }
 
 // Nos indica escribir un frame
@@ -216,7 +224,11 @@ void cpu_write(socket_connection * connection, char ** args)
 	int page = atoi(args[1]);		// número de página a escribir
 	char * data = args[2];			// página a escribir en el frame
 
+	write_start();
+
 	addWritePetition(pid, page, data, connection);
+
+	write_end();
 }
 
 // Nos indica que finalizo un proceso
@@ -224,8 +236,12 @@ void cpu_endProcess(socket_connection * connection, char ** args)
 {
 	int pid = atoi(args[0]);		// pid del proceso
 
+	write_start();
+
 	sw_endProcess(pid);
 	deleteProcess(pid);
+
+	write_end();
 }
 
 //-###########################################-//
@@ -237,8 +253,12 @@ void sw_startProcessOk(socket_connection * connection, char ** args)
 {
 	int pid = atoi(args[0]);		// pid del proceso
 
+	read_start();
+
 	t_process * process = getProcess(pid);
 	cpu_startProcessOk(process->connection->socket, pid);
+
+	read_end();
 }
 
 // Nos indica que no tiene suficiente espacio pra el proceso a comenzar
@@ -246,9 +266,13 @@ void sw_noSpace(socket_connection * connection, char ** args)
 {
 	int pid = atoi(args[0]);		// pid del proceso
 
+	write_start();
+
 	t_process * process = getProcess(pid);
 	deleteProcess(pid);
 	cpu_noSpace(process->connection->socket, pid);
+
+	write_end();
 }
 
 // Nos devuelve el conenido de una pagina
@@ -258,10 +282,14 @@ void sw_page(socket_connection * connection, char ** args)
 	int page_num = atoi(args[1]);	// número de página a escribir
 	char * data = args[2];			// datos de la pagina
 
+	write_start();
+
 	t_page * page = getPage(pid, page_num);
 	setMemoryData(page->frame, data, false);
 	page->present = true;
 	runPetitions();
+
+	write_end();
 }
 
 

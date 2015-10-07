@@ -17,6 +17,7 @@
 #include <errno.h>
 #include <socket.h>
 #include <stdbool.h>
+#include <utils.h>
 
 #include "memory.h"
 #include "connections.h"
@@ -71,7 +72,8 @@ void initializeLogger(int argc, char* argv[]){
 			}
 		}
 	}
-	logger = log_create("cpu.log", "CPU", showLogInConsole, LOG_LEVEL_INFO);
+	//logger = log_create("cpu.log", "CPU", showLogInConsole, LOG_LEVEL_INFO);
+	logger = log_create("cpu.log", "CPU", true, LOG_LEVEL_INFO);
 }
 
 //Escucha las 3 señales (se envian con kill -s SIG**** %pid%)
@@ -80,19 +82,21 @@ void listenSignal(int signal)
 	switch (signal)
 	{
 		case SIGUSR1:
-			printf("Limpiar TLB..\n");
+			clearTLB();
 			break;
 		case SIGUSR2:
-			printf("Limpiar Memoria..\n");
+			clearMemory();
 			break;
 		case SIGPOLL:
-			printf("Imprimir Memoria..\n");
+			printMemory();
 			break;
 	}
 }
 
 int main(int argc, char* argv[])
 {
+	//Inicializacion variables de sincronizacion
+	initSyn();
 
 	//inicializo loger
 	initializeLogger(argc, argv);
@@ -104,11 +108,14 @@ int main(int argc, char* argv[])
 	initMemory(memoryConfig);
 	initConnections(memoryConfig);
 
+	addProcess(1, 40, NULL);
+
+
 	//Me pongo a la escucha de CPUs
-	listenStart();
+	//listenStart();
 
 	//Me conecto al Swap
-	connectSwap();
+	//connectSwap();
 
 	//Pongo a la escucha las 3 señales
 	signal(SIGUSR1, listenSignal);
