@@ -6,7 +6,7 @@
 
 #include "shared.h"
 #include "connections.h"
-#include "cpumanager.h"
+#include "cpumanager.h" // ?? creo que no es necesario
 
 t_list* cpuList;
 
@@ -25,7 +25,7 @@ void createCpu(){
 }
 
 CPU* findCpuBySchedulerSocket(int socket_id){
-	int _haveSchedulerSocket(CPU* _cpu) {
+	bool _haveSchedulerSocket(CPU* _cpu) {
 		return _cpu->socketIdScheduler == socket_id;
 	}
 
@@ -33,7 +33,7 @@ CPU* findCpuBySchedulerSocket(int socket_id){
 }
 
 CPU* findCpuByMemorySocket(int socket_id){
-	int _haveMemorySocket(CPU* _cpu) {
+	bool _haveMemorySocket(CPU* _cpu) {
 		return _cpu->socketIdMemory == socket_id;
 	}
 
