@@ -8,10 +8,10 @@
 #include <stdlib.h>
 #include <socket.h>
 #include <commons/string.h>
+#include <commons/config.h>
 
 #include "shared.h"
 #include "cpumanager.h"
-#include "config.h"
 
 
 void schedulerStartProcess(socket_connection* connection, char ** args){
