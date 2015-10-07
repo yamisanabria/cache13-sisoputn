@@ -298,7 +298,7 @@ void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
 
 	int procStart = 0;
 	char *id = string_itoa(pid);
-	char *pn = string_itoa(pn);
+	char *pn = string_itoa(pageNum);
 	char *data;
 
 	bool _getPage(list_proc *l) {
