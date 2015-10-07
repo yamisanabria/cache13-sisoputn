@@ -16,21 +16,46 @@
 #include <errno.h>
 #include <socket.h>
 
-#include "config.h"
 #include "connections.h"
 #include "shared.h"
 
 #include "filereader.h"
 #include "cpumanager.h"
 
-
 pthread_mutex_t mx_main;
 
 /** Config info **/
+char* 	fileConfigDir = "config.cfg";	// Ruta a archivo config por defecto
+t_config* cpuConfig;				// Objeto de configuración de marta
 
 t_log* logger;							//Declarado extern en shared.h
 char log_buffer[1024];					//Declarado extern en shared.h
 
+t_config* readFileConfig()
+{
+	t_config* config;
+	config = config_create(fileConfigDir);
+
+	int configElements;
+	configElements = config_keys_amount(config);
+
+	if(configElements == 0){
+		log_error(logger, "Archivo de configuración inválido.");
+		exit(1);
+	}
+
+	if(!config_has_property(config, "IP_PLANIFICADOR") ||
+		!config_has_property(config, "PUERTO_PLANIFICADOR") ||
+		!config_has_property(config, "IP_MEMORIA") ||
+		!config_has_property(config, "PUERTO_MEMORIA") ||
+		!config_has_property(config, "CANTIDAD_HILOS") ||
+		!config_has_property(config, "RETARDO")){
+		log_error(logger, "Parámetros inválidos en archivo de configuración.");
+		exit(1);
+	}
+
+	return config;
+}
 
 void initializeLogger(int argc, char* argv[]){
 	int showLogInConsole = 0;
@@ -50,9 +75,8 @@ int main(int argc, char* argv[])
 {
 	initializeLogger(argc, argv);
 
-	initFileConfig();
-	
-	// cpuConfig es global, ya no es necesario pasarselo
+	cpuConfig = readFileConfig();
+
 	setConnectionsParameters(cpuConfig);
 
 	initializeRemoteFunctions();
