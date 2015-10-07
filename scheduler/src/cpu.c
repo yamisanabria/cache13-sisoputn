@@ -51,5 +51,5 @@ void cpuPrintMessages(CPU* cpu, PCBItem* process, char* messages)
 	sprintf(log_buffer, "Imprimimos mensajes del CPU %d, PID %d", cpu->id, process->PID);
 	log_info(logger, log_buffer);
 
-	printf(messages);
+	printf("%s", messages);
 }
