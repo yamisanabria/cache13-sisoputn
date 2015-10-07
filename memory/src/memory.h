@@ -88,6 +88,9 @@
 	// Devuelve un traduccion segun el PID y pagina
 	t_translation * getTranslation(int pid, int page);
 
+	// Elimina todos los registros de la TLB
+	void clearTLB();
+
 	//-###############################################################################################-//
 	//-###-[MEMORY]-##################################################################################-//
 	//-###############################################################################################-//
@@ -100,6 +103,12 @@
 
 	// devuelve los datos de un frame
 	char * getMemoryData(int frame, bool sleep);
+
+	// Vacia la memoria y deja los frames sin modificar
+	void clearMemory();
+
+	// Imprime la memoria en el LOG
+	void printMemory();
 
 	//-###############################################################################################-//
 	//-###-[FRAMES]-##################################################################################-//
