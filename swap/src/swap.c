@@ -28,6 +28,7 @@
 #include "shared.h"
 #include "swap.h"
 #include "utils.h"
+#include "tests.h"
 
 //VARIABLES GLOABLES
 
@@ -89,7 +90,7 @@ void initSwap() {
 	string_append(&command, string_itoa(pageQuan));
 
 	system(command); /* Ejecuto el comando */
-	swap = fopen(swapName, "w+"); /* Abro el archivo para lectura y escritura */
+	swap = fopen(swapName, "rb+"); /* Abro el archivo para lectura y escritura */
 	fseek(swap, 0, SEEK_SET); /* Pongo el puntero al comienzo del archivo */
 	pageDisp = pageQuan; /* Inicialmente tengo todas las páginas disponibles */
 	initList(); /* Inicializo la lista */
@@ -122,24 +123,35 @@ char *readSwap(int procStart, int pages) {
 
 	int offset = procStart * pageSize;      //desde donde comienzo a leer
 	int size = pages * pageSize;		    //cuanto leo
-	char *process = malloc(sizeof(char) * size);
+	char *process = malloc(sizeof(char)*size);
+
+	//Todo este quilombo es porque no se puede usar las funciones comentadas abajo:
+	char *string = string_duplicate("%");
+	char *cSize  = string_itoa(size);
+	string_append(&string,cSize);
+	string_append(&string,"s");
 
 	fseek(swap, offset, SEEK_SET);
-	fread(process, 1, size, swap);
+	fscanf(swap, string, process);
+	//fread(process, 1, size, swap);
+	//fgets(process,size,swap);
+
+	free(cSize);
+	free(string);
 
 	return process;
 
 }
 
-void writeSwap(int procStart, int pages, char *data) {
+void writeSwap(int procStart, int pages, char *data, int size) {
 
 	int offset = procStart * pageSize;      //desde donde comienzo a leer
 
 	fseek(swap, offset, SEEK_SET);
-	fwrite(data, 1, strlen(data), swap);
+	fwrite(data, 1, size, swap);
+
 	fflush(swap);
 
-	free(data);
 
 }
 
@@ -147,8 +159,9 @@ int compact() {
 
 	log_info(logg, "Compactación iniciada por fragmentación externa");
 
-	int beginPos = 0;
-	char *process;
+	/* Cominezo compactación lógica */
+	int beginPos = 0;	/* Inicio del siguiente mProc */
+	char *process;		/* Contenido del mProc */
 
 	void _set(list_proc *l) {
 		/* Obtengo el proceso, leyéndolo desde el swap */
@@ -156,12 +169,21 @@ int compact() {
 		/* Le asigno su nuva ubicación */
 		l->offset = beginPos;
 		/* Escribo en swap el proceso en su nueva ubicación */
-		writeSwap(beginPos, l->pageQty, process);
+		writeSwap(beginPos, l->pageQty, process,strlen(process));
 		/* Preparo la nueva ubicación para el siguiente proceso */
 		beginPos += l->pageQty;
 	}
 
 	list_iterate(lp, (void*) _set);
+	/* Fin de la compactación lógica */
+
+	/* Inicio de la compactación física */
+	int pages = pageQuan-beginPos;
+	int size  = pages*pageSize;
+	char *empty = malloc(size);
+	memset(empty,'\0',size);
+	writeSwap(beginPos,pages,empty,size);
+	/* Fin de la compactación fisica */
 
 	/* Pongo a dormir el proceso simulando el tiempo de retardo de compactación */
 	sleep(t_compaction);
@@ -207,14 +229,13 @@ int initProc(int pid, int requiredPages) {
 		list_add(lp, nodo);
 		beginPos = 0;
 	} else { /* Sino busco un hueco donde quepa */
-		if (!list_find(lp, (void*) _getInit)) {
+		if (!list_find(lp, (void*) _getInit)) { /* Sino hay huecos, pero se deduce que entra al final lo inserto al final */
 			if (pageDisp - acum >= requiredPages) {
 				nodo = createNode(pid, beginPos, requiredPages);
 				list_add(lp, nodo);
-			} else { /* Sino compacto el espacio de swap */
-				int bPos;
-				bPos = compact();
-				nodo = createNode(pid, bPos, requiredPages);
+			} else { /* Sino compacto el espacio de swap e inserto al final*/
+				beginPos = compact();
+				nodo = createNode(pid, beginPos, requiredPages);
 				list_add(lp, nodo);
 			}
 		}
@@ -255,7 +276,8 @@ void startProcess(socket_connection *conn, int pid, int requiredPages) {
 void endProcess(socket_connection *conn, int pid) {
 
 	int index = 0;
-	int size = 1;
+	int size = 0;
+	int pages = 1;
 	int procStart = 0;
 	int rp = 0;
 	int wp = 0;
@@ -264,7 +286,7 @@ void endProcess(socket_connection *conn, int pid) {
 	bool _getEnd(list_proc *l) {
 		if (l->pid == pid) {
 			procStart = l->offset;
-			size = l->pageQty;
+			pages = l->pageQty;
 			rp = l->reads;
 			wp = l->writes;
 			return 1;
@@ -278,18 +300,19 @@ void endProcess(socket_connection *conn, int pid) {
 	list_remove(lp, index);
 
 	/* lleno mi array de \0 para "eliminar" mi proceso del swap */
-	empty = malloc(sizeof(pageSize * size));
-	memset(empty, '\0', pageSize * size);
+	size = pages * pageSize;
+	empty = malloc(size);
+	memset(empty, '\0', size);
 
-	writeSwap(procStart, size, empty);
+	writeSwap(procStart, size, empty,size);
 
-	pageDisp += size;
+	pageDisp += pages;
 
 	free(empty);
 
 	log_info(logg, "Proceso liberado exitosamente.. PID: %d, N° de byte inicial"
 			" %d, Tamaño: %d bytes, Páginas leídas: %d, Páginas escritas: %d"
-			, pid, procStart * pageSize, size * pageSize, rp, wp );
+			, pid, procStart * pageSize, size, rp, wp );
 }
 
 void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
@@ -316,7 +339,7 @@ void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
 	data = readSwap(procStart, 1);
 
 	log_info(logg, "Lectura solicitada.. PID: %d, N° de byte inicial"
-			" %d, Tamaño: %d bytes, Contenido: %d", pid, procStart * pageSize,
+			" %d, Tamaño: %d bytes, Contenido: %s", pid, procStart * pageSize,
 			strlen(data), data);
 
 	sw_mem_page(conn, id, pn, data);
@@ -345,10 +368,10 @@ void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data)
 	}
 
 	list_find(lp, (void*) _setPage);
-	writeSwap(procStart, 1, data);
+	writeSwap(procStart, 1, data, strlen(data));
 
 	log_info(logg, "Escritura solicitada.. PID: %d, N° de byte inicial"
-			" %d, Tamaño: %d bytes, Contenido: %d", pid, procStart * pageSize,
+			" %d, Tamaño: %d bytes, Contenido: %s", pid, procStart * pageSize,
 			strlen(data), data);
 
 	free(data);
@@ -366,7 +389,10 @@ int main(int argc, char *argv[]) {
 	startListener();  /* Me pongo a la escucha de conexiones provenientes del Adm. de Memoria */
 
 	//TEST
-
+	/* Para ejecutar los test, descomentar a continuación la línea 395; y en el archivo connections.c
+	 * comentar las líneas 88,93 y 98
+	 */
+	//startTesting();
 	//FIN DE ESE CASO DE USO
 
 	pthread_mutex_init(&mx_main, NULL);

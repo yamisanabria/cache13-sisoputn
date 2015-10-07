@@ -78,6 +78,7 @@ void mem_sw_swapping(socket_connection *conn, char **args) {
 	pageWriteRequest(conn, pid, setPage, data);
 	pageReadRequest(conn, pid, getPage);
 
+
 }
 
 /* Llamadas por mí */
@@ -85,7 +86,6 @@ void mem_sw_swapping(socket_connection *conn, char **args) {
 void sw_mem_startProcessOk(socket_connection *conn, char *pid) {
 
 	runFunction(conn->socket, "sw_mem_startProcessOk", 1, pid);
-
 }
 
 void sw_mem_noSpace(socket_connection *conn, char *pid) {

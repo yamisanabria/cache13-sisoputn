@@ -5,15 +5,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/connections.c \
-../src/swap.c 
+../src/swap.c \
+../src/tests.c 
 
 OBJS += \
 ./src/connections.o \
-./src/swap.o 
+./src/swap.o \
+./src/tests.o 
 
 C_DEPS += \
 ./src/connections.d \
-./src/swap.d 
+./src/swap.d \
+./src/tests.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

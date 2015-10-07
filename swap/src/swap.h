@@ -47,7 +47,7 @@ list_proc *createNode(int pid, int pos, int pages);
 char *readSwap(int procStart, int pages);
 
 /* Función que escribe una determinada cantidad de bytes en el SWAP */
-void writeSwap(int procStart, int pages, char *data);
+void writeSwap(int procStart, int pages, char *data, int size);
 
 /* Función que compacta los procesos. Esto implica acomodar los nodos de la lista,
  * y acomodar los procesos en SWAP.
