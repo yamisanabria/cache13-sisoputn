@@ -93,7 +93,7 @@ void connectSwap(){
 void cpu_startProcessOk(int socket, int pid)
 {
 	char * pid_str = string_itoa(pid);
-	runFunction(socket, "mem_cpu_startProcessOk", 1, pid_str);
+	//runFunction(socket, "mem_cpu_startProcessOk", 1, pid_str);
 	free(pid_str);
 }
 
@@ -101,7 +101,7 @@ void cpu_startProcessOk(int socket, int pid)
 void cpu_noFrames(int socket, int pid)
 {
 	char * pid_str = string_itoa(pid);
-	runFunction(socket, "mem_cpu_noFrames", 1, pid_str);
+	//runFunction(socket, "mem_cpu_noFrames", 1, pid_str);
 	free(pid_str);
 }
 
@@ -109,22 +109,23 @@ void cpu_noFrames(int socket, int pid)
 void cpu_noSpace(int socket, int pid)
 {
 	char * pid_str = string_itoa(pid);
-	runFunction(socket, "mem_cpu_noSpace", 1, pid_str);
+	//runFunction(socket, "mem_cpu_noSpace", 1, pid_str);
 	free(pid_str);
 }
 
 // Enviamos contenido de un frame
 void cpu_frameData(int socket, int frame, char * data)
 {
+	log_info(logger, data);
 	char * frame_str = string_itoa(frame);
-	runFunction(socket, "mem_cpu_frameData", 2, frame_str, data);
+	//runFunction(socket, "mem_cpu_frameData", 2, frame_str, data);
 	free(frame_str);
 }
 
 // Indicamos que se realizo la escritura
 void cpu_writeOk(int socket)
 {
-	runFunction(socket, "mem_cpu_writeOk", 0);
+	//runFunction(socket, "mem_cpu_writeOk", 0);
 }
 
 
@@ -137,7 +138,7 @@ void sw_startProcess(int pid, int pages)
 {
 	char * pid_str = string_itoa(pid);
 	char * pages_str = string_itoa(pages);
-	runFunction(socket_swap, "mem_sw_startProcess", 2, pid_str, pages_str);
+	//runFunction(socket_swap, "mem_sw_startProcess", 2, pid_str, pages_str);
 	free(pid_str);
 	free(pages_str);
 }
@@ -147,7 +148,7 @@ void sw_getPage(int pid, int page)
 {
 	char * pid_str = string_itoa(pid);
 	char * page_str = string_itoa(page);
-	runFunction(socket_swap, "mem_sw_getPage", 2, pid_str, page_str);
+	//runFunction(socket_swap, "mem_sw_getPage", 2, pid_str, page_str);
 	free(pid_str);
 	free(page_str);
 }
@@ -157,28 +158,34 @@ void sw_setPage(int pid, int page, char *data)
 {
 	char * pid_str = string_itoa(pid);
 	char * page_str = string_itoa(page);
-	runFunction(socket_swap, "mem_sw_setPage", 3, pid_str, page_str, data);
+	//runFunction(socket_swap, "mem_sw_setPage", 3, pid_str, page_str, data);
 	free(pid_str);
 	free(page_str);
 }
 
 //Hacemos intercambio de paginas
-void sw_swapping(int pid, int setPage, char * data, int getPage)
+void sw_swapping(int pid, int setPage, char * data, int getPageNum)
 {
 	char * pid_str = string_itoa(pid);
 	char * setPage_str = string_itoa(setPage);
-	char * getPage_str = string_itoa(getPage);
-	runFunction(socket_swap, "mem_sw_swapping", 4, pid_str, setPage_str, data, getPage_str);
+	char * getPage_str = string_itoa(getPageNum);
+	//runFunction(socket_swap, "mem_sw_swapping", 4, pid_str, setPage_str, data, getPage_str);
 	free(pid_str);
 	free(setPage_str);
 	free(getPage_str);
+
+	//todo: eliminar codigo.. es de prueba
+	t_page * page = getPage(pid, getPageNum);
+	setMemoryData(page->frame, "fakeData", false);
+	page->present = true;
+	runPetitions();
 }
 
 //Indicamos la finalizacion de un proceso
 void sw_endProcess(int pid)
 {
 	char * pid_str = string_itoa(pid);
-	runFunction(socket_swap, "mem_sw_endProcess", 1, pid_str);
+	//runFunction(socket_swap, "mem_sw_endProcess", 1, pid_str);
 	free(pid_str);
 }
 
