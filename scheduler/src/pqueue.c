@@ -13,7 +13,6 @@ void createProcessQueue(){
 
 void pQueueAddProcess(PCBItem* process){
 
-	process->status = P_READY;
 	queue_push(pQueue, process);
 }
 

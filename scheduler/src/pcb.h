@@ -21,6 +21,6 @@ void processHasFailed(PCBItem* item);
 
 void processHasFinished(PCBItem* item);
 
-void processHasBeenBlocked(PCBItem* item);
+void processHasBeenBlocked(PCBItem* item, int sleep_time);
 
 #endif

@@ -43,9 +43,10 @@ void cpuNew(socket_connection* socketInfo)
  */
 void cpuProcessIsBack(socket_connection * connection, char ** args)
 {
-	int pid = atoi(args[0]);
-	int status = atoi(args[1]);
-	char* messages = string_duplicate(args[2]);
+	int pid 		= atoi(args[0]);
+	int status 		= atoi(args[1]);
+	char* messages 	= string_duplicate(args[2]);
+	char* data 		= args[3];
 
 	CPU* cpu = findCPUBySocketConnection(connection);
 	PCBItem* process = pcbGetByPID(pid);
@@ -66,7 +67,8 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 			processHasFinished(process);
 			break;
 		case 4: //Bloqueado
-			processHasBeenBlocked(process);
+			int sleep_time = atoi(data);
+			processHasBeenBlocked(process, sleep_time);
 			break;
 		default:
 			sprintf(log_buffer, "El estado %d es inválido", status);
@@ -76,6 +78,7 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 
 	markCPUAsAvailable(cpu);
 
+	checkReadyProcesses();
 }
 
 /* ################### CLIENTE ################### */

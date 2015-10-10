@@ -49,6 +49,7 @@ int runNewProcess(char* path)
 		item->start 	= clock();
 
 		int pid = pcbAddNewProcess(item);
+		item->status 	= P_READY;
 		pQueueAddProcess(item);
 
 		sprintf(log_buffer, "PROCESO PID-%d READY.\n", pid);
@@ -84,6 +85,8 @@ void processHasFinishedBurst(PCBItem* item)
 
 	sprintf(log_buffer, "PROCESO PID-%d READY.\n", item->PID);
 	log_info(logger, log_buffer);
+
+	pQueueAddProcess(item);
 }
 
 void processHasFailed(PCBItem* item)
@@ -97,10 +100,12 @@ void processHasFailed(PCBItem* item)
 	log_info(logger, log_buffer);
 }
 
-void processHasBeenBlocked(PCBItem* item)
+void processHasBeenBlocked(PCBItem* item, int sleep_time)
 {
-	item->status 	= P_BLOCKED;
+	item->status = P_BLOCKED;
 
 	sprintf(log_buffer, "PROCESO PID-%d BLOCKED.\n", item->PID);
 	log_info(logger, log_buffer);
+
+	ioQueueAddProcess(item, sleep_time);
 }
