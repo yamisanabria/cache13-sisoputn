@@ -23,4 +23,8 @@ void processHasFinished(PCBItem* item);
 
 void processHasBeenBlocked(PCBItem* item, int sleep_time);
 
+int finalizeProcess(char* pid);
+
+int forceFinalize(PCBItem* item);
+
 #endif

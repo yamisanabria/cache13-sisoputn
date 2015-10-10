@@ -18,7 +18,10 @@ void cmd_run(char ** args)
 void cmd_end(char ** args)
 {
 	char* pid = string_duplicate(args[1]);
-	printf("\nEND %s called\n", pid);
+	printf("\nFinalizar proceso %s \n", pid);
+	if(!finalizeProcess(pid)){
+		printf("Ha ocurrido un error al finalizar el proceso, revise el log.\n");
+	}
 	free(pid);
 }
 

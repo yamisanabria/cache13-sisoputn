@@ -57,26 +57,30 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 
 	cpuPrintMessages(cpu, process, messages);
 
-	int sleep_time;
+	if(!forceFinalize(process)){ //Si lo mandaron a finalizar no hago todo esto.
 
-	switch(status){
-		case 1: //Ráfaga ok
-			processHasFinishedBurst(process);
-			break;
-		case 2: //Falló
-			processHasFailed(process);
-			break;
-		case 3: //Terminó
-			processHasFinished(process);
-			break;
-		case 4: //Bloqueado
-			sleep_time = atoi(data);
-			processHasBeenBlocked(process, sleep_time);
-			break;
-		default:
-			sprintf(log_buffer, "El estado %d es inválido", status);
-			log_error(logger, log_buffer);
-			exit(1);
+		int sleep_time;
+
+		switch(status){
+			case 1: //Ráfaga ok
+				processHasFinishedBurst(process);
+				break;
+			case 2: //Falló
+				processHasFailed(process);
+				break;
+			case 3: //Terminó
+				processHasFinished(process);
+				break;
+			case 4: //Bloqueado
+				sleep_time = atoi(data);
+				processHasBeenBlocked(process, sleep_time);
+				break;
+			default:
+				sprintf(log_buffer, "El estado %d es inválido", status);
+				log_error(logger, log_buffer);
+				exit(1);
+		}
+
 	}
 
 	markCPUAsAvailable(cpu);
@@ -91,6 +95,10 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
  * Si el quantum es 0 es que tiene que ejecutar hasta que corte (FIFO)
  */
 void cpuRunProcess(CPU* cpu){
+	if(cpu->process->counter == -1){
+		sprintf(log_buffer, "Mandamos a ejecutar la última línea del proceso PID-%d.\n", cpu->process->PID);
+	}
+
 	sprintf(log_buffer, "Llamando a startProcess en CPU %d con (%d, %s, %d, %d) en socket n°%d", cpu->id, cpu->process->PID, cpu->process->path, cpu->process->counter, P_QUANTUM, cpu->socket->socket);
 	log_info(logger, log_buffer);
 	runFunction(cpu->socket->socket, "sc_cpu_startProcess", 4, cpu->process->path, cpu->process->PID, string_itoa(cpu->process->counter), string_itoa(P_QUANTUM));

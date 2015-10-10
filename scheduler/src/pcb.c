@@ -64,6 +64,20 @@ int runNewProcess(char* path)
 	}
 }
 
+int finalizeProcess(char* pid){
+	PCBItem* process = pcbGetByPID(atoi(pid));
+	if(process != NULL){
+		process->counter = -1; //Última línea
+		sprintf(log_buffer, "El proceso %s finalizará en su próxima ejecución.\n", pid);
+		log_info(logger, log_buffer);
+		return 1;
+	} else {
+		sprintf(log_buffer, "No se ha encontrado el proceso %s para finalizar.\n", pid);
+		log_error(logger, log_buffer);
+	}
+	return 0;
+}
+
 void processHasFinished(PCBItem* item)
 {
 	item->status 	= P_FINISHED;
@@ -109,4 +123,16 @@ void processHasBeenBlocked(PCBItem* item, int sleep_time)
 	log_info(logger, log_buffer);
 
 	ioQueueAddProcess(item, sleep_time);
+}
+
+int forceFinalize(PCBItem* item){
+	if(item->counter == -1){
+		//Lo mandamos a ejecutar la última línea
+		log_info(logger, log_buffer);
+		item->status 	= P_READY;
+		pQueueAddProcess(item);
+		return 1;
+	} else {
+		return 0;
+	}
 }
