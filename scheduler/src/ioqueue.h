@@ -5,4 +5,8 @@ void createIOQueue();
 
 void ioQueueAddProcess(PCBItem* process, int sleep_time);
 
+void ioQueueRunner();
+
+void ioQueueAddProcess(PCBItem* process, int sleep_time);
+
 #endif

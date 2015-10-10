@@ -1,6 +1,7 @@
 #include "shared.h"
 #include "cpu.h"
 #include "pcb.h"
+#include "pqueue.h"
 
 /** Variables generales que usaremos **/
 t_dictionary * callableRemoteFunctions;	/* Diccionario de funciones que pueden ser llamadas por mis conexiones (FUNCIONES SERVIDOR)*/
@@ -46,7 +47,7 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 	int pid 		= atoi(args[0]);
 	int status 		= atoi(args[1]);
 	char* messages 	= string_duplicate(args[2]);
-	char* data 		= args[3];
+	char* data		= args[3];
 
 	CPU* cpu = findCPUBySocketConnection(connection);
 	PCBItem* process = pcbGetByPID(pid);
@@ -55,6 +56,8 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 	log_info(logger, log_buffer);
 
 	cpuPrintMessages(cpu, process, messages);
+
+	int sleep_time;
 
 	switch(status){
 		case 1: //Ráfaga ok
@@ -67,7 +70,7 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 			processHasFinished(process);
 			break;
 		case 4: //Bloqueado
-			int sleep_time = atoi(data);
+			sleep_time = atoi(data);
 			processHasBeenBlocked(process, sleep_time);
 			break;
 		default:

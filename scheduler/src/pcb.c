@@ -1,6 +1,7 @@
 #include "shared.h"
 #include "unistd.h"
 #include "pqueue.h"
+#include "ioqueue.h"
 
 t_list* pcb;
 
