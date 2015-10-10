@@ -88,6 +88,13 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 	checkReadyProcesses();
 }
 
+void cpuStats(socket_connection * connection, char ** args)
+{
+	char* stats = args[0];
+	CPU* cpu = findCPUBySocketConnection(connection);
+	cpuStatsAreHere(cpu, stats);
+}
+
 /* ################### CLIENTE ################### */
 
 /**
@@ -104,10 +111,17 @@ void cpuRunProcess(CPU* cpu){
 	runFunction(cpu->socket->socket, "sc_cpu_startProcess", 4, cpu->process->path, cpu->process->PID, string_itoa(cpu->process->counter), string_itoa(P_QUANTUM));
 }
 
+void getCPUStats(CPU* cpu){
+	sprintf(log_buffer, "Le pedimos al CPU %d sus stats", cpu->id);
+	log_info(logger, log_buffer);
+	runFunction(cpu->socket->socket, "sc_cpu_getStats", 0);
+}
+
 void listenStart()
 {
 	callableRemoteFunctions = dictionary_create();
 	dictionary_put(callableRemoteFunctions, "cpu_sc_process_back", &cpuProcessIsBack);
+	dictionary_put(callableRemoteFunctions, "cpu_sc_stats", &cpuStats);
 
 	createListen(schedulerPort, &cpuNew, callableRemoteFunctions, &cpuDisconnected, NULL);
 	sprintf(log_buffer, "Nos ponemos en escucha de CPUs en puerto %d...", schedulerPort);

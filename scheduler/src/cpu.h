@@ -19,4 +19,6 @@ void markCPUAsAvailable(CPU* cpu);
 
 void cpuPrintMessages(CPU* cpu, PCBItem* process, char* messages);
 
+void cpuStatsAreHere(CPU* cpu, char* stats);
+
 #endif

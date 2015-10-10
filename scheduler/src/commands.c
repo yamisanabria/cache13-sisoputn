@@ -1,5 +1,6 @@
 #include "shared.h"
 #include "pcb.h"
+#include "connections.h"
 #include "cpu.h"
 
 PCBItem* _item;
@@ -45,20 +46,13 @@ void cmd_ps()
 
 void cmd_cpu()
 {
-
-	void __printcpu(CPU* item) {
-		char* _status[2] = {"AVAILABLE", "BUSY"};
-		
-		printf("ID: %d\nstatus:%s\n**********\n", item->id, _status[item->status]);
-		//printf("%d,%d,%s,%d,%s",item->PID, item->counter, item->path, item->status, item->start);
-	}
-
 	printf("\n");
 	printf("+----------------------------+"); printf("\n");
 	printf("+       Listado de CPUs      +"); printf("\n");
 	printf("+----------------------------+");
 	printf("\n\n");	
-	list_iterate(getCPUsList(), (void*)__printcpu);
+	list_iterate(getCPUsList(), (void*)getCPUStats);
 
+	getchar();
 }
 

@@ -8,7 +8,7 @@ t_dictionary* sleepTimes; //Diccionario que tiene como clave el PID y como data 
 pthread_mutex_t mutex_ioSleep;
 sem_t sem_ioSleep;
 
-pthread_t* ioThread;
+pthread_t ioThread;
 
 void ioQueueRunner(){
 	while(1){
@@ -37,7 +37,7 @@ void ioQueueRunner(){
 
 void createIOQueue(){
 
-	pthread_create(ioThread, NULL, (void *) ioQueueRunner, NULL);
+	pthread_create(&ioThread, NULL, (void *) ioQueueRunner, NULL);
 
 	ioQueue = queue_create();
 	sleepTimes = dictionary_create();
