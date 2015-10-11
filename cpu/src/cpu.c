@@ -19,8 +19,9 @@
 #include "connections.h"
 #include "shared.h"
 
-#include "filereader.h"
 #include "cpumanager.h"
+#include "codparser.h"
+
 
 pthread_mutex_t mx_main;
 
@@ -71,13 +72,17 @@ void initializeLogger(int argc, char* argv[]){
 	logger = log_create("cpu.log", "CPU", showLogInConsole, LOG_LEVEL_INFO);
 }
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
+
 	initializeLogger(argc, argv);
 
 	cpuConfig = readFileConfig();
 
 	setConnectionsParameters(cpuConfig);
+	// seteo el "RETARDO"
+	setCpuWait(config_get_int_value(cpuConfig, "RETARDO"));
+	// inicializa las instrucciones del codparser
+	initInstructions();
 
 	initializeRemoteFunctions();
 

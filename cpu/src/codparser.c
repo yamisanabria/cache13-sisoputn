@@ -1,88 +1,107 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
+#include <commons/string.h>
 
 #include "shared.h"
+#include "codparser.h"
 #include "codinstructions.h"
+#include "filereader.h"
+#include "utils.h"
 
 
-bool consumeQuantums(CPU* cpu){
+typedef struct
+{
+	char * name;
+	void (*fn)();
+	int args;
+} Instruction;
 
-	// TODO !! interpretar cod
-
-	return false;
-}
-
-
-
-
-
-
-
-/*
-Instruction* 	ins;
 t_list* 	instructions;
 
-char* 		input;				// Utilizada para el ingreso del usuario
-size_t 		inputLength = 100;	// Length maximo de entrada en el ingreso del usuario
 
-// Crea un nuevo comando
-Instruction * newCommand(char * name, void (*fn)(), int args, char * description)
-{
-	ins = malloc(sizeof(Instruction));
-	ins->name = name;
-	ins->fn = fn;
-	ins->args = args;
-	ins->description = description;
-	return ins;
+// retardo por defecto
+int RETARDO = 1;
+
+void setCpuWait(int _retardo){
+	RETARDO = _retardo;
 }
 
-// Carga de lista de instrucciones cod
-void loadInstructions()
-{
+void initInstructions(){
+	// Crea Instruccion
+	Instruction * newInstruction(char * name, void (*fn)(), int args){
+		Instruction* ins = malloc(sizeof(Instruction));
+		ins->name = name;
+		ins->fn = fn;
+		ins->args = args;
+		return ins;
+	}
+
 	instructions = list_create();
-	list_add(instructions, newCommand("correr", &ins_run	, 1, "(PATH)~$: Ejecuta el programa de la ruta señalada."));
-	list_add(instructions, newCommand("finalizar", &ins_end	, 1, "(PID)~$: Coloca el puntero en la última línea del programa."));
-	list_add(instructions, newCommand("ps", &ins_ps			, 0, "()~$: Imprime una lista con los estados de los programas."));
-	list_add(instructions, newCommand("cpu", &ins_cpu		, 0, "()~$: Imprime el uso de cada CPU."));
+	list_add(instructions, newInstruction("iniciar", &ins_iniciar, 1));
+	list_add(instructions, newInstruction("leer", &ins_leer, 1));
+	list_add(instructions, newInstruction("escribir", &ins_escribir, 2));
+	list_add(instructions, newInstruction("entrada-salida", &ins_entradaSalida, 1));
+	list_add(instructions, newInstruction("finalizar", &ins_finalizar, 0));
 }
 
-// Valida y ejecuta comando especifico
-void executeCommand(CPU* cpu, char* c)
-{
-	c[strlen(c)-1] = '\0'; //quito /n final
-
-	if(string_is_empty(c) || c[0] == ' ' || c[strlen(c)-1] == ' ')
-	{
-		printf("Comando inexistente.\n");
+void consumeQuantum(CPU* cpu){
+	if(cpu->quantum == 0){
+		endQuantum(cpu);
 		return;
 	}
 
-	char ** args = string_split(c, " ");
-	char * name = args[0];
+	// sleep de retardo
+	sleep(RETARDO);
 
-	int i;
-	for(i = 0; i < name[i]; i++)
-		name[i] = tolower(name[i]);
+	// el -1 es por que el process_counter va de 1 a n lineas
+	// y el get_nth_line de 0 a n-1 lineas
+	char *line = get_nth_line(cpu->codfile, (cpu->process_counter - 1));
+	
+	cpu->quantum = cpu->quantum - 1;
+	cpu->process_counter = cpu->process_counter + 1;
+	
+	runLine(line, cpu);
 
-	int _get(Command * cc)
-	{return strcmp(cc->name, name) == 0;}
-
-	ins = list_find(instructions,(void*) _get);
-
-	if(ins == NULL) {
-		printf("Comando inexistente.\n");
-	} else if(charArray_length(args) - 1 != ins->args) {
-		printf("La cantidad de parametros no coincide [%d/%d].\n", charArray_length(args) - 1, ins->args);
-	} else {
-		ins->fn(cpu, args);
-	}
-
-	freeCharArray(args);
+	free(line);
 }
 
+/*
+ * Informa al scheduler el resultado del programa al finalizar
+ * el quantum o el programa
+ */
+void endQuantum(CPU* cpu){
+	// manda al scheduler todo el cpu->execResponseBuffer
+	// TODO
+}
 
-//			executeCommand(input);
-	
-*/
+void runLine(char* line, CPU* cpu) {
+	// la copio por que uso el string original si ocurre un fallo
+	char *_line = string_duplicate(line);
+	_line[strlen(_line)-1] = '\0'; //quito /n final
+
+	// ver de usar string_n_split y string_starts_with;
+	//should_bool(string_starts_with("MiArchivo.txt", "txt")) be truthy;
+	char ** args = string_split(_line, " ");
+	char * name = args[0];
+
+	bool _get(Instruction* cc){
+		return strcmp(cc->name, name) == 0;
+	}
+
+	Instruction* instruction = list_find(instructions, (void*) _get);
+
+	if(instruction == NULL) {
+		printf("Instruccion inexistente:\n%s\n", line);
+		exit(EXIT_FAILURE);
+	} else if(charArray_length(args) - 1 != instruction->args) {
+		printf("La cantidad de parametros no coincide [%d/%d].\n%s\n", charArray_length(args) - 1, instruction->args, line);
+		exit(EXIT_FAILURE);
+	}
+               
+	instruction->fn(cpu, args);
+	freeCharArray(args);
+	free(_line);	
+}

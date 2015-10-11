@@ -7,11 +7,6 @@
 #include "cpumanager.h"
 #include "codparser.h"
 
-void doRun(CPU* cpu){
-	// ver corparser
-	while(consumeQuantums(cpu));
-}
-
 void schedulerStartProcess(socket_connection* connection, char ** args){
 	char* path 			= args[0];		// path del codigo
 	int pid = atoi(args[1]);// linea a ejecutar
@@ -40,7 +35,7 @@ void schedulerStartProcess(socket_connection* connection, char ** args){
 		cpu->quantum = quantum;
 	}
 
-	doRun(cpu);
+	consumeQuantum(cpu);
 	
 }
 
@@ -50,7 +45,7 @@ void memoryStartProcessOk(socket_connection* connection, char ** args) {
 
 	// TODO
 	// hacer lo que haya que hacer y seguir consumiendo quantums;
-	//doRun(cpu);
+	//consumeQuantums(cpu);
 }
 
 void memoryNoFrames(socket_connection* connection, char ** args) {
@@ -76,7 +71,7 @@ void memoryFrameData(socket_connection* connection, char ** args) {
 	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
 	// TODO
 	// hacer lo que haya que hacer y seguir consumiendo quantums;
-	//doRun(cpu);
+	//consumeQuantums(cpu);
 }
 
 void memoryWriteOk(socket_connection* connection, char ** args) {
@@ -84,5 +79,5 @@ void memoryWriteOk(socket_connection* connection, char ** args) {
 	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
 	// TODO
 	// hacer lo que haya que hacer y seguir consumiendo quantums;
-	//doRun(cpu);
+	//consumeQuantums(cpu);
 }

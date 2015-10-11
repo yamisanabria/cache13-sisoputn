@@ -11,13 +11,4 @@ void ins_entradaSalida(CPU* cpu,char ** args);
 
 void ins_finalizar(CPU* cpu);
 
-
-typedef struct
-{
-	char * name;
-	void(*fn)();
-	int args;
-	char * description;
-} Instruction;
-
 #endif

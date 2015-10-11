@@ -1,5 +1,6 @@
 #include "shared.h"
 
+
 void ins_iniciar(CPU* cpu,char ** args)
 {
 /*	
