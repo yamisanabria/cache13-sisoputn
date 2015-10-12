@@ -6,7 +6,7 @@
 #include "shared.h"
 #include "cpumanager.h"
 #include "codparser.h"
-// solo para poder aser uso del addResponseToExecbuffer :S :\
+// solo para poder aser uso del addResponseToExecbuffer :S
 #include "codinstructions.h"
 
 void schedulerStartProcess(socket_connection* connection, char ** args){
