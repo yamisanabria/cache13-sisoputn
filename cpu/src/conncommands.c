@@ -6,6 +6,8 @@
 #include "shared.h"
 #include "cpumanager.h"
 #include "codparser.h"
+// solo para poder aser uso del addResponseToExecbuffer :S :\
+#include "codinstructions.h"
 
 void schedulerStartProcess(socket_connection* connection, char ** args){
 	char* path 			= args[0];		// path del codigo
@@ -43,17 +45,22 @@ void memoryStartProcessOk(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
 
-	// TODO
+	char* _buffer = string_from_format("mProc %s - Iniciado\n", cpu->execPid);
+	addResponseToExecbuffer(cpu, _buffer);
+	free(_buffer);
 	// hacer lo que haya que hacer y seguir consumiendo quantums;
-	//consumeQuantums(cpu);
+	consumeQuantum(cpu);
 }
 
 void memoryNoFrames(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
 
-	// TODO
-	// hacer lo que haya que hacer y seguir consumiendo quantums;
+	char* _buffer = string_from_format("mProc %s - Fallo\n", cpu->execPid);
+	addResponseToExecbuffer(cpu, _buffer);
+	free(_buffer);
+
+	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, cpu->execPid, "2", cpu->execResponseBuffer, "no_frames");
 
 }
 
@@ -61,23 +68,35 @@ void memoryNoSpace(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
 
-	// TODO
-	// hacer lo que haya que hacer y seguir consumiendo quantums;
+	char* _buffer = string_from_format("mProc %s - Fallo\n", cpu->execPid);
+	addResponseToExecbuffer(cpu, _buffer);
+	free(_buffer);
+
+	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, cpu->execPid, "2", cpu->execResponseBuffer, "no_space");
 
 }
 
 void memoryFrameData(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
-	// TODO
-	// hacer lo que haya que hacer y seguir consumiendo quantums;
-	//consumeQuantums(cpu);
+	
+	char* _frame = string_duplicate(args[1]);
+	char* _data = string_duplicate(args[1]);
+
+	char* _buffer = string_from_format("mProc %s - Pagina %s leida: %s\n", cpu->execPid, _data, _frame);
+	addResponseToExecbuffer(cpu, _buffer);
+	free(_buffer);
+
+	free(_data);
+	free(_frame);
+
+	consumeQuantum(cpu);
 }
 
 void memoryWriteOk(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
-	// TODO
-	// hacer lo que haya que hacer y seguir consumiendo quantums;
-	//consumeQuantums(cpu);
+	
+
+	consumeQuantum(cpu);
 }

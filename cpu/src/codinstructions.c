@@ -45,6 +45,14 @@ void ins_escribir(CPU* cpu,char ** args) {
 	char* _page = string_duplicate(args[1]);
 	char* _data = string_duplicate(args[2]);
 	runFunction(cpu->socketIdMemory, "cpu_mem_read", 3, cpu->execPid, _page, _data);
+
+	// estaria mejor que esto se haga cuando responda el adm de memoria, pero como cuando
+	// responde no manda los parametros que necesito (pagina y contenido escrito) lo hago
+	// aca
+	char* _buffer = string_from_format("mProc %s - Pagina %s escrita: %s", cpu->execPid, _page, _data);
+	addResponseToExecbuffer(cpu, _buffer);
+	free(_buffer);
+
 	free(_page);
 	free(_data);
 }

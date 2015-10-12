@@ -99,12 +99,12 @@ void initializeRemoteFunctions()
 	// si es el primero paso a ejucutar el .cod
 	// si es cualquiera de los otros tengo que informarle la falla al scheduler
 
-	/*
+	
 	// llamadas desde el adm de memoria
 	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_startProcessOk", &memoryStartProcessOk);
 	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_noFrames", &memoryNoFrames);
 	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_noSpace", &memoryNoSpace);
 	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_frameData", &memoryFrameData);
 	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_writeOk", &memoryWriteOk);
-	*/
+	
 }
