@@ -470,7 +470,6 @@ bool runWrite(t_write_petition * write_petition)
 		page->used = true;
 		page->modified_timestamp = getTimestamp();
 		cpu_writeOk(write_petition->connection->socket);
-		log_info(logger, "Escritura hecha PID: %d - Page: %d", write_petition->pid, write_petition->page); //todo: eliminar.. es de testeo
 		return true;
 	}
 	else if(!write_petition->arriving)

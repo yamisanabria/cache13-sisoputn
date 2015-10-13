@@ -108,30 +108,11 @@ int main(int argc, char* argv[])
 	initMemory(memoryConfig);
 	initConnections(memoryConfig);
 
-	socket_connection * fakeConnection = malloc(sizeof(socket_connection));
-
-	addProcess(1, 40, fakeConnection);
-	addWritePetition(1, 0, "write1", fakeConnection);
-	addWritePetition(1, 3, "write2", fakeConnection);
-	addProcess(2, 20, fakeConnection);
-	addWritePetition(2, 2, "write3", fakeConnection);
-	addProcess(3, 30, fakeConnection);
-	addWritePetition(1, 1, "write1", fakeConnection);
-	addWritePetition(2, 3, "write3", fakeConnection);
-	addWritePetition(1, 6, "write3", fakeConnection);
-	addWritePetition(1, 7, "write3", fakeConnection);
-	addWritePetition(3, 8, "write3", fakeConnection);
-	addWritePetition(3, 9, "write3", fakeConnection);
-	addWritePetition(2, 11, "write3", fakeConnection);
-	addWritePetition(3, 22, "write3", fakeConnection);
-
-
-
 	//Me pongo a la escucha de CPUs
-	//listenStart();
+	listenStart();
 
 	//Me conecto al Swap
-	//connectSwap();
+	connectSwap();
 
 	//Pongo a la escucha las 3 señales
 	signal(SIGUSR1, listenSignal);
