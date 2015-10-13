@@ -1,6 +1,7 @@
 #include "shared.h"
 #include "cpu.h"
 #include "pcb.h"
+#include "pqueue.h"
 
 /** Variables generales que usaremos **/
 t_dictionary * callableRemoteFunctions;	/* Diccionario de funciones que pueden ser llamadas por mis conexiones (FUNCIONES SERVIDOR)*/
@@ -43,9 +44,10 @@ void cpuNew(socket_connection* socketInfo)
  */
 void cpuProcessIsBack(socket_connection * connection, char ** args)
 {
-	int pid = atoi(args[0]);
-	int status = atoi(args[1]);
-	char* messages = string_duplicate(args[2]);
+	int pid 		= atoi(args[0]);
+	int status 		= atoi(args[1]);
+	char* messages 	= string_duplicate(args[2]);
+	char* data		= args[3];
 
 	CPU* cpu = findCPUBySocketConnection(connection);
 	PCBItem* process = pcbGetByPID(pid);
@@ -55,27 +57,42 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 
 	cpuPrintMessages(cpu, process, messages);
 
-	switch(status){
-		case 1: //Ráfaga ok
-			processHasFinishedBurst(process);
-			break;
-		case 2: //Falló
-			processHasFailed(process);
-			break;
-		case 3: //Terminó
-			processHasFinished(process);
-			break;
-		case 4: //Bloqueado
-			processHasBeenBlocked(process);
-			break;
-		default:
-			sprintf(log_buffer, "El estado %d es inválido", status);
-			log_error(logger, log_buffer);
-			exit(1);
+	if(!forceFinalize(process)){ //Si lo mandaron a finalizar no hago todo esto.
+
+		int sleep_time;
+
+		switch(status){
+			case 1: //Ráfaga ok
+				processHasFinishedBurst(process);
+				break;
+			case 2: //Falló
+				processHasFailed(process);
+				break;
+			case 3: //Terminó
+				processHasFinished(process);
+				break;
+			case 4: //Bloqueado
+				sleep_time = atoi(data);
+				processHasBeenBlocked(process, sleep_time);
+				break;
+			default:
+				sprintf(log_buffer, "El estado %d es inválido", status);
+				log_error(logger, log_buffer);
+				exit(1);
+		}
+
 	}
 
 	markCPUAsAvailable(cpu);
 
+	checkReadyProcesses();
+}
+
+void cpuStats(socket_connection * connection, char ** args)
+{
+	char* stats = args[0];
+	CPU* cpu = findCPUBySocketConnection(connection);
+	cpuStatsAreHere(cpu, stats);
 }
 
 /* ################### CLIENTE ################### */
@@ -85,15 +102,26 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
  * Si el quantum es 0 es que tiene que ejecutar hasta que corte (FIFO)
  */
 void cpuRunProcess(CPU* cpu){
+	if(cpu->process->counter == -1){
+		sprintf(log_buffer, "Mandamos a ejecutar la última línea del proceso PID-%d.\n", cpu->process->PID);
+	}
+
 	sprintf(log_buffer, "Llamando a startProcess en CPU %d con (%d, %s, %d, %d) en socket n°%d", cpu->id, cpu->process->PID, cpu->process->path, cpu->process->counter, P_QUANTUM, cpu->socket->socket);
 	log_info(logger, log_buffer);
 	runFunction(cpu->socket->socket, "sc_cpu_startProcess", 4, cpu->process->path, cpu->process->PID, string_itoa(cpu->process->counter), string_itoa(P_QUANTUM));
+}
+
+void getCPUStats(CPU* cpu){
+	sprintf(log_buffer, "Le pedimos al CPU %d sus stats", cpu->id);
+	log_info(logger, log_buffer);
+	runFunction(cpu->socket->socket, "sc_cpu_getStats", 0);
 }
 
 void listenStart()
 {
 	callableRemoteFunctions = dictionary_create();
 	dictionary_put(callableRemoteFunctions, "cpu_sc_process_back", &cpuProcessIsBack);
+	dictionary_put(callableRemoteFunctions, "cpu_sc_stats", &cpuStats);
 
 	createListen(schedulerPort, &cpuNew, callableRemoteFunctions, &cpuDisconnected, NULL);
 	sprintf(log_buffer, "Nos ponemos en escucha de CPUs en puerto %d...", schedulerPort);

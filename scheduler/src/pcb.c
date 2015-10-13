@@ -1,6 +1,7 @@
 #include "shared.h"
 #include "unistd.h"
 #include "pqueue.h"
+#include "ioqueue.h"
 
 t_list* pcb;
 
@@ -49,6 +50,7 @@ int runNewProcess(char* path)
 		item->start 	= clock();
 
 		int pid = pcbAddNewProcess(item);
+		item->status 	= P_READY;
 		pQueueAddProcess(item);
 
 		sprintf(log_buffer, "PROCESO PID-%d READY.\n", pid);
@@ -60,6 +62,20 @@ int runNewProcess(char* path)
 	} else {
 		return 0;
 	}
+}
+
+int finalizeProcess(char* pid){
+	PCBItem* process = pcbGetByPID(atoi(pid));
+	if(process != NULL){
+		process->counter = -1; //Última línea
+		sprintf(log_buffer, "El proceso %s finalizará en su próxima ejecución.\n", pid);
+		log_info(logger, log_buffer);
+		return 1;
+	} else {
+		sprintf(log_buffer, "No se ha encontrado el proceso %s para finalizar.\n", pid);
+		log_error(logger, log_buffer);
+	}
+	return 0;
 }
 
 void processHasFinished(PCBItem* item)
@@ -84,6 +100,8 @@ void processHasFinishedBurst(PCBItem* item)
 
 	sprintf(log_buffer, "PROCESO PID-%d READY.\n", item->PID);
 	log_info(logger, log_buffer);
+
+	pQueueAddProcess(item);
 }
 
 void processHasFailed(PCBItem* item)
@@ -97,10 +115,24 @@ void processHasFailed(PCBItem* item)
 	log_info(logger, log_buffer);
 }
 
-void processHasBeenBlocked(PCBItem* item)
+void processHasBeenBlocked(PCBItem* item, int sleep_time)
 {
-	item->status 	= P_BLOCKED;
+	item->status = P_BLOCKED;
 
 	sprintf(log_buffer, "PROCESO PID-%d BLOCKED.\n", item->PID);
 	log_info(logger, log_buffer);
+
+	ioQueueAddProcess(item, sleep_time);
+}
+
+int forceFinalize(PCBItem* item){
+	if(item->counter == -1){
+		//Lo mandamos a ejecutar la última línea
+		log_info(logger, log_buffer);
+		item->status 	= P_READY;
+		pQueueAddProcess(item);
+		return 1;
+	} else {
+		return 0;
+	}
 }

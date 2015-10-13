@@ -54,17 +54,25 @@ void initMemory(t_config* memoryConfig)
 	//reservo la memoria necesaria
 	memory = malloc(sizeof(char*)*frames_q);
 
+
 	//Inicializacion de frames vacios
 	frames = malloc(sizeof(bool) * frames_q);
 	int i;
 	for(i = 0; i < frames_q; i++)
+	{
+		memory[i] = string_new();
 		frames[i] = false;
+	}
 
 	//Inicializacion de la TLB
 	TLB = queue_create();
 
 	//Inicializacion de lista de procesos
 	processes = list_create();
+
+	//Inicializo colas de escritura y lectura
+	write_petitions = queue_create();
+	read_petitions = queue_create();
 }
 
 //-###############################################################################################-//
@@ -126,7 +134,10 @@ void deletePages(t_list * pages)
 	{
 		page = list_get(pages, i);
 		if(page->present)
+		{
 			frames[page->frame] = false;
+			frames_free++;
+		}
 	}
 
 	list_clean_and_destroy_elements(pages, (void*)_destroy);
@@ -202,7 +213,7 @@ void clearTLB()
 void sleepAccessMemory()
 {
 	write_end();
-	sleep(sleep_access_memory);
+	//sleep(sleep_access_memory);
 	write_start();
 }
 
@@ -222,7 +233,7 @@ char * getMemoryData(int frame, bool sleep)
 	if(sleep)
 		sleepAccessMemory();
 
-	return memory[frame * frame_size];
+	return memory[frame];
 }
 
 // Vacia la memoria y deja los frames sin modificar
@@ -381,6 +392,7 @@ int getFreeFrame()
 		if(!frames[i])
 		{
 			frames[i] = true;
+			frames_free--;
 			return i;
 		}
 	}
@@ -462,8 +474,9 @@ bool runWrite(t_write_petition * write_petition)
 	}
 	else if(!write_petition->arriving)
 	{
-		assignFrame(write_petition->pid, page);
 		write_petition->arriving = true;
+		if(assignFrame(write_petition->pid, page))
+			return runWrite(write_petition);
 	}
 
 	return false;
@@ -484,8 +497,9 @@ bool runRead(t_read_petition * read_petition)
 	}
 	else if(!read_petition->arriving)
 	{
-		assignFrame(read_petition->pid, page);
 		read_petition->arriving = true;
+		if(assignFrame(read_petition->pid, page))
+			return runRead(read_petition);
 	}
 
 	return false;
@@ -495,8 +509,9 @@ bool runRead(t_read_petition * read_petition)
 void runWritePetitions()
 {
 	int i;
+	int q = queue_size(write_petitions);
 	t_write_petition * write_petition;
-	for(i = 0; i < queue_size(write_petitions); i++)
+	for(i = 0; i < q; i++)
 	{
 		write_petition = queue_pop(write_petitions);
 		if(runWrite(write_petition))
@@ -510,14 +525,15 @@ void runWritePetitions()
 void runReadPetitions()
 {
 	int i;
+	int q = queue_size(read_petitions);
 	t_read_petition * read_petition;
-	for(i = 0; i < queue_size(write_petitions); i++)
+	for(i = 0; i < q; i++)
 	{
 		read_petition = queue_pop(read_petitions);
 		if(runRead(read_petition))
 			free(read_petition);
 		else
-			queue_push(write_petitions, read_petition);
+			queue_push(read_petitions, read_petition);
 	}
 }
 

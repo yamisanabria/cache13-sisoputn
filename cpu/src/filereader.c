@@ -6,15 +6,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *get_nth_line( FILE *fp, int line_no )
+char *get_nth_line(char *codfile, int line_no )
 {
+    FILE* fp = fopen(codfile, "r");
+    if (codfile == NULL) {
+      printf("no existe archivo %s\n", codfile);
+      exit(EXIT_FAILURE);
+    }
+    
     char * line = NULL;
     size_t len = 0;
     int i = 0;
     
-    // vuelvo a la posicion inicial
-    rewind(fp);
-
     while ((getline(&line, &len, fp)) != -1) {
         if(i == line_no) {
             strtok(line, "\n");
@@ -22,6 +25,7 @@ char *get_nth_line( FILE *fp, int line_no )
         }
         i++;
     }
+    fclose(fp);
 
     return line;
    

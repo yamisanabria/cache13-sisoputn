@@ -18,9 +18,11 @@
 #include <utils.h>
 
 #include "shared.h"
+#include "conncommands.h"
 
 /** Variables generales que usaremos **/
-t_dictionary * callableRemoteFunctions;	/* Diccionario de funciones que pueden ser llamadas por mis conexiones (FUNCIONES SERVIDOR)*/
+t_dictionary * callableSchedulerRemoteFunctions;	/* Diccionario de funciones que pueden ser llamadas por mis conexiones (FUNCIONES SERVIDOR)*/
+t_dictionary * callableMemoryRemoteFunctions;	/* Diccionario de funciones que pueden ser llamadas por mis conexiones (FUNCIONES SERVIDOR)*/
 
 /** Datos de configuración **/
 int 	schedulerPort;
@@ -52,7 +54,7 @@ void memDisconnected(socket_connection* socketInfo)
 
 int connectScheduler(){
 	/* Me conecto al FileSystem; si hay error, informo y finalizo*/
-	int socket_scheduler = connectServer(schedulerIP, schedulerPort, callableRemoteFunctions, &scDisconnected, NULL);
+	int socket_scheduler = connectServer(schedulerIP, schedulerPort, callableSchedulerRemoteFunctions, &scDisconnected, NULL);
 	if(socket_scheduler == -1) {
 		sprintf(log_buffer, "Error al intentar conectar con el scheduler en IP %s en puerto %d", schedulerIP, schedulerPort);
 		log_error(logger, log_buffer);
@@ -68,7 +70,7 @@ int connectScheduler(){
 
 int connectMemory(){
 	/* Me conecto al FileSystem; si hay error, informo y finalizo*/
-	int socket_memory = connectServer(memoryIP, memoryPort, callableRemoteFunctions, &memDisconnected, NULL);
+	int socket_memory = connectServer(memoryIP, memoryPort, callableMemoryRemoteFunctions, &memDisconnected, NULL);
 	if (socket_memory == -1) {
 		sprintf(log_buffer, "Error al intentar conectar con el Memory en IP %s en puerto %d", memoryIP, memoryPort);
 		log_error(logger, log_buffer);
@@ -83,7 +85,26 @@ int connectMemory(){
 void initializeRemoteFunctions()
 {
 	/* Agregamos las funciones que podrán ser llamadas por mis conexiones */
-	callableRemoteFunctions = dictionary_create();
+	callableSchedulerRemoteFunctions = dictionary_create();
+	callableMemoryRemoteFunctions = dictionary_create();
 
-	//dictionary_put(callableRemoteFunctions, "sc_cpu_startProcess", &startProcess);
+	
+	// llamadas desde el scheduler
+	dictionary_put(callableSchedulerRemoteFunctions, "sc_cpu_startProcess", &schedulerStartProcess);
+
+	// desde el scheduler recibimos el mensaje sc_cpu_startProcess que inicia la ejecucion de un proceso
+	// luego le avisamos al administrador de memoria cpu_mem_startProcess(pid, pages) 
+	// y luego de recibir del administrado de memoria uno de los mensajes;
+	// (mem_cpu_startProcessOk, mem_cpu_noFrames o memoryNoSpace)
+	// si es el primero paso a ejucutar el .cod
+	// si es cualquiera de los otros tengo que informarle la falla al scheduler
+
+	
+	// llamadas desde el adm de memoria
+	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_startProcessOk", &memoryStartProcessOk);
+	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_noFrames", &memoryNoFrames);
+	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_noSpace", &memoryNoSpace);
+	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_frameData", &memoryFrameData);
+	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_writeOk", &memoryWriteOk);
+	
 }

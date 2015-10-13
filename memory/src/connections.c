@@ -116,6 +116,7 @@ void cpu_noSpace(int socket, int pid)
 // Enviamos contenido de un frame
 void cpu_frameData(int socket, int frame, char * data)
 {
+	log_info(logger, data);
 	char * frame_str = string_itoa(frame);
 	runFunction(socket, "mem_cpu_frameData", 2, frame_str, data);
 	free(frame_str);
@@ -163,11 +164,11 @@ void sw_setPage(int pid, int page, char *data)
 }
 
 //Hacemos intercambio de paginas
-void sw_swapping(int pid, int setPage, char * data, int getPage)
+void sw_swapping(int pid, int setPage, char * data, int getPageNum)
 {
 	char * pid_str = string_itoa(pid);
 	char * setPage_str = string_itoa(setPage);
-	char * getPage_str = string_itoa(getPage);
+	char * getPage_str = string_itoa(getPageNum);
 	runFunction(socket_swap, "mem_sw_swapping", 4, pid_str, setPage_str, data, getPage_str);
 	free(pid_str);
 	free(setPage_str);
@@ -178,7 +179,7 @@ void sw_swapping(int pid, int setPage, char * data, int getPage)
 void sw_endProcess(int pid)
 {
 	char * pid_str = string_itoa(pid);
-	runFunction(socket_swap, "mem_sw_endProcess", 1, pid_str);
+	//runFunction(socket_swap, "mem_sw_endProcess", 1, pid_str);
 	free(pid_str);
 }
 

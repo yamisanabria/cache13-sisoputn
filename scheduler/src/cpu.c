@@ -51,5 +51,16 @@ void cpuPrintMessages(CPU* cpu, PCBItem* process, char* messages)
 	sprintf(log_buffer, "Imprimimos mensajes del CPU %d, PID %d", cpu->id, process->PID);
 	log_info(logger, log_buffer);
 
-	printf(messages);
+	printf("%s", messages);
+}
+
+void cpuStatsAreHere(CPU* cpu, char* stats){
+	sprintf(log_buffer, "Imprimimos stats del CPU %d", cpu->id);
+	log_info(logger, log_buffer);
+
+	char* _status[2] = {"AVAILABLE", "BUSY"};
+	printf("ID: %d\n", cpu->id);
+	printf("Estado:%s\n", _status[cpu->status]);
+	printf("Uso:%s\n", stats);
+	printf("**********\n");
 }

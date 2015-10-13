@@ -108,14 +108,11 @@ int main(int argc, char* argv[])
 	initMemory(memoryConfig);
 	initConnections(memoryConfig);
 
-	addProcess(1, 40, NULL);
-
-
 	//Me pongo a la escucha de CPUs
-	//listenStart();
+	listenStart();
 
 	//Me conecto al Swap
-	//connectSwap();
+	connectSwap();
 
 	//Pongo a la escucha las 3 señales
 	signal(SIGUSR1, listenSignal);

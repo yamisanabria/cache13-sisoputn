@@ -12,6 +12,8 @@
 
 	void cpuRunProcess(CPU* cpu);
 
+	void getCPUStats(CPU* cpu);
+
 	/*** FUNCIONES INTERNAS ***/
 
 	/**
