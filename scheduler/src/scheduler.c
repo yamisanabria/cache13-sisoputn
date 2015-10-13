@@ -98,6 +98,8 @@ int main(int argc, char* argv[])
 
 	createPCB();
 
+	createIOQueue();
+
 	createProcessQueue();
 
 	startConsole(); //Acá se queda en un while(1)
