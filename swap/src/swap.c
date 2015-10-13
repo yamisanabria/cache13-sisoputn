@@ -389,9 +389,6 @@ int main(int argc, char *argv[]) {
 	startListener();  /* Me pongo a la escucha de conexiones provenientes del Adm. de Memoria */
 
 	//TEST
-	/* Para ejecutar los test, descomentar a continuación la línea 395; y en el archivo connections.c
-	 * comentar las líneas 88,93 y 98
-	 */
 	//startTesting();
 	//FIN DE ESE CASO DE USO
 
