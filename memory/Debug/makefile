@@ -26,7 +26,7 @@ endif
 all: memory
 
 dependents:
-	-cd /home/utnso/workspace/tp-2015-2c-Aprobados/includes/Debug && $(MAKE) clean all
+	-cd /home/utnso/workspace/tp-2015-2c-Aprobados/includes/Debug && $(MAKE) all
 
 # Tool invocations
 memory: $(OBJS) $(USER_OBJS) /home/utnso/workspace/tp-2015-2c-Aprobados/includes/Debug/libIncludes.so

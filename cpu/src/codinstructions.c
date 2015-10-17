@@ -27,7 +27,7 @@ void ins_iniciar(CPU* cpu,char ** args) {
 	// TODO testear
 
 	char* _pages = string_duplicate(args[1]);
-	runFunction(cpu->socketIdMemory, "cpu_mem_startProcess", 2, cpu->execPid, _pages);
+	runFunction(cpu->socketIdMemory, "cpu_mem_startProcess", 2, string_itoa(cpu->execPid), _pages);
 	free(_pages);
 }
 
@@ -35,7 +35,7 @@ void ins_leer(CPU* cpu,char ** args) {
 	// TODO testear
 
 	char* _page = string_duplicate(args[1]);
-	runFunction(cpu->socketIdMemory, "cpu_mem_read", 2, cpu->execPid, _page);
+	runFunction(cpu->socketIdMemory, "cpu_mem_read", 2, string_itoa(cpu->execPid), _page);
 	free(_page);
 }
 
@@ -44,12 +44,12 @@ void ins_escribir(CPU* cpu,char ** args) {
 
 	char* _page = string_duplicate(args[1]);
 	char* _data = string_duplicate(args[2]);
-	runFunction(cpu->socketIdMemory, "cpu_mem_read", 3, cpu->execPid, _page, _data);
+	runFunction(cpu->socketIdMemory, "cpu_mem_read", 3, string_itoa(cpu->execPid), _page, _data);
 
 	// estaria mejor que esto se haga cuando responda el adm de memoria, pero como cuando
 	// responde no manda los parametros que necesito (pagina y contenido escrito) lo hago
 	// aca
-	char* _buffer = string_from_format("mProc %s - Pagina %s escrita: %s", cpu->execPid, _page, _data);
+	char* _buffer = string_from_format("mProc %s - Pagina %s escrita: %s", string_itoa(cpu->execPid), _page, _data);
 	addResponseToExecbuffer(cpu, _buffer);
 	free(_buffer);
 
@@ -62,7 +62,7 @@ void ins_entradaSalida(CPU* cpu,char ** args) {
 
 	char* _sleep = string_duplicate(args[1]);
 	
-	char* _buffer = string_from_format("mProc %s en entrada-salida de tiempo %s\n", cpu->execPid, _sleep);
+	char* _buffer = string_from_format("mProc %s en entrada-salida de tiempo %s\n", string_itoa(cpu->execPid), _sleep);
 	addResponseToExecbuffer(cpu, _buffer);
 	
 	/* MENSAJE A SCHEDULER:
@@ -74,7 +74,7 @@ void ins_entradaSalida(CPU* cpu,char ** args) {
 		data = info relacionada al estado. Por ejemplo si entra en E/S, sería el tiempo que tiene que bloquearse.
 	*/
 
-	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, cpu->execPid, "4", cpu->execResponseBuffer, _sleep);
+	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "4", cpu->execResponseBuffer, _sleep);
 
 	free(_sleep);
 	free(_buffer);
@@ -84,12 +84,12 @@ void ins_entradaSalida(CPU* cpu,char ** args) {
 void ins_finalizar(CPU* cpu) {
 	// TODO testear
 	
-	char* _buffer = string_from_format("mProc %s finalizado\n", cpu->execPid);
+	char* _buffer = string_from_format("mProc %s finalizado\n", string_itoa(cpu->execPid));
 	addResponseToExecbuffer(cpu, _buffer);
 	free(_buffer);
 	// le aviso a la memoria que termino proceso
-	runFunction(cpu->socketIdMemory, "cpu_mem_endProcess", 1, cpu->execPid);
+	runFunction(cpu->socketIdMemory, "cpu_mem_endProcess", 1, string_itoa(cpu->execPid));
 	// le aviso al scheduler que termino proceso
-	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, cpu->execPid, "4", cpu->execResponseBuffer, "");
+	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "4", cpu->execResponseBuffer, "");
 
 }

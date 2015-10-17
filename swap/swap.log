@@ -37,3 +37,25 @@
 [INFO] 11:23:54:572 Swap/(4576:4576): El archivo swap.data, de 36 bytes, fue creado exitosamente
 [INFO] 11:23:54:572 Swap/(4576:4576): A la escucha de algún proceso Administrador de Memoria el puerto: 6000.
 [INFO] 11:23:55:688 Swap/(4576:4579): Se ha conectado un proceso Adm. de Memoria con ip 127.0.0.1 en socket n°6
+[INFO] 11:50:36:684 Swap/(5945:5945): El archivo swap.data, de 36 bytes, fue creado exitosamente
+[INFO] 11:50:36:685 Swap/(5945:5945): A la escucha de algún proceso Administrador de Memoria el puerto: 6000.
+[INFO] 11:50:40:161 Swap/(5945:5948): Se ha conectado un proceso Adm. de Memoria con ip 127.0.0.1 en socket n°6
+[INFO] 12:15:07:495 Swap/(5945:5951): Proceso asignado exitosamente.. PID: 1, N° de byte inicial 0, Tamaño: 8 bytes
+[INFO] 12:15:46:105 Swap/(5945:5951): Proceso asignado exitosamente.. PID: 1, N° de byte inicial 8, Tamaño: 8 bytes
+[INFO] 12:17:59:518 Swap/(5945:5951): Proceso asignado exitosamente.. PID: 1, N° de byte inicial 16, Tamaño: 8 bytes
+[INFO] 12:18:41:100 Swap/(5945:5951): Proceso asignado exitosamente.. PID: 1, N° de byte inicial 24, Tamaño: 8 bytes
+[INFO] 12:19:34:308 Swap/(5945:5951): Conexión con el Adm. de Memoria 127.0.0.1:6000  terminada
+[INFO] 12:19:37:980 Swap/(6807:6807): El archivo swap.data, de 36 bytes, fue creado exitosamente
+[INFO] 12:19:37:980 Swap/(6807:6807): A la escucha de algún proceso Administrador de Memoria el puerto: 6000.
+[INFO] 12:19:39:207 Swap/(6807:6810): Se ha conectado un proceso Adm. de Memoria con ip 127.0.0.1 en socket n°6
+[INFO] 12:19:55:885 Swap/(6807:6813): Proceso asignado exitosamente.. PID: 1, N° de byte inicial 0, Tamaño: 8 bytes
+[INFO] 12:23:08:959 Swap/(6807:6813): Proceso asignado exitosamente.. PID: 1, N° de byte inicial 8, Tamaño: 8 bytes
+[INFO] 12:24:18:281 Swap/(6998:6998): El archivo swap.data, de 36 bytes, fue creado exitosamente
+[INFO] 12:24:18:281 Swap/(6998:6998): A la escucha de algún proceso Administrador de Memoria el puerto: 6000.
+[INFO] 12:24:19:61 Swap/(6998:7001): Se ha conectado un proceso Adm. de Memoria con ip 127.0.0.1 en socket n°6
+[INFO] 12:24:36:307 Swap/(6998:7004): Proceso asignado exitosamente.. PID: 1, N° de byte inicial 0, Tamaño: 8 bytes
+[INFO] 12:26:07:428 Swap/(6998:7004): Conexión con el Adm. de Memoria 127.0.0.1:6000  terminada
+[INFO] 12:26:09:489 Swap/(7110:7110): El archivo swap.data, de 36 bytes, fue creado exitosamente
+[INFO] 12:26:09:489 Swap/(7110:7110): A la escucha de algún proceso Administrador de Memoria el puerto: 6000.
+[INFO] 12:26:10:70 Swap/(7110:7113): Se ha conectado un proceso Adm. de Memoria con ip 127.0.0.1 en socket n°6
+[INFO] 12:26:20:845 Swap/(7110:7117): Proceso asignado exitosamente.. PID: 1, N° de byte inicial 0, Tamaño: 8 bytes

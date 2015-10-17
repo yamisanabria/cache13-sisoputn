@@ -75,12 +75,17 @@ void consumeQuantum(CPU* cpu){
 void endQuantum(CPU* cpu){
 	// manda al scheduler todo el cpu->execResponseBuffer
 	// TODO
+
+	//@pablovergne: Tendrías que fijarte si terminó de ejecutar el archivo entero
+	// Si es así me mandás un parámetro diferente, mirate el protocolo, en scheduler
 }
 
 void runLine(char* line, CPU* cpu) {
 	// la copio por que uso el string original si ocurre un fallo
 	char *_line = string_duplicate(line);
-	_line[strlen(_line)-1] = '\0'; //quito /n final
+
+	/* @pablovergne: TE COMENTO ESTO PORQUE ME SACA EL ÚLTIMO CARACTER DE UNA LÍNEA */
+	//_line[strlen(_line)-1] = '\0'; //quito /n final
 
 	// ver de usar string_n_split y string_starts_with;
 	//should_bool(string_starts_with("MiArchivo.txt", "txt")) be truthy;

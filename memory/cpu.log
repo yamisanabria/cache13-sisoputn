@@ -52,3 +52,51 @@
 [INFO] 11:41:19:650 CPU/(4580:4581): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°7
 [INFO] 11:42:19:977 CPU/(4580:5314): CPU (socket n°7) se ha desconectado.
 
+[INFO] 11:45:50:416 CPU/(4580:4583): Swap (socket n°5) se ha desconectado.
+
+[INFO] 11:50:40:161 CPU/(5949:5949): Nos ponemos en escucha de CPUs en puerto 5000...
+[INFO] 11:50:40:162 CPU/(5949:5949): Se ha conectado exitosamente al Swap en IP 127.0.0.1 en puerto 6000 por socket n° 5
+[INFO] 11:51:02:112 CPU/(5949:5950): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°6
+[INFO] 11:51:45:33 CPU/(5949:5992): CPU (socket n°6) se ha desconectado.
+
+[INFO] 11:58:32:505 CPU/(5949:5950): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°7
+[INFO] 11:58:53:850 CPU/(5949:6134): CPU (socket n°7) se ha desconectado.
+
+[INFO] 11:59:12:721 CPU/(5949:5950): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°6
+[INFO] 12:01:06:581 CPU/(5949:6174): CPU (socket n°6) se ha desconectado.
+
+[INFO] 12:06:06:553 CPU/(5949:5950): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°7
+[INFO] 12:09:25:249 CPU/(5949:6277): CPU (socket n°7) se ha desconectado.
+
+[INFO] 12:15:02:415 CPU/(5949:5950): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°6
+[INFO] 12:15:07:634 CPU/(5949:6511): CPU (socket n°6) se ha desconectado.
+
+[INFO] 12:15:16:113 CPU/(5949:5950): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°7
+[INFO] 12:17:29:835 CPU/(5949:6553): CPU (socket n°7) se ha desconectado.
+
+[INFO] 12:17:45:456 CPU/(5949:5950): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°6
+[INFO] 12:18:23:755 CPU/(5949:6713): CPU (socket n°6) se ha desconectado.
+
+[INFO] 12:18:32:951 CPU/(5949:5950): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°7
+[INFO] 12:19:21:979 CPU/(5949:6775): CPU (socket n°7) se ha desconectado.
+
+[INFO] 12:19:39:206 CPU/(6811:6811): Nos ponemos en escucha de CPUs en puerto 5000...
+[INFO] 12:19:39:207 CPU/(6811:6811): Se ha conectado exitosamente al Swap en IP 127.0.0.1 en puerto 6000 por socket n° 5
+[INFO] 12:19:45:282 CPU/(6811:6812): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°6
+[INFO] 12:20:22:839 CPU/(6811:6852): CPU (socket n°6) se ha desconectado.
+
+[INFO] 12:22:54:427 CPU/(6811:6812): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°7
+[INFO] 12:23:56:834 CPU/(6811:6981): CPU (socket n°7) se ha desconectado.
+
+[INFO] 12:24:15:893 CPU/(6811:6814): Swap (socket n°5) se ha desconectado.
+
+[INFO] 12:24:19:61 CPU/(7002:7002): Nos ponemos en escucha de CPUs en puerto 5000...
+[INFO] 12:24:19:61 CPU/(7002:7002): Se ha conectado exitosamente al Swap en IP 127.0.0.1 en puerto 6000 por socket n° 5
+[INFO] 12:24:29:247 CPU/(7002:7003): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°6
+[INFO] 12:24:48:44 CPU/(7002:7041): CPU (socket n°6) se ha desconectado.
+
+[INFO] 12:26:10:70 CPU/(7115:7115): Nos ponemos en escucha de CPUs en puerto 5000...
+[INFO] 12:26:10:71 CPU/(7115:7115): Se ha conectado exitosamente al Swap en IP 127.0.0.1 en puerto 6000 por socket n° 5
+[INFO] 12:26:15:642 CPU/(7115:7116): Se ha conectado un nuevo CPU con ip 127.0.0.1 en socket n°6
+[INFO] 12:27:05:332 CPU/(7115:7155): CPU (socket n°6) se ha desconectado.
+
