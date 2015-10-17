@@ -108,7 +108,7 @@ void cpuRunProcess(CPU* cpu){
 
 	sprintf(log_buffer, "Llamando a startProcess en CPU %d con (%d, %s, %d, %d) en socket n°%d", cpu->id, cpu->process->PID, cpu->process->path, cpu->process->counter, P_QUANTUM, cpu->socket->socket);
 	log_info(logger, log_buffer);
-	runFunction(cpu->socket->socket, "sc_cpu_startProcess", 4, cpu->process->path, cpu->process->PID, string_itoa(cpu->process->counter), string_itoa(P_QUANTUM));
+	runFunction(cpu->socket->socket, "sc_cpu_startProcess", 4, cpu->process->path, string_itoa(cpu->process->PID), string_itoa(cpu->process->counter), string_itoa(P_QUANTUM));
 }
 
 void getCPUStats(CPU* cpu){

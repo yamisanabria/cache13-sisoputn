@@ -9,7 +9,7 @@
 char *get_nth_line(char *codfile, int line_no )
 {
     FILE* fp = fopen(codfile, "r");
-    if (codfile == NULL) {
+    if (fp == NULL) {
       printf("no existe archivo %s\n", codfile);
       exit(EXIT_FAILURE);
     }

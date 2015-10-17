@@ -30,3 +30,10 @@
 [INFO] 14:38:43:405 Swap/(9342:9342): Escritura solicitada.. PID: 6, N° de byte inicial 8, Tamaño: 4 bytes, Contenido: fork
 [INFO] 14:38:43:405 Swap/(9342:9342): Escritura solicitada.. PID: 5, N° de byte inicial 20, Tamaño: 4 bytes, Contenido: bash
 [INFO] 14:38:43:405 Swap/(9342:9342): Lectura solicitada.. PID: 5, N° de byte inicial 32, Tamaño: 3 bytes, Contenido: NEO
+[INFO] 11:19:16:852 Swap/(4437:4437): El archivo swap.data, de 36 bytes, fue creado exitosamente
+[INFO] 11:19:16:852 Swap/(4437:4437): A la escucha de algún proceso Administrador de Memoria el puerto: 6000.
+[INFO] 11:19:20:417 Swap/(4437:4440): Se ha conectado un proceso Adm. de Memoria con ip 127.0.0.1 en socket n°6
+[INFO] 11:23:50:575 Swap/(4437:4442): Conexión con el Adm. de Memoria 127.0.0.1:6000  terminada
+[INFO] 11:23:54:572 Swap/(4576:4576): El archivo swap.data, de 36 bytes, fue creado exitosamente
+[INFO] 11:23:54:572 Swap/(4576:4576): A la escucha de algún proceso Administrador de Memoria el puerto: 6000.
+[INFO] 11:23:55:688 Swap/(4576:4579): Se ha conectado un proceso Adm. de Memoria con ip 127.0.0.1 en socket n°6
