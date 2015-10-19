@@ -25,6 +25,11 @@
 
 # archivo de logs
 /cpu/cpu.log
+/memory/cpu.log
+/swap/swap.log
+
+#mix
+/swap/swap.data
 
 # Object files
 *.o
