@@ -71,8 +71,9 @@ void executeCommand(char * c)
 	for(i = 0; i < name[i]; i++)
 		name[i] = tolower(name[i]);
 
-	int _get(Command * cc)
-	{return strcmp(cc->name, name) == 0;}
+	bool _get(Command * cc) {
+		return strcmp(cc->name, name) == 0;
+	}
 
 	cmd = list_find(commands,(void*) _get);
 
