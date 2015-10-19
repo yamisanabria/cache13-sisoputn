@@ -60,10 +60,10 @@ void consumeQuantum(CPU* cpu){
 	// el -1 es por que el process_counter va de 1 a n lineas
 	// y el get_nth_line de 0 a n-1 lineas
 	char *line = get_nth_line(cpu->codfile, (cpu->process_counter - 1));
-	
+
 	cpu->quantum = cpu->quantum - 1;
 	cpu->process_counter = cpu->process_counter + 1;
-	
+
 	runLine(line, cpu);
 
 	free(line);
@@ -94,6 +94,9 @@ void runLine(char* line, CPU* cpu) {
 	char * name = args[0];
 
 	bool _get(Instruction* cc){
+		if(cc == NULL) {
+			return false;
+		}
 		return strcmp(cc->name, name) == 0;
 	}
 
@@ -106,8 +109,8 @@ void runLine(char* line, CPU* cpu) {
 		printf("La cantidad de parametros no coincide [%d/%d].\n%s\n", charArray_length(args) - 1, instruction->args, line);
 		exit(EXIT_FAILURE);
 	}
-               
+
 	instruction->fn(cpu, args);
 	freeCharArray(args);
-	free(_line);	
+	free(_line);
 }
