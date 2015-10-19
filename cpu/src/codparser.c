@@ -4,6 +4,7 @@
 #include <unistd.h>
 
 #include <commons/string.h>
+#include <string.h>
 
 #include "shared.h"
 #include "codparser.h"
