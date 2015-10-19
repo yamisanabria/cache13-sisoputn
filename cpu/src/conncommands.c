@@ -21,13 +21,13 @@ void schedulerStartProcess(socket_connection* connection, char ** args){
 
 	free(cpu->codfile);
 	free(cpu->execResponseBuffer);
-	
+
 	// setear datos en cpu para despues correr
 	cpu->execResponseBuffer = string_new();
 	cpu->codfile = string_duplicate(path);
 	cpu->execPid = pid;
 	cpu->process_counter = process_counter;
-	
+
 	// si el quantum es 0 significa que es apropiativa
 	// o sea corre hasta fin o entrada salida, a fines
 	// practiocos voy a usar -1 si quantum es 0
@@ -38,8 +38,16 @@ void schedulerStartProcess(socket_connection* connection, char ** args){
 	}
 
 	consumeQuantum(cpu);
-	
+
 }
+
+void schedulerGetStats(socket_connection* connection, char ** args){
+	//Identificar CPU comparando sockets
+	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
+	// TODO por ahora devuelve siempre 1, hay que acordar que debe hacer
+	runFunction(cpu->socketIdScheduler, "cpu_sc_stats", 1, string_itoa(1));
+}
+
 
 void memoryStartProcessOk(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
@@ -79,7 +87,7 @@ void memoryNoSpace(socket_connection* connection, char ** args) {
 void memoryFrameData(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
-	
+
 	char* _frame = string_duplicate(args[1]);
 	char* _data = string_duplicate(args[1]);
 
@@ -96,7 +104,7 @@ void memoryFrameData(socket_connection* connection, char ** args) {
 void memoryWriteOk(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
-	
+
 
 	consumeQuantum(cpu);
 }

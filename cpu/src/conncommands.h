@@ -1,7 +1,8 @@
 #ifndef CONNCOMMANDS_H_
 #define CONNCOMMANDS_H_
 
-	void schedulerStartProcess(socket_connection * connection, char ** args);
+  void schedulerStartProcess(socket_connection * connection, char ** args);
+  void schedulerGetStats(socket_connection * connection, char ** args);
 
 	void memoryStartProcessOk(socket_connection * connection, char ** args);
 	void memoryNoFrames(socket_connection * connection, char ** args);

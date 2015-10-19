@@ -88,23 +88,24 @@ void initializeRemoteFunctions()
 	callableSchedulerRemoteFunctions = dictionary_create();
 	callableMemoryRemoteFunctions = dictionary_create();
 
-	
+
 	// llamadas desde el scheduler
 	dictionary_put(callableSchedulerRemoteFunctions, "sc_cpu_startProcess", &schedulerStartProcess);
+	dictionary_put(callableSchedulerRemoteFunctions, "sc_cpu_getStats", &schedulerGetStats);
 
 	// desde el scheduler recibimos el mensaje sc_cpu_startProcess que inicia la ejecucion de un proceso
-	// luego le avisamos al administrador de memoria cpu_mem_startProcess(pid, pages) 
+	// luego le avisamos al administrador de memoria cpu_mem_startProcess(pid, pages)
 	// y luego de recibir del administrado de memoria uno de los mensajes;
 	// (mem_cpu_startProcessOk, mem_cpu_noFrames o memoryNoSpace)
 	// si es el primero paso a ejucutar el .cod
 	// si es cualquiera de los otros tengo que informarle la falla al scheduler
 
-	
+
 	// llamadas desde el adm de memoria
 	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_startProcessOk", &memoryStartProcessOk);
 	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_noFrames", &memoryNoFrames);
 	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_noSpace", &memoryNoSpace);
 	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_frameData", &memoryFrameData);
 	dictionary_put(callableMemoryRemoteFunctions, "mem_cpu_writeOk", &memoryWriteOk);
-	
+
 }
