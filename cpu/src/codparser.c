@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <socket.h>
 
 #include <commons/collections/dictionary.h>
 #include <commons/string.h>
@@ -49,7 +50,7 @@ void initInstructions(){
 
 void consumeQuantum(CPU* cpu){
 	if(cpu->quantum == 0){
-		endQuantum(cpu);
+		runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "1", string_itoa(cpu->process_counter + 1), cpu->execResponseBuffer, "");
 		return;
 	}
 
@@ -68,17 +69,6 @@ void consumeQuantum(CPU* cpu){
 	free(line);
 }
 
-/*
- * Informa al scheduler el resultado del programa al finalizar
- * el quantum o el programa
- */
-void endQuantum(CPU* cpu){
-	// manda al scheduler todo el cpu->execResponseBuffer
-	// TODO
-
-	//@pablovergne: Tendrías que fijarte si terminó de ejecutar el archivo entero
-	// Si es así me mandás un parámetro diferente, mirate el protocolo, en scheduler
-}
 
 void runLine(char* line, CPU* cpu) {
 	// la copio por que uso el string original si ocurre un fallo
