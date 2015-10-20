@@ -12,8 +12,8 @@
 void schedulerStartProcess(socket_connection* connection, char ** args){
 	char* path 			= args[0];		// path del codigo
 	int pid = atoi(args[1]);// linea a ejecutar
-	int process_counter = atoi(args[1]);// linea a ejecutar
-	int quantum			= atoi(args[2]);// cantidad de lineas a ejectuar , si es 0 ejectua todo hasta cortar
+	int process_counter = atoi(args[2]);// linea a ejecutar
+	int quantum			= atoi(args[3]);// cantidad de lineas a ejectuar , si es 0 ejectua todo hasta cortar
 
 
 	//Identificar CPU comparando sockets

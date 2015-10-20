@@ -19,7 +19,8 @@ void addResponseToExecbuffer(CPU* cpu, char *str){
 	code will still compile, but most compilers already issue a warning if this is the case.
 	*/
 
-	snprintf(cpu->execResponseBuffer, strlen(cpu->execResponseBuffer) + strlen(str) + 1, "%s%s", cpu->execResponseBuffer, str);
+	//snprintf(cpu->execResponseBuffer, strlen(cpu->execResponseBuffer) + strlen(str) + 1, "%s%s", cpu->execResponseBuffer, str);
+	string_append(&cpu->execResponseBuffer, str);
 
 }
 
@@ -90,6 +91,6 @@ void ins_finalizar(CPU* cpu) {
 	// le aviso a la memoria que termino proceso
 	runFunction(cpu->socketIdMemory, "cpu_mem_endProcess", 1, string_itoa(cpu->execPid));
 	// le aviso al scheduler que termino proceso
-	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "4", cpu->execResponseBuffer, "");
+	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", cpu->execResponseBuffer, "");
 
 }
