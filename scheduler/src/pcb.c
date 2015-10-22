@@ -17,7 +17,7 @@ t_list* getPCBlist()
 
 PCBItem* pcbGetByPID(int pid)
 {
-	return list_get(pcb, pid);
+	return list_get(pcb, pid - 1);
 }
 
 int validateCodFile(char* path)

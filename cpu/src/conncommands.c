@@ -6,14 +6,12 @@
 #include "shared.h"
 #include "cpumanager.h"
 #include "codparser.h"
-// solo para poder aser uso del addResponseToExecbuffer :S
-#include "codinstructions.h"
 
 void schedulerStartProcess(socket_connection* connection, char ** args){
 	char* path 			= args[0];		// path del codigo
 	int pid = atoi(args[1]);// linea a ejecutar
-	int process_counter = atoi(args[1]);// linea a ejecutar
-	int quantum			= atoi(args[2]);// cantidad de lineas a ejectuar , si es 0 ejectua todo hasta cortar
+	int process_counter = atoi(args[2]);// linea a ejecutar
+	int quantum			= atoi(args[3]);// cantidad de lineas a ejectuar , si es 0 ejectua todo hasta cortar
 
 
 	//Identificar CPU comparando sockets
@@ -54,7 +52,7 @@ void memoryStartProcessOk(socket_connection* connection, char ** args) {
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
 
 	char* _buffer = string_from_format("mProc %s - Iniciado\n", string_itoa(cpu->execPid));
-	addResponseToExecbuffer(cpu, _buffer);
+	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
 	// hacer lo que haya que hacer y seguir consumiendo quantums;
 	consumeQuantum(cpu);
@@ -65,10 +63,10 @@ void memoryNoFrames(socket_connection* connection, char ** args) {
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
 
 	char* _buffer = string_from_format("mProc %s - Fallo\n", string_itoa(cpu->execPid));
-	addResponseToExecbuffer(cpu, _buffer);
+	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
 
-	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", cpu->execResponseBuffer, "no_frames");
+	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", string_itoa(cpu->process_counter + 1), cpu->execResponseBuffer, "no_frames");
 
 }
 
@@ -77,10 +75,10 @@ void memoryNoSpace(socket_connection* connection, char ** args) {
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
 
 	char* _buffer = string_from_format("mProc %s - Fallo\n", string_itoa(cpu->execPid));
-	addResponseToExecbuffer(cpu, _buffer);
+	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
 
-	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", cpu->execResponseBuffer, "no_space");
+	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", string_itoa(cpu->process_counter + 1), cpu->execResponseBuffer, "no_space");
 
 }
 
@@ -92,7 +90,7 @@ void memoryFrameData(socket_connection* connection, char ** args) {
 	char* _data = string_duplicate(args[1]);
 
 	char* _buffer = string_from_format("mProc %s - Pagina %s leida: %s\n", string_itoa(cpu->execPid), _data, _frame);
-	addResponseToExecbuffer(cpu, _buffer);
+	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
 
 	free(_data);
