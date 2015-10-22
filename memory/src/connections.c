@@ -199,6 +199,8 @@ void cpu_startProcess(socket_connection * connection, char ** args)
 
 	write_start();
 
+	log_info(logger, "CPU solicita comenzar proceso PIDº%d (%d páginas)", pid, pages);
+
 	addProcess(pid, pages, connection);
 	sw_startProcess(pid, pages);
 
@@ -212,6 +214,8 @@ void cpu_read(socket_connection * connection, char ** args)
 	int page = atoi(args[1]);		// número de página a leer
 
 	write_start();
+
+	log_info(logger, "CPU solicita lectura de página Nº%d (PIDº%d)",page, pid);
 
 	addReadPetition(pid, page, connection);
 
@@ -227,6 +231,8 @@ void cpu_write(socket_connection * connection, char ** args)
 
 	write_start();
 
+	log_info(logger, "CPU solicita escribir en página Nº%d (PIDº%d)", page, pid);
+
 	addWritePetition(pid, page, data, connection);
 
 	write_end();
@@ -238,6 +244,8 @@ void cpu_endProcess(socket_connection * connection, char ** args)
 	int pid = atoi(args[0]);		// pid del proceso
 
 	write_start();
+
+	log_info(logger, "CPU solicita finalizar proceso PID Nº%d", pid);
 
 	sw_endProcess(pid);
 	deleteProcess(pid);
@@ -256,18 +264,22 @@ void sw_startProcessOk(socket_connection * connection, char ** args)
 
 	read_start();
 
+	log_info(logger, "SWAP nos indica que comenzo correctamente el proceso PIDº%d", pid);
+
 	t_process * process = getProcess(pid);
 	cpu_startProcessOk(process->connection->socket, pid);
 
 	read_end();
 }
 
-// Nos indica que no tiene suficiente espacio pra el proceso a comenzar
+// Nos indica que no tiene suficiente espacio para el proceso a comenzar
 void sw_noSpace(socket_connection * connection, char ** args)
 {
 	int pid = atoi(args[0]);		// pid del proceso
 
 	write_start();
+
+	log_info(logger, "SWAP nos indica que no tiene suficiente espacio para comenzar el proceso PIDº%d", pid);
 
 	t_process * process = getProcess(pid);
 	deleteProcess(pid);
@@ -284,6 +296,8 @@ void sw_page(socket_connection * connection, char ** args)
 	char * data = args[2];			// datos de la pagina
 
 	write_start();
+
+	log_info(logger, "SWAP nos devuelve el conenido de una pagina Nº%d (PIDº%d)", page_num, pid);
 
 	t_page * page = getPage(pid, page_num);
 	setMemoryData(page->frame, data, false);
