@@ -36,6 +36,8 @@ void cpuNew(socket_connection* socketInfo)
 	cpu->status			= CPU_AVAILABLE;
 
 	addNewCPU(cpu);
+
+	checkReadyProcesses();
 }
 
 /* ################### SERVIDOR ################### */
@@ -46,8 +48,9 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 {
 	int pid 		= atoi(args[0]);
 	int status 		= atoi(args[1]);
-	char* messages 	= string_duplicate(args[2]);
-	char* data		= args[3];
+	int p_counter	= atoi(args[2]);
+	char* messages 	= string_duplicate(args[3]);
+	char* data		= args[4];
 
 	CPU* cpu = findCPUBySocketConnection(connection);
 	PCBItem* process = pcbGetByPID(pid);
@@ -57,7 +60,10 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 
 	cpuPrintMessages(cpu, process, messages);
 
-	if(!forceFinalize(process)){ //Si lo mandaron a finalizar no hago todo esto.
+	//Si lo mandaron a finalizar y no viene de terminar ni fallar, no hago todo esto.
+	if(status == 2 || status == 3 || !forceFinalize(process)){
+
+		processUpdateProgramCounter(process, p_counter);
 
 		int sleep_time;
 
@@ -104,8 +110,8 @@ void cpuStats(socket_connection * connection, char ** args)
 void cpuRunProcess(CPU* cpu){
 	if(cpu->process->counter == -1){
 		sprintf(log_buffer, "Mandamos a ejecutar la última línea del proceso PID-%d.\n", cpu->process->PID);
+		log_info(logger, log_buffer);
 	}
-
 	sprintf(log_buffer, "Llamando a startProcess en CPU %d con (%d, %s, %d, %d) en socket n°%d", cpu->id, cpu->process->PID, cpu->process->path, cpu->process->counter, P_QUANTUM, cpu->socket->socket);
 	log_info(logger, log_buffer);
 	runFunction(cpu->socket->socket, "sc_cpu_startProcess", 4, cpu->process->path, string_itoa(cpu->process->PID), string_itoa(cpu->process->counter), string_itoa(P_QUANTUM));

@@ -50,19 +50,29 @@ void initInstructions(){
 
 void consumeQuantum(CPU* cpu){
 	if(cpu->quantum == 0){
-		runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "1", string_itoa(cpu->process_counter + 1), cpu->execResponseBuffer, "");
+		runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "1", string_itoa(cpu->process_counter), cpu->execResponseBuffer, "");
 		return;
 	}
 
+	sprintf(log_buffer, "Ejecutando retardo del proceso %d", cpu->execPid);
+	log_info(logger, log_buffer);
 	// sleep de retardo
 	sleep(RETARDO);
 
-	// el -1 es por que el process_counter va de 1 a n lineas
-	// y el get_nth_line de 0 a n-1 lineas
-	char *line = get_nth_line(cpu->codfile, (cpu->process_counter - 1));
+	char *line;
+	if(cpu->process_counter == -1){ //Forzaron finalizar
+		line = string_duplicate("finalizar");
+	} else {
+		// el -1 es por que el process_counter va de 1 a n lineas
+		// y el get_nth_line de 0 a n-1 lineas
+		line = get_nth_line(cpu->codfile, (cpu->process_counter - 1));
 
-	cpu->quantum = cpu->quantum - 1;
-	cpu->process_counter = cpu->process_counter + 1;
+		cpu->quantum = cpu->quantum - 1;
+			//cpu->process_counter = cpu->process_counter + 1; Esto lo sacamos de acá en el runLine, porque tiene que saber qué línea ejecuta para ver si suma o no
+	}
+
+	sprintf(log_buffer, "Ejecutando instrucción (%s) del proceso %d", line, cpu->execPid);
+	log_info(logger, log_buffer);
 
 	runLine(line, cpu);
 
@@ -76,9 +86,12 @@ void runLine(char* line, CPU* cpu) {
 
 	// ver de usar string_n_split y string_starts_with;
 	//should_bool(string_starts_with("MiArchivo.txt", "txt")) be truthy;
-	char ** args = string_split(_line, " ");
+	//char ** args = string_split(_line, " ");
+	char ** instr = string_n_split(_line, 2, " ");
 
-	Instruction* instruction = dictionary_get(instructions, args[0]);
+	Instruction* instruction = dictionary_get(instructions, instr[0]);
+
+	char ** args = string_n_split(_line, instruction->args + 1, " ");
 
 	if(instruction == NULL) {
 		printf("Instruccion inexistente:\n%s\n", line);
@@ -90,5 +103,6 @@ void runLine(char* line, CPU* cpu) {
 
 	instruction->fn(cpu, args);
 	freeCharArray(args);
+	freeCharArray(instr);
 	free(_line);
 }

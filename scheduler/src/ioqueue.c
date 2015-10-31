@@ -26,6 +26,9 @@ void ioQueueRunner(){
 		sprintf(log_buffer, "Despertó el proceso PID-%d.\n", process->PID);
 		log_info(logger, log_buffer);
 
+		if(process->counter != -1) //Si no está la finalización forzada
+			process->counter = process->counter + 1;
+
 		process->status = P_READY;
 
 		pQueueAddProcess(process);

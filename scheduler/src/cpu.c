@@ -48,10 +48,8 @@ CPU* findCPUAvailable(){
 
 void cpuPrintMessages(CPU* cpu, PCBItem* process, char* messages)
 {
-	sprintf(log_buffer, "Imprimimos mensajes del CPU %d, PID %d", cpu->id, process->PID);
+	sprintf(log_buffer, "Imprimimos mensajes del CPU %d, PID %d: \n%s", cpu->id, process->PID, messages);
 	log_info(logger, log_buffer);
-
-	printf("%s", messages);
 }
 
 void cpuStatsAreHere(CPU* cpu, char* stats){

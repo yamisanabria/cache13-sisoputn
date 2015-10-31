@@ -92,11 +92,6 @@ void processHasFinished(PCBItem* item)
 void processHasFinishedBurst(PCBItem* item)
 {
 	item->status 	= P_READY;
-	/**
-	 * https://github.com/sisoputnfrba/foro/issues/83
-	 * Esto es cualquiera...
-	 */
-	item->counter = item->counter + P_QUANTUM;
 
 	sprintf(log_buffer, "PROCESO PID-%d READY.\n", item->PID);
 	log_info(logger, log_buffer);
@@ -128,11 +123,15 @@ void processHasBeenBlocked(PCBItem* item, int sleep_time)
 int forceFinalize(PCBItem* item){
 	if(item->counter == -1){
 		//Lo mandamos a ejecutar la última línea
-		log_info(logger, log_buffer);
 		item->status 	= P_READY;
 		pQueueAddProcess(item);
 		return 1;
 	} else {
 		return 0;
 	}
+}
+
+void processUpdateProgramCounter(PCBItem* process, int p_counter)
+{
+	process->counter = p_counter;
 }

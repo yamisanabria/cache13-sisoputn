@@ -54,6 +54,8 @@ void memoryStartProcessOk(socket_connection* connection, char ** args) {
 	char* _buffer = string_from_format("mProc %s - Iniciado\n", string_itoa(cpu->execPid));
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
+
+	cpu->process_counter = cpu->process_counter + 1;
 	// hacer lo que haya que hacer y seguir consumiendo quantums;
 	consumeQuantum(cpu);
 }
@@ -62,11 +64,11 @@ void memoryNoFrames(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
 
-	char* _buffer = string_from_format("mProc %s - Fallo\n", string_itoa(cpu->execPid));
+	char* _buffer = string_from_format("mProc %s - Falló: Espacion en swap insuficiente\n", string_itoa(cpu->execPid));
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
 
-	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", string_itoa(cpu->process_counter + 1), cpu->execResponseBuffer, "no_frames");
+	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", string_itoa(cpu->process_counter + 1), string_duplicate(cpu->execResponseBuffer), "no_frames");
 
 }
 
@@ -74,11 +76,11 @@ void memoryNoSpace(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
 
-	char* _buffer = string_from_format("mProc %s - Fallo\n", string_itoa(cpu->execPid));
+	char* _buffer = string_from_format("mProc %s - Falló: Espacio en memoria insuficiente\n", string_itoa(cpu->execPid));
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
 
-	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", string_itoa(cpu->process_counter + 1), cpu->execResponseBuffer, "no_space");
+	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", string_itoa(cpu->process_counter + 1), string_duplicate(cpu->execResponseBuffer), "no_space");
 
 }
 
@@ -86,16 +88,17 @@ void memoryFrameData(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
 
-	char* _frame = string_duplicate(args[1]);
+	char* _frame = string_duplicate(args[0]);
 	char* _data = string_duplicate(args[1]);
 
-	char* _buffer = string_from_format("mProc %s - Pagina %s leida: %s\n", string_itoa(cpu->execPid), _data, _frame);
+	char* _buffer = string_from_format("mProc %s - Página %s leida: %s\n", string_itoa(cpu->execPid), _frame, _data);
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
 
 	free(_data);
 	free(_frame);
 
+	cpu->process_counter = cpu->process_counter + 1;
 	consumeQuantum(cpu);
 }
 
@@ -103,6 +106,6 @@ void memoryWriteOk(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
 
-
+	cpu->process_counter = cpu->process_counter + 1;
 	consumeQuantum(cpu);
 }

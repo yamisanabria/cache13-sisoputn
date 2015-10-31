@@ -27,4 +27,6 @@ int finalizeProcess(char* pid);
 
 int forceFinalize(PCBItem* item);
 
+void processUpdateProgramCounter(PCBItem* process, int p_counter);
+
 #endif
