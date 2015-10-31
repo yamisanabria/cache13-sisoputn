@@ -17,11 +17,11 @@ void initCpuManager(){
 void createCpu(){
 	CPU* _cpu = malloc(sizeof(CPU));
 
-	list_add(cpuList, _cpu);
-
 	_cpu->status = CPU_AVAILABLE;
 	_cpu->socketIdMemory = connectMemory();
 	_cpu->socketIdScheduler = connectScheduler();
+
+	list_add(cpuList, _cpu);
 }
 
 CPU* findCpuBySchedulerSocket(int socket_id){

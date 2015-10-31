@@ -17,9 +17,6 @@ void schedulerStartProcess(socket_connection* connection, char ** args){
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
 
-	free(cpu->codfile);
-	free(cpu->execResponseBuffer);
-
 	// setear datos en cpu para despues correr
 	cpu->execResponseBuffer = string_new();
 	cpu->codfile = string_duplicate(path);
