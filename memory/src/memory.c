@@ -213,7 +213,7 @@ void clearTLB()
 void sleepAccessMemory()
 {
 	write_end();
-	//sleep(sleep_access_memory);
+	sleep(sleep_access_memory);
 	write_start();
 }
 
@@ -434,7 +434,7 @@ bool assignFrame(int pid, t_page * page)
 		//Si esta modificado hago swapping caso contrario solo asigno la pagina
 		if(select->modified)
 		{
-			char * data = getMemoryData(select->frame, false);
+			char * data = getMemoryData(page->frame, false);
 			sw_swapping(pid, select->num, data, page->num);
 			return false;
 		}
