@@ -33,16 +33,17 @@
 //VARIABLES GLOABLES
 
 char *fileConfig = "config.cfg"; /* Ruta del archivo de configuración */
-char *swapName; /* Nombre del archivo swap */
-int pageQuan; /* Cantidad de páginas */
-int pageSize; /* Tamaño de la página en bytes */
-int t_compaction; /* Tiempo del retardo de compactación */
-int pageDisp; /* Páginas disponibles en el swap */
+char *swapName;                  /* Nombre del archivo swap */
+int pageQuan;                    /* Cantidad de páginas */
+int pageSize;                    /* Tamaño de la página en bytes */
+int t_swap;   					 /* Tiempo del retardo de intercambio (swap-in o swap-out) */
+int t_compaction;                /* Tiempo del retardo de compactación */
+int pageDisp; 					 /* Páginas disponibles en el swap */
 
-FILE *swap; /* Puntero al archivo de swap */
-t_log *logg; /* Variable para el log (tambien definida como extern en "shared.h) */
-t_list *lp; /* Puntero a la lista para administrar el espacio utilizado */
-pthread_mutex_t mx_main; /* Mutex para el proceso main */
+FILE *swap; 				     /* Puntero al archivo de swap */
+t_log *logg;					 /* Variable para el log (tambien definida como extern en "shared.h) */
+t_list *lp; 					 /* Puntero a la lista para administrar el espacio utilizado */
+pthread_mutex_t mx_main; 		 /* Mutex para el proceso main */
 
 //FUNCIONES PROPIAS
 
@@ -65,6 +66,9 @@ void readFileConfig() {
 
 	if (config_has_property(config, "TAMANIO_PAGINA"))
 		pageSize = config_get_int_value(config, "TAMANIO_PAGINA");
+
+	if (config_has_property(config, "RETARDO_SWAP"))
+			t_swap = config_get_int_value(config, "RETARDO_SWAP");
 
 	if (config_has_property(config, "RETARDO_COMPACTACION"))
 		t_compaction = config_get_int_value(config, "RETARDO_COMPACTACION");
@@ -319,6 +323,8 @@ void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
 
 	read_start();
 
+	sleep(t_swap);  /*Retardo de swap*/
+
 	int procStart = 0;
 	char *id = string_itoa(pid);
 	char *pn = string_itoa(pageNum);
@@ -354,6 +360,8 @@ void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
 void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data) {
 
 	write_start();
+
+	sleep(t_swap);  /*Retardo de swap*/
 
 	int procStart = 0;
 
