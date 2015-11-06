@@ -65,6 +65,9 @@ t_config* readFileConfig()
 	} else {
 		P_QUANTUM 	= config_get_int_value(config, "QUANTUM");
 		P_METHOD	= config_get_string_value(config, "ALGORITMO_PLANIFICACION");
+		if(string_equals_ignore_case(P_METHOD, "FIFO")){
+			P_QUANTUM = 0; //Si es FIFO no hay quantum
+		}
 	}
 
 	return config;
