@@ -2,8 +2,6 @@
 #include "cpu.h"
 #include "connections.h"
 
-//Asumimos FIFO
-
 t_queue* pQueue;
 pthread_mutex_t mutex_checkReadyProcesses;
 
@@ -14,6 +12,18 @@ void createProcessQueue(){
 void pQueueAddProcess(PCBItem* process){
 
 	queue_push(pQueue, process);
+}
+
+void pQueueAddProcessFirst(PCBItem* process){
+	t_queue* tmp = queue_create();
+	while(!queue_is_empty(pQueue)){
+		queue_push(tmp, queue_pop(pQueue));
+	}
+	queue_push(pQueue, process);
+	while(!queue_is_empty(tmp)){
+		queue_push(pQueue, queue_pop(tmp));
+	}
+	free(tmp);
 }
 
 
