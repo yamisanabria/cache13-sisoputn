@@ -212,9 +212,7 @@ void clearTLB()
 // Corre retardo de acceso a memoria
 void sleepAccessMemory()
 {
-	write_end();
 	sleep(sleep_access_memory);
-	write_start();
 }
 
 // Ingresa datos en un frame
