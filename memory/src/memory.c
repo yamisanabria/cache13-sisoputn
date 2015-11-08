@@ -346,7 +346,7 @@ t_page * selectFrame_CLOCK_M(int pid, t_list * presents)
 		}
 
 		//cambio puntero
-		nextIndex = ++nextIndex > list_size(presents) ? 0 : nextIndex;
+		nextIndex = ++nextIndex >= list_size(presents) ? 0 : nextIndex;
 		process->clock_pointer = list_get(presents, nextIndex);
 	}
 }

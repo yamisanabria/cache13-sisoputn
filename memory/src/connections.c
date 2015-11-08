@@ -225,9 +225,9 @@ void cpu_read(socket_connection * connection, char ** args)
 // Nos indica escribir un frame
 void cpu_write(socket_connection * connection, char ** args)
 {
-	int pid = atoi(args[0]);		// pid del proceso
-	int page = atoi(args[1]);		// número de página a escribir
-	char * data = args[2];			// página a escribir en el frame
+	int pid = atoi(args[0]);					// pid del proceso
+	int page = atoi(args[1]);					// número de página a escribir
+	char * data = string_duplicate(args[2]);	// página a escribir en el frame
 
 	write_start();
 
