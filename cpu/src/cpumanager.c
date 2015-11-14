@@ -11,7 +11,7 @@
 t_list* cpuList;
 
 void initCpuManager(){
-	cpuList = list_create();	
+	cpuList = list_create();
 }
 
 void createCpu(){
@@ -20,6 +20,8 @@ void createCpu(){
 	_cpu->status = CPU_AVAILABLE;
 	_cpu->socketIdMemory = connectMemory();
 	_cpu->socketIdScheduler = connectScheduler();
+
+	_cpu->rawstats = list_create();
 
 	list_add(cpuList, _cpu);
 }

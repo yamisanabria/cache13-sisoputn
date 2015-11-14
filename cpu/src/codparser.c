@@ -3,6 +3,8 @@
 #include <string.h>
 #include <unistd.h>
 #include <socket.h>
+#include <sys/time.h>
+
 
 #include <commons/collections/dictionary.h>
 #include <commons/string.h>
@@ -54,6 +56,14 @@ void consumeQuantum(CPU* cpu){
 		return;
 	}
 
+	struct timeval tv;
+	QUANTUMstat* _stats = malloc(sizeof(QUANTUMstat));
+
+	// guardo tiempo de inicio
+	gettimeofday(&tv, NULL);
+	_stats->init = (unsigned long long)(tv.tv_sec) * 1000 +
+    (unsigned long long)(tv.tv_usec) / 1000;
+
 	sprintf(log_buffer, "Ejecutando retardo del proceso %d", cpu->execPid);
 	log_info(logger, log_buffer);
 	// sleep de retardo
@@ -75,6 +85,13 @@ void consumeQuantum(CPU* cpu){
 	log_info(logger, log_buffer);
 
 	runLine(line, cpu);
+
+	// guardo tiempo de finalizacion
+	gettimeofday(&tv, NULL);
+	_stats->end = (unsigned long long)(tv.tv_sec) * 1000 +
+		(unsigned long long)(tv.tv_usec) / 1000;
+	list_add(cpu->rawstats, _stats);
+
 
 	free(line);
 }
