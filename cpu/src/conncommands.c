@@ -39,7 +39,9 @@ void schedulerStartProcess(socket_connection* connection, char ** args){
 void schedulerGetStats(socket_connection* connection, char ** args){
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
-	// TODO por ahora devuelve siempre 1, hay que acordar que debe hacer
+	// TODO RECORRER lista cpu->rawstats
+	// buscar los del ultimo minuto calcular duraciones, sumarlas y hacer
+	// calculo de porcentage
 	runFunction(cpu->socketIdScheduler, "cpu_sc_stats", 1, string_itoa(1));
 }
 

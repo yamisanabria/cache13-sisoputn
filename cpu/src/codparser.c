@@ -56,6 +56,7 @@ void consumeQuantum(CPU* cpu){
 		return;
 	}
 
+	/** inicio de quantum, guardo estadisticas */
 	struct timeval tv;
 	QUANTUMstat* _stats = malloc(sizeof(QUANTUMstat));
 
@@ -63,6 +64,8 @@ void consumeQuantum(CPU* cpu){
 	gettimeofday(&tv, NULL);
 	_stats->init = (unsigned long long)(tv.tv_sec) * 1000 +
     (unsigned long long)(tv.tv_usec) / 1000;
+	/** fin de inicio de quantum */
+
 
 	sprintf(log_buffer, "Ejecutando retardo del proceso %d", cpu->execPid);
 	log_info(logger, log_buffer);
@@ -86,12 +89,28 @@ void consumeQuantum(CPU* cpu){
 
 	runLine(line, cpu);
 
+
+	/** inicio de fin quantum, guardo estadisticas y limpio los datos viejos */
 	// guardo tiempo de finalizacion
 	gettimeofday(&tv, NULL);
 	_stats->end = (unsigned long long)(tv.tv_sec) * 1000 +
 		(unsigned long long)(tv.tv_usec) / 1000;
 	list_add(cpu->rawstats, _stats);
 
+	unsigned long long _haceUnMinuto;
+	_haceUnMinuto = _stats->end - (unsigned long long)(60*1000);
+	bool _hacemasDeUnMinuto(QUANTUMstat *s) {
+		return s->init < _haceUnMinuto;
+	}
+
+	QUANTUMstat *aux;
+	aux = list_remove_by_condition(cpu->rawstats, (void*) _hacemasDeUnMinuto);
+	while(aux){
+		free(aux);
+		aux = list_remove_by_condition(cpu->rawstats, (void*) _hacemasDeUnMinuto);
+	}
+
+	/** fin inicio de fin quantum DUPLICA! */
 
 	free(line);
 }
