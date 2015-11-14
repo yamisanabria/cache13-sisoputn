@@ -60,6 +60,8 @@ t_config* readFileConfig()
 }
 
 void initializeLogger(int argc, char* argv[]){
+	/*
+	// showLogInConsole no se esta usando, por ello comento todo
 	int showLogInConsole = 0;
 	if(argc > 0){
 		int i = 0;
@@ -69,7 +71,7 @@ void initializeLogger(int argc, char* argv[]){
 				break;
 			}
 		}
-	}
+	}*/
 	//logger = log_create("cpu.log", "CPU", showLogInConsole, LOG_LEVEL_INFO);
 	logger = log_create("cpu.log", "CPU", true, LOG_LEVEL_INFO);
 }
