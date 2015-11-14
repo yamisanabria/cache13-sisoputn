@@ -25,6 +25,8 @@
 		t_list * pages;
 		t_page * clock_pointer;
 		socket_connection * connection;
+		int access;
+		int faults;
 
 	} t_process;
 
@@ -35,7 +37,6 @@
 		char * data;
 		bool arriving;
 		socket_connection * connection;
-
 	} t_write_petition;
 
 	typedef struct
@@ -90,6 +91,9 @@
 
 	// Elimina todos los registros de la TLB
 	void clearTLB();
+
+	// Imprime la tasa de aciertos de la TLB
+	void printHitRate();
 
 	//-###############################################################################################-//
 	//-###-[MEMORY]-##################################################################################-//

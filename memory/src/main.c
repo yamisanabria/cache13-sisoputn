@@ -23,8 +23,6 @@
 #include "connections.h"
 #include "shared.h"
 
-pthread_mutex_t mx_main;
-
 /** Config info **/
 char* 	fileConfigDir = "config.cfg";	// Ruta a archivo config por defecto
 t_config* memoryConfig;				    // Objeto de configuración de marta
@@ -119,10 +117,12 @@ int main(int argc, char* argv[])
 	signal(SIGUSR2, listenSignal);
 	signal(SIGPOLL, listenSignal);
 
-	//Dejo bloqueado el main
-	pthread_mutex_init(&mx_main, NULL);
-	pthread_mutex_lock(&mx_main);
-	pthread_mutex_lock(&mx_main);
+	// Imprimo cada 1 minuto la tasa de aciertos
+	while(true)
+	{
+		sleep(60);
+		printHitRate();
+	}
 
 	config_destroy(memoryConfig);
 

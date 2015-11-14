@@ -28,6 +28,8 @@ int frames_free;			// Frames libres
 char * frame_algorithm; 	// Algoritmo de seleccion de frame
 
 int TLB_q;					// Cantidad de traduciones de la TLB
+float TLB_access;			// Cantidad de accesos intentados
+float TLB_hits;				// Cantidad de aciertos
 
 char ** memory;				// Memoria reservada
 bool * frames;				// Estados de los Frames (Libres/Ocupados)
@@ -104,6 +106,8 @@ void addProcess(int id, int pages_q, socket_connection * connection)
 	process->pages = pages;
 	process->clock_pointer = NULL;
 	process->connection = connection;
+	process->access = 0;
+	process->faults = 0;
 	list_add(processes, process);
 }
 
@@ -147,6 +151,9 @@ void deletePages(t_list * pages)
 void deleteProcess(int id)
 {
 	t_process * process = getProcess(id);
+
+	log_info(logger, "Accesos/Fallas: %d/%d.", process->access, process->faults);
+
 	deletePages(process->pages);
 
 	int _get(t_process * process)
@@ -179,6 +186,9 @@ void addTranslation(int pid, int page, int frame)
 		return;
 
 	t_translation * translation = malloc(sizeof(t_translation));
+	translation->pid = pid;
+	translation->page = page;
+	translation->frame = frame;
 	if(queue_size(TLB) > TLB_q)
 	{
 		t_translation * select = queue_pop(TLB);
@@ -203,6 +213,15 @@ void clearTLB()
 	void _destroyer(t_translation * translation)
 	{free(translation);}
 	queue_destroy_and_destroy_elements(TLB, (void*)_destroyer);
+}
+
+// Imprime la tasa de aciertos de la TLB
+void printHitRate()
+{
+	if(TLB_access > 0)
+		log_info(logger, "Referencias: %f. Aciertos: %f. Tasa de aciertos: %f.", TLB_access, TLB_hits, (TLB_hits / TLB_access));
+	else
+		log_info(logger, "TLB sin movimientos.");
 }
 
 //-###############################################################################################-//
@@ -370,8 +389,14 @@ t_page * selectFrame(int pid, t_list * presents)
 int getNumFrame(int pid, int page_num)
 {
 	t_translation * translation = getTranslation(pid, page_num);
+	TLB_access += 1.0f;
 	if(translation != NULL)
+	{
+		TLB_hits += 1.0f;
 		return translation->frame;
+	}
+
+	sleepAccessMemory();
 
 	t_page * page = getPage(pid, page_num);
 	if(page != NULL)
@@ -417,6 +442,7 @@ bool assignFrame(int pid, t_page * page)
 	{
 		page->frame = getFreeFrame();
 		page->present = true;
+		addTranslation(pid, page->num, page->frame);
 		return true;
 	}
 	// Selecciono un frame (si es que hay)
@@ -425,6 +451,7 @@ bool assignFrame(int pid, t_page * page)
 		// Selecciono frame
 		t_page * select = selectFrame(pid, presents);
 		page->frame = select->frame;
+		addTranslation(pid, page->num, page->frame);
 
 		select->present = false;
 		select->frame = -1;
@@ -459,9 +486,15 @@ bool assignFrame(int pid, t_page * page)
 // Ejecuta escritura
 bool runWrite(t_write_petition * write_petition)
 {
+	if(!write_petition->arriving)
+		getNumFrame(write_petition->pid, write_petition->page);
+
 	t_page * page = getPage(write_petition->pid, write_petition->page);
+	t_process * process = getProcess(write_petition->pid);
 	if(page->present)
 	{
+		process->access++;
+
 		//seteo datos de pagina y aviso que se realizo ok
 		setMemoryData(page->frame, write_petition->data, true);
 		page->modified = true;
@@ -472,6 +505,8 @@ bool runWrite(t_write_petition * write_petition)
 	}
 	else if(!write_petition->arriving)
 	{
+		process->faults++;
+
 		write_petition->arriving = true;
 		if(assignFrame(write_petition->pid, page))
 			return runWrite(write_petition);
@@ -483,18 +518,25 @@ bool runWrite(t_write_petition * write_petition)
 // Ejecuta lectura
 bool runRead(t_read_petition * read_petition)
 {
+	if(!read_petition->arriving)
+		getNumFrame(read_petition->pid, read_petition->page);
+
 	t_page * page = getPage(read_petition->pid, read_petition->page);
+	t_process * process = getProcess(read_petition->pid);
 	if(page->present)
 	{
-		page->used = true;
+		process->access++;
 
 		//obtengo datos de pagina y los envio
 		char * data = getMemoryData(page->frame, true);
+		page->used = true;
 		cpu_frameData(read_petition->connection->socket, page->frame, data);
 		return true;
 	}
 	else if(!read_petition->arriving)
 	{
+		process->faults++;
+
 		read_petition->arriving = true;
 		if(assignFrame(read_petition->pid, page))
 			return runRead(read_petition);
@@ -553,7 +595,6 @@ void addWritePetition(int pid, int page, char * data, socket_connection * connec
 	write->arriving = false;
 	queue_push(write_petitions, write);
 
-	sleepAccessMemory();
 	runWritePetitions();
 }
 
@@ -567,7 +608,6 @@ void addReadPetition(int pid, int page, socket_connection * connection)
 	read->arriving = false;
 	queue_push(read_petitions, read);
 
-	sleepAccessMemory();
 	runReadPetitions();
 }
 
