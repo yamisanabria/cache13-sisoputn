@@ -20,7 +20,7 @@ char *get_nth_line(char *codfile, int line_no )
     
     while ((getline(&line, &len, fp)) != -1) {
         if(i == line_no) {
-            strtok(line, "\n");
+            strtok(line, ";\n");
             return line;
         }
         i++;
