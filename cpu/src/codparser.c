@@ -120,9 +120,6 @@ void runLine(char* line, CPU* cpu) {
 	// la copio por que uso el string original si ocurre un fallo
 	char *_line = string_duplicate(line);
 
-	// ver de usar string_n_split y string_starts_with;
-	//should_bool(string_starts_with("MiArchivo.txt", "txt")) be truthy;
-	//char ** args = string_split(_line, " ");
 	char ** instr = string_n_split(_line, 2, " ");
 
 	Instruction* instruction = dictionary_get(instructions, instr[0]);

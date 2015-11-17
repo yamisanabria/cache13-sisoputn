@@ -13,18 +13,18 @@ void ins_iniciar(CPU* cpu,char ** args) {
 }
 
 void ins_leer(CPU* cpu,char ** args) {
-	// TODO testear
-
 	char* _page = string_duplicate(args[1]);
 	runFunction(cpu->socketIdMemory, "cpu_mem_read", 2, string_itoa(cpu->execPid), _page);
 	free(_page);
 }
 
 void ins_escribir(CPU* cpu,char ** args) {
-	// TODO testear
-
 	char* _page = string_duplicate(args[1]);
-	char* _data = string_duplicate(args[2]);
+	// char* _data = string_duplicate(args[2]);
+	// La data está con comillas, se las sacamos
+	char* _data = string_substring(args[2], 1, string_length(args[2]) - 2);
+
+
 	runFunction(cpu->socketIdMemory, "cpu_mem_write", 3, string_itoa(cpu->execPid), _page, _data);
 
 	// estaria mejor que esto se haga cuando responda el adm de memoria, pero como cuando
