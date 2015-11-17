@@ -190,7 +190,7 @@ int compact() {
 	/* Fin de la compactación fisica */
 
 	/* Pongo a dormir el proceso simulando el tiempo de retardo de compactación */
-	sleep(t_compaction);
+	usleep(t_compaction);
 
 	log_info(logg, "Compactación finalizada");
 
@@ -323,7 +323,7 @@ void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
 
 	read_start();
 
-	sleep(t_swap);  /*Retardo de swap*/
+	usleep(t_swap);  /*Retardo de swap*/
 
 	int procStart = 0;
 	char *id = string_itoa(pid);
@@ -361,7 +361,7 @@ void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data)
 
 	write_start();
 
-	sleep(t_swap);  /*Retardo de swap*/
+	usleep(t_swap);  /*Retardo de swap*/
 
 	int procStart = 0;
 
