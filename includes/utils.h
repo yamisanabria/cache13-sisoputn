@@ -14,6 +14,8 @@
      _a > _b ? _a : _b; })
 
 
+	unsigned long long getTimeNow();
+
 	char* getFileContentUtils(char* fileName);
 
 	//Dado un archivo devuelve un buffer con el contenido del archivo.

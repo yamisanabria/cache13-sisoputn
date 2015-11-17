@@ -57,8 +57,5 @@ void cpuStatsAreHere(CPU* cpu, char* stats){
 	log_info(logger, log_buffer);
 
 	char* _status[2] = {"AVAILABLE", "BUSY"};
-	printf("ID: %d\n", cpu->id);
-	printf("Estado:%s\n", _status[cpu->status]);
-	printf("Uso:%s\n", stats);
-	printf("**********\n");
+	printf("cpu %d: %s%% (%s)\n", cpu->id, stats, _status[cpu->status]);
 }

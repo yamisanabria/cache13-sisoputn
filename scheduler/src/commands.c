@@ -53,7 +53,6 @@ void cmd_cpu()
 	printf("+----------------------------+");
 	printf("\n\n");	
 	list_iterate(getCPUsList(), (void*)getCPUStats);
-
 	getchar();
 }
 

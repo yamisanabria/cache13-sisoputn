@@ -5,6 +5,7 @@
 #include <socket.h>
 
 #include "shared.h"
+#include "codparser.h"
 
 void ins_iniciar(CPU* cpu,char ** args) {
 	char* _pages = string_duplicate(args[1]);
@@ -39,8 +40,6 @@ void ins_escribir(CPU* cpu,char ** args) {
 }
 
 void ins_entradaSalida(CPU* cpu,char ** args) {
-	// TODO testear
-
 	char* _sleep = string_duplicate(args[1]);
 
 	char* _buffer = string_from_format("mProc %s en entrada-salida de tiempo %s\n", string_itoa(cpu->execPid), _sleep);
@@ -55,6 +54,7 @@ void ins_entradaSalida(CPU* cpu,char ** args) {
 		data = info relacionada al estado. Por ejemplo si entra en E/S, sería el tiempo que tiene que bloquearse.
 	*/
 
+	updateCpuTimer(cpu);
 	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 5, string_itoa(cpu->execPid), "4", string_itoa(cpu->process_counter), string_duplicate(cpu->execResponseBuffer), _sleep);
 
 	free(_sleep);
@@ -66,6 +66,8 @@ void ins_finalizar(CPU* cpu) {
 	char* _buffer = string_from_format("mProc %s finalizado\n", string_itoa(cpu->execPid));
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
+
+	updateCpuTimer(cpu);
 	// le aviso a la memoria que termino proceso
 	runFunction(cpu->socketIdMemory, "cpu_mem_endProcess", 1, string_itoa(cpu->execPid));
 	// le aviso al scheduler que termino proceso

@@ -6,6 +6,7 @@
 #include "shared.h"
 #include "cpumanager.h"
 #include "codparser.h"
+#include "utils.h"
 
 void schedulerStartProcess(socket_connection* connection, char ** args){
 	char* path 			= args[0];		// path del codigo
@@ -32,6 +33,7 @@ void schedulerStartProcess(socket_connection* connection, char ** args){
 		cpu->quantum = quantum;
 	}
 
+	updateCpuTimer(cpu);
 	consumeQuantum(cpu);
 
 }
@@ -39,10 +41,34 @@ void schedulerStartProcess(socket_connection* connection, char ** args){
 void schedulerGetStats(socket_connection* connection, char ** args){
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
-	// TODO RECORRER lista cpu->rawstats
-	// buscar los del ultimo minuto calcular duraciones, sumarlas y hacer
-	// calculo de porcentage
-	runFunction(cpu->socketIdScheduler, "cpu_sc_stats", 1, string_itoa(1));
+
+	float percentage = 0;
+	unsigned long long temp = 0;
+	unsigned long long now = getTimeNow();
+
+	bool _hacemasDeUnMinuto(QUANTUMstat *s) {
+		return s->end && s->end < (now - (unsigned long long)(60*1000));
+	}
+	list_remove_and_destroy_by_condition(cpu->rawstats, (void*) _hacemasDeUnMinuto, free);
+
+	void _calculateLastMinutePercentage(QUANTUMstat* st){
+		unsigned long long t1 = st->end;
+		unsigned long long t2 = st->init;
+		if(!t1)
+			t1 = now;
+		if(st->init < now - (unsigned long long)(60*1000))
+			t2 = now - (unsigned long long)(60*1000);
+		temp += t1 - t2;
+	}
+
+	list_iterate(cpu->rawstats, (void*)_calculateLastMinutePercentage);
+
+	percentage = ((float)temp / (float)(60*1000)) * 100;
+
+	if(percentage > 100)
+		percentage = 100;
+
+	runFunction(cpu->socketIdScheduler, "cpu_sc_stats", 1, string_itoa(percentage));
 }
 
 
@@ -56,6 +82,7 @@ void memoryStartProcessOk(socket_connection* connection, char ** args) {
 
 	cpu->process_counter = cpu->process_counter + 1;
 	// hacer lo que haya que hacer y seguir consumiendo quantums;
+	updateCpuTimer(cpu);
 	consumeQuantum(cpu);
 }
 
@@ -67,8 +94,8 @@ void memoryNoFrames(socket_connection* connection, char ** args) {
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
 
+	updateCpuTimer(cpu);
 	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", string_itoa(cpu->process_counter + 1), string_duplicate(cpu->execResponseBuffer), "no_frames");
-
 }
 
 void memoryNoSpace(socket_connection* connection, char ** args) {
@@ -79,8 +106,8 @@ void memoryNoSpace(socket_connection* connection, char ** args) {
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
 
+	updateCpuTimer(cpu);
 	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", string_itoa(cpu->process_counter + 1), string_duplicate(cpu->execResponseBuffer), "no_space");
-
 }
 
 void memoryFrameData(socket_connection* connection, char ** args) {
@@ -98,13 +125,16 @@ void memoryFrameData(socket_connection* connection, char ** args) {
 	free(_frame);
 
 	cpu->process_counter = cpu->process_counter + 1;
+	updateCpuTimer(cpu);
 	consumeQuantum(cpu);
 }
 
 void memoryWriteOk(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
+
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
 
 	cpu->process_counter = cpu->process_counter + 1;
+	updateCpuTimer(cpu);
 	consumeQuantum(cpu);
 }

@@ -50,6 +50,22 @@ void initInstructions(){
 	dictionary_put(instructions, "finalizar", newInstruction(&ins_finalizar, 0));
 }
 
+void updateCpuTimer(CPU* cpu){
+
+	unsigned long long now = getTimeNow();
+
+	bool _hacemasDeUnMinuto(QUANTUMstat *s) {
+		return s->end && s->end < (now - (unsigned long long)(60*1000));
+	}
+	list_remove_and_destroy_by_condition(cpu->rawstats, (void*) _hacemasDeUnMinuto, free);
+
+	void _updateEndTime(QUANTUMstat* st){
+		if(!st->end)
+			st->end = now;
+	}
+	list_iterate(cpu->rawstats, (void*) _updateEndTime);
+}
+
 void consumeQuantum(CPU* cpu){
 	if(cpu->quantum == 0){
 		runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "1", string_itoa(cpu->process_counter), cpu->execResponseBuffer, "");
@@ -57,13 +73,12 @@ void consumeQuantum(CPU* cpu){
 	}
 
 	/** inicio de quantum, guardo estadisticas */
-	struct timeval tv;
 	QUANTUMstat* _stats = malloc(sizeof(QUANTUMstat));
 
 	// guardo tiempo de inicio
-	gettimeofday(&tv, NULL);
-	_stats->init = (unsigned long long)(tv.tv_sec) * 1000 +
-    (unsigned long long)(tv.tv_usec) / 1000;
+	_stats->init = getTimeNow();
+	_stats->end = 0;
+	list_add(cpu->rawstats, _stats);
 	/** fin de inicio de quantum */
 
 
@@ -81,36 +96,13 @@ void consumeQuantum(CPU* cpu){
 		line = get_nth_line(cpu->codfile, (cpu->process_counter - 1));
 
 		cpu->quantum = cpu->quantum - 1;
-			//cpu->process_counter = cpu->process_counter + 1; Esto lo sacamos de acá en el runLine, porque tiene que saber qué línea ejecuta para ver si suma o no
+		//cpu->process_counter = cpu->process_counter + 1; Esto lo sacamos de acá en el runLine, porque tiene que saber qué línea ejecuta para ver si suma o no
 	}
 
 	sprintf(log_buffer, "Ejecutando instrucción (%s) del proceso %d", line, cpu->execPid);
 	log_info(logger, log_buffer);
 
 	runLine(line, cpu);
-
-
-	/** inicio de fin quantum, guardo estadisticas y limpio los datos viejos */
-	// guardo tiempo de finalizacion
-	gettimeofday(&tv, NULL);
-	_stats->end = (unsigned long long)(tv.tv_sec) * 1000 +
-		(unsigned long long)(tv.tv_usec) / 1000;
-	list_add(cpu->rawstats, _stats);
-
-	unsigned long long _haceUnMinuto;
-	_haceUnMinuto = _stats->end - (unsigned long long)(60*1000);
-	bool _hacemasDeUnMinuto(QUANTUMstat *s) {
-		return s->init < _haceUnMinuto;
-	}
-
-	QUANTUMstat *aux;
-	aux = list_remove_by_condition(cpu->rawstats, (void*) _hacemasDeUnMinuto);
-	while(aux){
-		free(aux);
-		aux = list_remove_by_condition(cpu->rawstats, (void*) _hacemasDeUnMinuto);
-	}
-
-	/** fin inicio de fin quantum DUPLICA! */
 
 	free(line);
 }
