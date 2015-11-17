@@ -1,8 +1,8 @@
-iniciar 5
-escribir 0 "Pablo: Hola, todo bien? Hacemos E/S"
-leer 0
-entrada-salida 10
-escribir 4 "Pablo: Listo!"
-leer 4
-finalizar
+iniciar 5;
+escribir 0 "Pablo: Hola, todo bien? Hacemos E/S";
+leer 0;
+entrada-salida 10;
+escribir 4 "Pablo: Listo!";
+leer 4;
+finalizar;
 
