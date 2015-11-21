@@ -1,0 +1,3 @@
+iniciar 100;
+escribir 0 "Hola";
+finalizar;
