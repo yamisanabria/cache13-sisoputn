@@ -33,17 +33,17 @@
 //VARIABLES GLOABLES
 
 char *fileConfig = "config.cfg"; /* Ruta del archivo de configuración */
-char *swapName;                  /* Nombre del archivo swap */
-int pageQuan;                    /* Cantidad de páginas */
-int pageSize;                    /* Tamaño de la página en bytes */
-int t_swap;   					 /* Tiempo del retardo de intercambio (swap-in o swap-out) */
-int t_compaction;                /* Tiempo del retardo de compactación */
-int pageDisp; 					 /* Páginas disponibles en el swap */
+char *swapName; /* Nombre del archivo swap */
+int pageQuan; /* Cantidad de páginas */
+int pageSize; /* Tamaño de la página en bytes */
+int t_swap; /* Tiempo del retardo de intercambio (swap-in o swap-out) */
+int t_compaction; /* Tiempo del retardo de compactación */
+int pageDisp; /* Páginas disponibles en el swap */
 
-FILE *swap; 				     /* Puntero al archivo de swap */
-t_log *logg;					 /* Variable para el log (tambien definida como extern en "shared.h) */
-t_list *lp; 					 /* Puntero a la lista para administrar el espacio utilizado */
-pthread_mutex_t mx_main; 		 /* Mutex para el proceso main */
+FILE *swap;  /* Puntero al archivo de swap */
+t_log *logg; /* Variable para el log (tambien definida como extern en "shared.h) */
+t_list *lp;  /* Puntero a la lista para administrar el espacio utilizado */
+pthread_mutex_t mx_main; /* Mutex para el proceso main */
 
 //FUNCIONES PROPIAS
 
@@ -68,7 +68,7 @@ void readFileConfig() {
 		pageSize = config_get_int_value(config, "TAMANIO_PAGINA");
 
 	if (config_has_property(config, "RETARDO_SWAP"))
-			t_swap = config_get_int_value(config, "RETARDO_SWAP");
+		t_swap = config_get_int_value(config, "RETARDO_SWAP");
 
 	if (config_has_property(config, "RETARDO_COMPACTACION"))
 		t_compaction = config_get_int_value(config, "RETARDO_COMPACTACION");
@@ -123,39 +123,47 @@ list_proc *createNode(int pid, int pos, int pages) {
 	return nodo;
 }
 
-char *readSwap(int procStart, int pages) {
+void setZeros(int beginPos, int pages) {
 
-	int offset = procStart * pageSize;      //desde donde comienzo a leer
-	int size = pages * pageSize;		    //cuanto leo
-	char *process = malloc(sizeof(char)*size);
+	int size = pages * pageSize;
+	char *zeros = calloc(1, pages * size + 1);
+	fseek(swap, beginPos * pageSize, SEEK_SET);
+	fwrite(zeros, 1, size, swap);
+	fflush(swap);
+	free(zeros);
+}
 
-	//Todo este quilombo es porque no se puede usar las funciones comentadas abajo:
-	char *string = string_duplicate("%");
-	char *cSize  = string_itoa(size);
-	string_append(&string,cSize);
-	string_append(&string,"s");
+char *readSwap(int procStart) {
+
+	int offset = procStart * pageSize;    //desde donde comienzo a leer
+	char *process = calloc(1, pageSize + 1); //se necesita +1 para el '\0' de mierda
 
 	fseek(swap, offset, SEEK_SET);
-	fscanf(swap, string, process);
-	//fread(process, 1, size, swap);
-	//fgets(process,size,swap);
-
-	free(cSize);
-	free(string);
+	fread(process, pageSize, 1, swap);
 
 	return process;
 
 }
 
-void writeSwap(int procStart, int pages, char *data, int size) {
+void writeSwap(int procStart, char *data, int size) {
 
-	int offset = procStart * pageSize;      //desde donde comienzo a leer
+	int offset = procStart * pageSize; //desde donde comienzo a escribir
+	int zeros = pageSize - size;
 
-	fseek(swap, offset, SEEK_SET);
-	fwrite(data, 1, size, swap);
+	fseek(swap, offset, SEEK_SET); // me posiciono en donde comenzaré a escribir
+
+	if (zeros != 0) {
+		char *s = string_duplicate(data);
+		char *empty = calloc(1, zeros + 1);
+		string_append(&s, empty);
+		fwrite(s, pageSize, 1, swap);
+		free(empty);
+		free(s);
+	} else {
+		fwrite(data, pageSize, 1, swap);
+	}
 
 	fflush(swap);
-
 
 }
 
@@ -163,31 +171,30 @@ int compact() {
 
 	log_info(logg, "Compactación iniciada por fragmentación externa");
 
-	/* Cominezo compactación lógica */
-	int beginPos = 0;	/* Inicio del siguiente mProc */
-	char *process;		/* Contenido del mProc */
+	int beginPos = 0; /* Inicio del siguiente mProc */
+	char *process;    /* Contenido del mProc */
 
 	void _set(list_proc *l) {
-		/* Obtengo el proceso, leyéndolo desde el swap */
-		process = readSwap(l->offset, l->pageQty);
-		/* Le asigno su nuva ubicación */
-		l->offset = beginPos;
-		/* Escribo en swap el proceso en su nueva ubicación */
-		writeSwap(beginPos, l->pageQty, process,strlen(process));
+		int i; /* Página actual */
+		int swapReadPos = l->offset; /* La posición de la que debo leer en swap */
+		int swapWritePos = beginPos; /* La posición de la que debo leer en swap */
+		l->offset = beginPos;        /* Asigno nuevo comienzo del mProc */
+
+		for (i = 0; i < l->pageQty; i++) {
+			/* Leo la información de la página actual del mProc en swap */
+			process = readSwap(swapReadPos);
+			/* Escribo en swap, el contenido en su nueva ubicación */
+			writeSwap(swapWritePos, process, strlen(process));
+			swapReadPos++;
+			swapWritePos++;
+		}
+
 		/* Preparo la nueva ubicación para el siguiente proceso */
 		beginPos += l->pageQty;
 	}
 
+	/* Itero la lista para compactar esos mProc */
 	list_iterate(lp, (void*) _set);
-	/* Fin de la compactación lógica */
-
-	/* Inicio de la compactación física */
-	int pages = pageQuan-beginPos;
-	int size  = pages*pageSize;
-	char *empty = malloc(size);
-	memset(empty,'\0',size);
-	writeSwap(beginPos,pages,empty,size);
-	/* Fin de la compactación fisica */
 
 	/* Pongo a dormir el proceso simulando el tiempo de retardo de compactación */
 	usleep(t_compaction);
@@ -245,6 +252,10 @@ int initProc(int pid, int requiredPages) {
 		}
 	}
 
+	/* Relleno con '\0' el espacio que utilizará este mProc en swap */
+	setZeros(beginPos, requiredPages);
+
+	/* Actualizo cantidad de páginas disponibles */
 	pageDisp -= requiredPages;
 	return beginPos;
 }
@@ -285,7 +296,6 @@ void endProcess(socket_connection *conn, int pid) {
 	int procStart = 0;
 	int rp = 0;
 	int wp = 0;
-	char *empty;
 
 	bool _getEnd(list_proc *l) {
 		if (l->pid == pid) {
@@ -304,26 +314,22 @@ void endProcess(socket_connection *conn, int pid) {
 	list_remove(lp, index);
 
 	/* lleno mi array de \0 para "eliminar" mi proceso del swap */
-	size = pages * pageSize;
-	empty = malloc(size);
-	memset(empty, '\0', size);
-
-	writeSwap(procStart, size, empty,size);
-
+//	size = pages * pageSize;
+//	empty = malloc(size);
+//	memset(empty, '\0', size);
+//  writeSwap(procStart, size, empty,size);
 	pageDisp += pages;
 
-	free(empty);
-
 	log_info(logg, "Proceso liberado exitosamente.. PID: %d, N° de byte inicial"
-			" %d, Tamaño: %d bytes, Páginas leídas: %d, Páginas escritas: %d"
-			, pid, procStart * pageSize, size, rp, wp );
+			" %d, Tamaño: %d bytes, Páginas leídas: %d, Páginas escritas: %d",
+			pid, procStart * pageSize, size, rp, wp);
 }
 
 void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
 
 	read_start();
 
-	usleep(t_swap);  /*Retardo de swap*/
+	usleep(t_swap); /*Retardo de swap*/
 
 	int procStart = 0;
 	char *id = string_itoa(pid);
@@ -342,7 +348,7 @@ void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
 
 	list_find(lp, (void*) _getPage);
 
-	data = readSwap(procStart, 1);
+	data = readSwap(procStart);
 
 	log_info(logg, "Lectura solicitada.. PID: %d, N° de byte inicial"
 			" %d, Tamaño: %d bytes, Contenido: %s", pid, procStart * pageSize,
@@ -361,7 +367,7 @@ void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data)
 
 	write_start();
 
-	usleep(t_swap);  /*Retardo de swap*/
+	usleep(t_swap); /*Retardo de swap*/
 
 	int procStart = 0;
 
@@ -376,7 +382,7 @@ void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data)
 	}
 
 	list_find(lp, (void*) _setPage);
-	writeSwap(procStart, 1, data, strlen(data));
+	writeSwap(procStart, data, strlen(data));
 
 	log_info(logg, "Escritura solicitada.. PID: %d, N° de byte inicial"
 			" %d, Tamaño: %d bytes, Contenido: %s", pid, procStart * pageSize,
@@ -390,11 +396,11 @@ void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data)
 int main(int argc, char *argv[]) {
 
 	readFileConfig(); /* Leo archivo de configuracion */
-	initLog(); 		  /* Inicializo el log */
-	initSwap();       /* Creo el archivo de swap */
-	initSyn();		  /* Inicializo semáforos */
+	initLog(); /* Inicializo el log */
+	initSwap(); /* Creo el archivo de swap */
+	initSyn(); /* Inicializo semáforos */
 	initDictionary(); /* Inicializo el diccionario de funciones remotas */
-	startListener();  /* Me pongo a la escucha de conexiones provenientes del Adm. de Memoria */
+	startListener(); /* Me pongo a la escucha de conexiones provenientes del Adm. de Memoria */
 
 	//TEST
 	//startTesting();
