@@ -43,11 +43,18 @@ void initList();
  */
 list_proc *createNode(int pid, int pos, int pages);
 
-/* Función que retorna el contenido leido de una página(una porción del SWAP) */
-char *readSwap(int procStart, int pages);
+/* Función que formatea el espacio que necesita un mProc al iniciarse, es decir,
+ * rellena con '\0' los sectores de disco que va a utilizar, ya que podría quedar
+ * data de un proceso ya dado de baja logicamente.
+ */
+void setZeroes(int beginPos, int pages);
 
-/* Función que escribe una determinada cantidad de bytes en el SWAP */
-void writeSwap(int procStart, int pages, char *data, int size);
+/* Función que retorna el contenido leido de una página(una porción del SWAP) */
+char *readSwap(int procStart);
+
+/* Función que escribe una determinada cantidad de bytes en el SWAP
+ * Recordar que siempre se escribe de a una página (pages = 1) */
+void writeSwap(int procStart, char *data, int size);
 
 /* Función que compacta los procesos. Esto implica acomodar los nodos de la lista,
  * y acomodar los procesos en SWAP.

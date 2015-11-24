@@ -2,32 +2,20 @@
 
 Para correr en el laboratorio;
 
-
-```sh
-make all
-tmux
-./tmuxrun.sh
+Pasos iniciales:
+```
+git clone https://github.com/sisoputnfrba/tp-2015-2c-Aprobados.git
+cd tp-2015-2c-Aprobados
+export LD_LIBRARY_PATH=$(pwd)/includes:$LD_LIBRARY_PATH
+sudo make all
 ```
 
-Que hacen esas lineas?
-#########
 
+Levantar ventanas automáticamente:
 ```sh
-make all
+#Levanta el multiplexor de terminales, si, asi de groso.
+tmux          
+
+#Carga los modulos de cache13 en diferentes ventanas de tmux, con ctrl + b podés usar las flechas y cambiar de ventanas, más info en (google!); http://hipertextual.com/archivo/2014/09/tmux/
+./tmuxrun.sh  
 ```
-Te compila todo el codigo, si ves que escupe un error arreglalo!
-
-
-
-```sh
-tmux
-```
-Levanta el multiplexor de terminales, si, asi de groso.
-
-
-```sh
-./tmuxrun.sh
-```
-Carga los modulos de cache13 en diferentes ventanas de tmux, con ctrl + b podes
-usar las flechas y cambiar de ventanas, mas info en (google!);
-http://hipertextual.com/archivo/2014/09/tmux/
