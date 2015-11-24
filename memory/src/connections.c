@@ -116,8 +116,6 @@ void cpu_noSpace(int socket, int pid)
 // Enviamos contenido de un frame
 void cpu_frameData(int socket, int frame, char * data)
 {
-	log_info(logger, "%d", frame);
-	log_info(logger, data);
 	char * frame_str = string_itoa(frame);
 	runFunction(socket, "mem_cpu_frameData", 2, frame_str, data);
 	free(frame_str);

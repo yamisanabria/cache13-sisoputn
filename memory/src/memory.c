@@ -233,7 +233,7 @@ void printHitRate()
 void sleepAccessMemory()
 {
 	log_info(logger, "Retardo de %d segundos.", sleep_access_memory);
-	sleep(sleep_access_memory);
+	usleep(sleep_access_memory);
 }
 
 // Ingresa datos en un frame
@@ -443,9 +443,10 @@ bool assignFrame(int pid, t_page * page)
 	if(list_size(presents) < frames_max && frames_free > 0)
 	{
 		page->frame = getFreeFrame();
-		page->present = true;
+		page->present = false;
 		addTranslation(pid, page->num, page->frame);
-		return true;
+		sw_getPage(pid, page->num);
+		return false;
 	}
 	// Selecciono un frame (si es que hay)
 	else if(list_size(presents) > 0)
@@ -467,8 +468,9 @@ bool assignFrame(int pid, t_page * page)
 		}
 		else
 		{
-			page->present = true;
-			return true;
+			page->present = false;
+			sw_getPage(pid, page->num);
+			return false;
 		}
 	}
 	// Sin frames asignados y sin frames disponibles: aborto
