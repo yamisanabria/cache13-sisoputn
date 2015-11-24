@@ -140,6 +140,7 @@ void deletePages(t_list * pages)
 		if(page->present)
 		{
 			frames[page->frame] = false;
+			setMemoryData(page->frame, string_new(), false);
 			frames_free++;
 		}
 	}
@@ -231,6 +232,7 @@ void printHitRate()
 // Corre retardo de acceso a memoria
 void sleepAccessMemory()
 {
+	log_info(logger, "Retardo de %d segundos.", sleep_access_memory);
 	sleep(sleep_access_memory);
 }
 
@@ -530,7 +532,7 @@ bool runRead(t_read_petition * read_petition)
 		//obtengo datos de pagina y los envio
 		char * data = getMemoryData(page->frame, true);
 		page->used = true;
-		cpu_frameData(read_petition->connection->socket, page->frame, data);
+		cpu_frameData(read_petition->connection->socket, page->num, data);
 		return true;
 	}
 	else if(!read_petition->arriving)
