@@ -35,12 +35,13 @@ void startTesting() {
 	pageWriteRequest(c, 1, 0, "Hola");
 	pageWriteRequest(c, 1, 45, "chau");
 	pageReadRequest(c, 1, 0);
-	pageReadRequest(c, 1, 45);
+	pageReadRequest(c, 1, 1);
+	setZeros(0,1);
 	pageWriteRequest(c, 1, 10, "ERROR");
 	pageWriteRequest(c, 1, 9, "Noooooo");
 	pageWriteRequest(c, 1, 12, "PorFavooor");
 	pageWriteRequest(c, 1, 19, "No?");
-	pageWriteRequest(c, 1, 33, "LoVemosEl28deNov");
+	pageWriteRequest(c, 1, 33, "LoVemoEl28");
 	pageWriteRequest(c, 1, 46, "Aprobas?");
 	pageReadRequest(c, 1, 46);
 	pageReadRequest(c, 1, 9);

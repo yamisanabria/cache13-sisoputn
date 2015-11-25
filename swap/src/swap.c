@@ -153,17 +153,17 @@ void writeSwap(int procStart, char *data, int size) {
 	fseek(swap, offset, SEEK_SET); // me posiciono en donde comenzaré a escribir
 
 	if (zeros != 0) {
-		char *s = string_duplicate(data);
-		char *empty = calloc(1, zeros + 1);
-		string_append(&s, empty);
-		fwrite(s, pageSize, 1, swap);
-		free(empty);
+		char *s = calloc(1,pageSize+1);	//lleno un array dinámico con '\0'
+		memcpy(s,data,size);			//copio los n bytes de ese array con la palabra a escribir donde n es la longitud de palabra
+		fwrite(s, 1, pageSize, swap);
 		free(s);
 	} else {
 		fwrite(data, pageSize, 1, swap);
+
 	}
 
 	fflush(swap);
+
 
 }
 
