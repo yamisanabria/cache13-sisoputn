@@ -29,6 +29,33 @@ socket_connection *c; /* Estructura dummy para poder utilizar las funciones que 
 
 void startTesting() {
 
+	/*startProcess(c, 1, 50);
+	pageReadRequest(c, 1, 0);
+	pageReadRequest(c, 1, 1);
+	pageWriteRequest(c, 1, 0, "Hola");
+	pageWriteRequest(c, 1, 45, "chau");
+	pageReadRequest(c, 1, 0);
+	pageReadRequest(c, 1, 45);
+	pageWriteRequest(c, 1, 10, "ERROR");
+	pageWriteRequest(c, 1, 9, "Noooooo");
+	pageWriteRequest(c, 1, 12, "PorFavooor");
+	pageWriteRequest(c, 1, 19, "No?");
+	pageWriteRequest(c, 1, 33, "LoVemosEl28deNov");
+	pageWriteRequest(c, 1, 46, "Aprobas?");
+	pageReadRequest(c, 1, 46);
+	pageReadRequest(c, 1, 9);
+	pageWriteRequest(c, 1, 1, "Seguro");
+	pageReadRequest(c, 1, 1);
+	pageWriteRequest(c, 1, 0, "Seh");
+	pageReadRequest(c, 1, 10);
+	pageReadRequest(c, 1, 46);
+	pageReadRequest(c, 1, 9);
+	pageReadRequest(c, 1, 1);
+	pageReadRequest(c, 1, 0);
+	pageReadRequest(c, 1, 12);
+	pageReadRequest(c, 1, 33);
+	endProcess(c, 1);*/
+
 	//Iniciar mProcs
 	startProcess(c, 1, 2); /* Paso 1 */
 	startProcess(c, 2, 3); /* Paso 2 */

@@ -57,6 +57,7 @@ void mem_sw_setPage(socket_connection *conn, char **args) {
 	char *data = string_duplicate(args[2]);
 
 	pageWriteRequest(conn, pid, pag, data);
+	free(data);
 
 }
 

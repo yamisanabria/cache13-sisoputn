@@ -388,8 +388,6 @@ void pageWriteRequest(socket_connection *conn, int pid, int pageNum, char* data)
 			" %d, Tamaño: %d bytes, Contenido: %s", pid, procStart * pageSize,
 			strlen(data), data);
 
-	free(data);
-
 	write_end();
 }
 
