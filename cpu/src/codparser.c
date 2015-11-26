@@ -85,7 +85,7 @@ void consumeQuantum(CPU* cpu){
 	sprintf(log_buffer, "Ejecutando retardo del proceso %d", cpu->execPid);
 	log_info(logger, log_buffer);
 	// sleep de retardo
-	sleep(RETARDO);
+	usleep(RETARDO);
 
 	char *line;
 	if(cpu->process_counter == -1){ //Forzaron finalizar

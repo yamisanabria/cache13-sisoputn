@@ -7,21 +7,20 @@ leer 0
 leer 45
 escribir 10 "ERROR"
 escribir 9 "Noooooo"
-entrada­salida 2
+entrada-salida 2
 escribir 12 "PorFavooor"
-entrada­salida 2
+entrada-salida 2
 escribir 19 "No?"
-entrada­salida 2
-escribir 33
-"LoVemosEl28deNov"
-entrada­salida 4
+entrada-salida 2
+escribir 33 "LoVemosEl28deNov"
+entrada-salida 4
 escribir 46 "Aprobas?"
 leer 46
 leer 9
 escribir 1 "Seguro?"
 leer 1
 escribir 0 "Seh"
-entrada­salida 15
+entrada-salida 15
 leer 10
 leer 46
 leer 9
