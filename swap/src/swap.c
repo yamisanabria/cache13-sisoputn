@@ -227,7 +227,7 @@ int initProc(int pid, int requiredPages) {
 		// Establezco el nuevo comienzo
 		beginPos = l->offset + l->pageQty;
 		// Acumulo los huecos disponibles
-		acum = +dif;
+		acum += dif;
 		// Índice actual de la lista
 		index++;
 		return 0;
