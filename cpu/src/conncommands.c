@@ -82,6 +82,10 @@ void memoryStartProcessOk(socket_connection* connection, char ** args) {
 
 	char* pid = string_itoa(cpu->execPid);
 	char* _buffer = string_from_format("mProc %s - Iniciado\n", pid);
+
+	sprintf(log_buffer, "mProc %s - Fin instruccion: %s", pid, _buffer);
+	log_info(logger, log_buffer);
+
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
 	free(pid);
