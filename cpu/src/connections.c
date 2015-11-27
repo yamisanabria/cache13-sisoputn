@@ -63,7 +63,6 @@ int connectScheduler(){
 		sprintf(log_buffer, "Se ha conectado exitosamente al Scheduler en IP %s en puerto %d por socket n° %d", schedulerIP, schedulerPort, socket_scheduler);
 		log_info(logger, log_buffer);
 	}
-
 	return socket_scheduler;
 
 }

@@ -18,6 +18,8 @@ void createCpu(){
 	CPU* _cpu = malloc(sizeof(CPU));
 
 	_cpu->status = CPU_AVAILABLE;
+	_cpu->codfile = string_new();
+	_cpu->execResponseBuffer = string_new();
 	_cpu->socketIdMemory = connectMemory();
 	_cpu->socketIdScheduler = connectScheduler();
 

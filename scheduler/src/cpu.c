@@ -50,6 +50,7 @@ void cpuPrintMessages(CPU* cpu, PCBItem* process, char* messages)
 {
 	sprintf(log_buffer, "Imprimimos mensajes del CPU %d, PID %d: \n%s", cpu->id, process->PID, messages);
 	log_info(logger, log_buffer);
+	free(messages);
 }
 
 void cpuStatsAreHere(CPU* cpu, char* stats){

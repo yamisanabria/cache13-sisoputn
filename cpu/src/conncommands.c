@@ -19,7 +19,9 @@ void schedulerStartProcess(socket_connection* connection, char ** args){
 	CPU* cpu = findCpuBySchedulerSocket(connection->socket);
 
 	// setear datos en cpu para despues correr
+	free(cpu->execResponseBuffer);
 	cpu->execResponseBuffer = string_new();
+	free(cpu->codfile);
 	cpu->codfile = string_duplicate(path);
 	cpu->execPid = pid;
 	cpu->process_counter = process_counter;
@@ -65,10 +67,12 @@ void schedulerGetStats(socket_connection* connection, char ** args){
 
 	percentage = ((float)temp / (float)(60*1000)) * 100;
 
-	if(percentage > 100)
+	if(percentage >= 100)
 		percentage = 100;
 
-	runFunction(cpu->socketIdScheduler, "cpu_sc_stats", 1, string_itoa(percentage));
+	char* p = string_itoa(percentage);
+	runFunction(cpu->socketIdScheduler, "cpu_sc_stats", 1, p);
+	free(p);
 }
 
 
@@ -76,9 +80,11 @@ void memoryStartProcessOk(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
 
-	char* _buffer = string_from_format("mProc %s - Iniciado\n", string_itoa(cpu->execPid));
+	char* pid = string_itoa(cpu->execPid);
+	char* _buffer = string_from_format("mProc %s - Iniciado\n", pid);
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
+	free(pid);
 
 	cpu->process_counter = cpu->process_counter + 1;
 	// hacer lo que haya que hacer y seguir consumiendo quantums;
@@ -101,13 +107,14 @@ void memoryNoFrames(socket_connection* connection, char ** args) {
 void memoryNoSpace(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
-
-	char* _buffer = string_from_format("mProc %s - Falló: Espacio en memoria insuficiente\n", string_itoa(cpu->execPid));
+	char* pid = string_itoa(cpu->execPid);
+	char* _buffer = string_from_format("mProc %s - Falló: Espacio en memoria insuficiente\n", pid);
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
+	free(pid);
 
 	updateCpuTimer(cpu);
-	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "2", string_itoa(cpu->process_counter + 1), string_duplicate(cpu->execResponseBuffer), "no_space");
+	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, pid, "2", string_itoa(cpu->process_counter + 1), string_duplicate(cpu->execResponseBuffer), "no_space");
 }
 
 void memoryFrameData(socket_connection* connection, char ** args) {
@@ -116,11 +123,11 @@ void memoryFrameData(socket_connection* connection, char ** args) {
 
 	char* _frame = string_duplicate(args[0]);
 	char* _data = string_duplicate(args[1]);
-
-	char* _buffer = string_from_format("mProc %s - Página %s leida: %s\n", string_itoa(cpu->execPid), _frame, _data);
+	char* pid = string_itoa(cpu->execPid);
+	char* _buffer = string_from_format("mProc %s - Página %s leida: %s\n", pid, _frame, _data);
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
-
+	free(pid);
 	free(_data);
 	free(_frame);
 

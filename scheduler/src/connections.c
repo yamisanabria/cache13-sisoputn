@@ -50,8 +50,7 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 	int status 		= atoi(args[1]);
 	int p_counter	= atoi(args[2]);
 	char* messages 	= string_duplicate(args[3]);
-	char* data		= args[4];
-
+	char* data;
 	CPU* cpu = findCPUBySocketConnection(connection);
 	PCBItem* process = pcbGetByPID(pid);
 
@@ -66,6 +65,9 @@ void cpuProcessIsBack(socket_connection * connection, char ** args)
 		processUpdateProgramCounter(process, p_counter);
 
 		int sleep_time;
+
+		if(status == 4)
+			data = args[4];
 
 		switch(status){
 			case 1: //Ráfaga ok
@@ -114,7 +116,13 @@ void cpuRunProcess(CPU* cpu){
 	}
 	sprintf(log_buffer, "Llamando a startProcess en CPU %d con (%d, %s, %d, %d) en socket n°%d", cpu->id, cpu->process->PID, cpu->process->path, cpu->process->counter, P_QUANTUM, cpu->socket->socket);
 	log_info(logger, log_buffer);
-	runFunction(cpu->socket->socket, "sc_cpu_startProcess", 4, cpu->process->path, string_itoa(cpu->process->PID), string_itoa(cpu->process->counter), string_itoa(P_QUANTUM));
+	char* pid = string_itoa(cpu->process->PID);
+	char* pc = string_itoa(cpu->process->counter);
+	char* q = string_itoa(P_QUANTUM);
+	runFunction(cpu->socket->socket, "sc_cpu_startProcess", 4, cpu->process->path, pid, pc, q);
+	free(pid);
+	free(pc);
+	free(q);
 }
 
 void getCPUStats(CPU* cpu){
