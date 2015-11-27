@@ -260,7 +260,10 @@ void clearMemory()
 {
 	int i, j;
 	for(i = 0; i < frames_q; i++)
+	{
 		free(memory[i]);
+		memory[i] = string_duplicate("");
+	}
 
 	t_list * ps;
 	for(i = 0; i < list_size(processes); i++)
