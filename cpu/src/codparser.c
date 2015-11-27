@@ -86,7 +86,7 @@ void consumeQuantum(CPU* cpu){
 	/** fin de inicio de quantum */
 
 
-	sprintf(log_buffer, "Iniciando rafaga del proceso %d con retardo (%Ld) y quantum %d", (long long int)RETARDO, cpu->execPid, cpu->quantum);
+	sprintf(log_buffer, "Iniciando rafaga del proceso %d con retardo (%Ld) y quantum %d", cpu->execPid, (long long int)RETARDO, cpu->quantum);
 	log_info(logger, log_buffer);
 	// sleep de retardo
 	usleep(RETARDO);
