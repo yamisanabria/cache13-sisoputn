@@ -213,7 +213,7 @@ void clearTLB()
 {
 	void _destroyer(t_translation * translation)
 	{free(translation);}
-	queue_destroy_and_destroy_elements(TLB, (void*)_destroyer);
+	queue_clean_and_destroy_elements(TLB, (void*)_destroyer);
 }
 
 // Imprime la tasa de aciertos de la TLB
@@ -446,10 +446,13 @@ bool assignFrame(int pid, t_page * page)
 	if(list_size(presents) < frames_max && frames_free > 0)
 	{
 		page->frame = getFreeFrame();
-		page->present = false;
+		/*page->present = false;
 		addTranslation(pid, page->num, page->frame);
 		sw_getPage(pid, page->num);
-		return false;
+		return false;*/
+		page->present = true;
+                addTranslation(pid, page->num, page->frame);
+                return true;
 	}
 	// Selecciono un frame (si es que hay)
 	else if(list_size(presents) > 0)
@@ -471,9 +474,11 @@ bool assignFrame(int pid, t_page * page)
 		}
 		else
 		{
-			page->present = false;
+			/*page->present = false;
 			sw_getPage(pid, page->num);
-			return false;
+			return false;*/
+			page->present = true;
+                	return true;
 		}
 	}
 	// Sin frames asignados y sin frames disponibles: aborto
