@@ -68,7 +68,11 @@ void updateCpuTimer(CPU* cpu){
 
 void consumeQuantum(CPU* cpu){
 	if(cpu->quantum == 0){
-		runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, string_itoa(cpu->execPid), "1", string_itoa(cpu->process_counter), cpu->execResponseBuffer, "");
+		char* pid = string_itoa(cpu->execPid);
+		char* pc = string_itoa(cpu->process_counter);
+		runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, pid, "1", pc, cpu->execResponseBuffer, "");
+		free(pid);
+		free(pc);
 		return;
 	}
 
@@ -82,10 +86,10 @@ void consumeQuantum(CPU* cpu){
 	/** fin de inicio de quantum */
 
 
-	sprintf(log_buffer, "Ejecutando retardo del proceso %d", cpu->execPid);
+	sprintf(log_buffer, "Ejecutando retardo (%Ld) del proceso %d", (long long int)RETARDO, cpu->execPid);
 	log_info(logger, log_buffer);
 	// sleep de retardo
-	sleep(RETARDO);
+	usleep(RETARDO);
 
 	char *line;
 	if(cpu->process_counter == -1){ //Forzaron finalizar

@@ -73,7 +73,7 @@ void initializeLogger(int argc, char* argv[]){
 		}
 	}*/
 	//logger = log_create("cpu.log", "CPU", showLogInConsole, LOG_LEVEL_INFO);
-	logger = log_create("cpu.log", "CPU", true, LOG_LEVEL_INFO);
+	logger = log_create("memory.log", "MEMORY", true, LOG_LEVEL_INFO);
 }
 
 //Escucha las 3 señales (se envian con kill -s SIG**** %pid%)
