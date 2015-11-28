@@ -26,6 +26,9 @@ void schedulerStartProcess(socket_connection* connection, char ** args){
 	cpu->execPid = pid;
 	cpu->process_counter = process_counter;
 
+	sprintf(log_buffer, "Iniciando rafaga del proceso %d con quantum %d", cpu->execPid, cpu->quantum);
+	log_info(logger, log_buffer);
+
 	// si el quantum es 0 significa que es apropiativa
 	// o sea corre hasta fin o entrada salida, a fines
 	// practiocos voy a usar -1 si quantum es 0
@@ -82,6 +85,10 @@ void memoryStartProcessOk(socket_connection* connection, char ** args) {
 
 	char* pid = string_itoa(cpu->execPid);
 	char* _buffer = string_from_format("mProc %s - Iniciado\n", pid);
+
+	sprintf(log_buffer, "mProc %s - Fin instruccion: %s", pid, _buffer);
+	log_info(logger, log_buffer);
+
 	string_append(&cpu->execResponseBuffer, _buffer);
 	free(_buffer);
 	free(pid);
@@ -126,6 +133,11 @@ void memoryFrameData(socket_connection* connection, char ** args) {
 	char* pid = string_itoa(cpu->execPid);
 	char* _buffer = string_from_format("mProc %s - Página %s leida: %s\n", pid, _frame, _data);
 	string_append(&cpu->execResponseBuffer, _buffer);
+
+	sprintf(log_buffer, "mProc %s - Fin instruccion: %s", pid, _buffer);
+	log_info(logger, log_buffer);
+
+
 	free(_buffer);
 	free(pid);
 	free(_data);
@@ -140,6 +152,8 @@ void memoryWriteOk(socket_connection* connection, char ** args) {
 	//Identificar CPU comparando sockets
 
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
+
+
 
 	cpu->process_counter = cpu->process_counter + 1;
 	updateCpuTimer(cpu);

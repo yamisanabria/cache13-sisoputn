@@ -83,6 +83,10 @@ void ins_finalizar(CPU* cpu) {
 	// le aviso al scheduler que termino proceso
 	runFunction(cpu->socketIdScheduler, "cpu_sc_process_back", 4, pid, "3", pc, cpu->execResponseBuffer);
 
+	sprintf(log_buffer, "mProc %s - Fin instruccion: finalizar", pid);
+	log_info(logger, log_buffer);
+
+
 	cpu->quantum = 0;
 
 	free(pid);
