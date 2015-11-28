@@ -350,8 +350,8 @@ void pageReadRequest(socket_connection *conn, int pid, int pageNum) {
 
 	data = readSwap(procStart);
 
-	log_info(logg, "Lectura solicitada.. PID: %d, Página N°: %d, N° de byte inicial"
-			" %d, Tamaño: %d bytes, Contenido: %s", pid, pageNum, procStart * pageSize,
+	log_info(logg, "Lectura solicitada.. PID: %d, N° de byte inicial"
+			" %d, Tamaño: %d bytes, Contenido: %s", pid, procStart * pageSize,
 			strlen(data), data);
 
 	sw_mem_page(conn, id, pn, data);
