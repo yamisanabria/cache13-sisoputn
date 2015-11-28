@@ -30,6 +30,7 @@
 /cpu/cpu.log
 /memory/cpu.log
 /swap/swap.log
+/swap/swap.data
 
 #mix
 /swap/swap.data
