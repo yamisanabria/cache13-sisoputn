@@ -348,14 +348,14 @@ t_page * selectFrame_CLOCK_M(int pid, t_list * presents)
 {
 	t_process * process = getProcess(pid);
 
+	//Ordeno como pila
+	int _comparator(t_page * a, t_page * b)
+	{return a->frame < b->frame;}
+	list_sort(presents, (void *)_comparator);
+
 	//Inicializo la primera vez el puntero al primer marco
 	if(process->clock_pointer == NULL)
 		process->clock_pointer = list_get(presents, 0);
-
-	//Ordeno como pila
-	int _comparator(t_page * a, t_page * b)
-	{return a->frame_timestamp < b->frame_timestamp;}
-	list_sort(presents, (void *)_comparator);
 
 	//defino donde esta el puntero
 	int nextIndex = 0;
@@ -363,6 +363,7 @@ t_page * selectFrame_CLOCK_M(int pid, t_list * presents)
 		if(((t_page *)list_get(presents, nextIndex))->frame == process->clock_pointer->frame)
 			break;
 
+	t_page * _outPage = NULL;
 	int method = 1;
 	int count = 0;
 	while(true)
@@ -371,20 +372,16 @@ t_page * selectFrame_CLOCK_M(int pid, t_list * presents)
 
 		if(method == 1 && !process->clock_pointer->used && !process->clock_pointer->modified)
 		{
-			//cambio puntero
-			nextIndex = ++nextIndex >= list_size(presents) ? 0 : nextIndex;
-			process->clock_pointer = list_get(presents, nextIndex);
-			return process->clock_pointer;
+			_outPage = process->clock_pointer;
+			break;
 		}
 
 		if(method == 2)
 		{
 			if(!process->clock_pointer->used && process->clock_pointer->modified)
 			{
-				//cambio puntero
-				nextIndex = ++nextIndex >= list_size(presents) ? 0 : nextIndex;
-				process->clock_pointer = list_get(presents, nextIndex);
-				return process->clock_pointer;
+				_outPage = process->clock_pointer;
+				break;
 			}
 
 			process->clock_pointer->used = false;
@@ -400,6 +397,12 @@ t_page * selectFrame_CLOCK_M(int pid, t_list * presents)
 		nextIndex = ++nextIndex >= list_size(presents) ? 0 : nextIndex;
 		process->clock_pointer = list_get(presents, nextIndex);
 	}
+
+	//cambio puntero
+	nextIndex = ++nextIndex >= list_size(presents) ? 0 : nextIndex;
+	process->clock_pointer = list_get(presents, nextIndex);
+
+	return _outPage;
 }
 
 // Selecciona la pagina que debe salir
