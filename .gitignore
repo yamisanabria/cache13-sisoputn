@@ -13,6 +13,9 @@
 /memory/build
 /cpu/build
 
+/memory/Debug
+/swap/Debug
+
 # main de modulos
 /swap/swap
 /scheduler/scheduler
@@ -27,6 +30,7 @@
 /cpu/cpu.log
 /memory/cpu.log
 /swap/swap.log
+/swap/swap.data
 
 #mix
 /swap/swap.data
