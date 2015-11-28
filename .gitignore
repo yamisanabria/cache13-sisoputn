@@ -13,6 +13,8 @@
 /memory/build
 /cpu/build
 
+/memory/Debug
+
 # main de modulos
 /swap/swap
 /scheduler/scheduler
