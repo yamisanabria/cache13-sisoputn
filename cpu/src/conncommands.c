@@ -153,8 +153,7 @@ void memoryWriteOk(socket_connection* connection, char ** args) {
 
 	CPU* cpu = findCpuByMemorySocket(connection->socket);
 
-	sprintf(log_buffer, "mProc %s - Fin instruccion: %s", pid, _buffer);
-	log_info(logger, log_buffer);
+
 
 	cpu->process_counter = cpu->process_counter + 1;
 	updateCpuTimer(cpu);
