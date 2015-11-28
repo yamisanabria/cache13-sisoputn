@@ -119,12 +119,16 @@ void cpu_frameData(int socket, int frame, char * data)
 	char * frame_str = string_itoa(frame);
 	runFunction(socket, "mem_cpu_frameData", 2, frame_str, data);
 	free(frame_str);
+
+	write_end();
 }
 
 // Indicamos que se realizo la escritura
 void cpu_writeOk(int socket)
 {
 	runFunction(socket, "mem_cpu_writeOk", 0);
+
+	write_end();
 }
 
 
@@ -218,7 +222,7 @@ void cpu_read(socket_connection * connection, char ** args)
 
 	addReadPetition(pid, page, connection);
 
-	write_end();
+
 }
 
 // Nos indica escribir un frame
@@ -234,7 +238,7 @@ void cpu_write(socket_connection * connection, char ** args)
 
 	addWritePetition(pid, page, data, connection);
 
-	write_end();
+
 }
 
 // Nos indica que finalizo un proceso
@@ -294,7 +298,7 @@ void sw_page(socket_connection * connection, char ** args)
 	int page_num = atoi(args[1]);	// número de página a escribir
 	char * data = args[2];			// datos de la pagina
 
-	write_start();
+
 
 	log_info(logger, "SWAP nos devuelve el conenido de una pagina Nº%d (PIDº%d)", page_num, pid);
 
@@ -303,7 +307,6 @@ void sw_page(socket_connection * connection, char ** args)
 	page->present = true;
 	runPetitions();
 
-	write_end();
 }
 
 

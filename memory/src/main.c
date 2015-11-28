@@ -79,18 +79,28 @@ void initializeLogger(int argc, char* argv[]){
 //Escucha las 3 señales (se envian con kill -s SIG**** %pid%)
 void listenSignal(int signal)
 {
+	write_start();
+	//log_info(logger, "Comienzo sem");
+
 	switch (signal)
 	{
 		case SIGUSR1:
+			log_info(logger, "Signal SIGUSR1, limpiando TLB");
 			clearTLB();
 			break;
 		case SIGUSR2:
+			log_info(logger, "Signal SIGUSR2, limpiando memoria");
 			clearMemory();
 			break;
 		case SIGPOLL:
+			log_info(logger, "Signal SIGPOLL, imprimiendo dump de memoria");
 			printMemory();
 			break;
 	}
+
+	//log_info(logger, "fin sem");
+
+	write_end();
 }
 
 int main(int argc, char* argv[])

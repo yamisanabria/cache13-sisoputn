@@ -140,7 +140,7 @@ void deletePages(t_list * pages)
 		if(page->present)
 		{
 			frames[page->frame] = false;
-			setMemoryData(page->frame, string_new(), false);
+			//setMemoryData(page->frame, string_new(), false);
 			frames_free++;
 		}
 	}
@@ -259,18 +259,35 @@ char * getMemoryData(int frame, bool sleep)
 void clearMemory()
 {
 	int i, j;
+
+	t_list * pages;
+	for(i = 0; i < list_size(processes); i++)
+	{
+		t_process * process = list_get(processes, i);
+		pages = process->pages;
+		for(j = 0; j < list_size(pages); j++)
+		{
+			t_page * page = list_get(pages, j);
+			if(page->present)
+			{
+				frames_free++;
+				if(page->modified)
+					sw_setPage(process->id, page->num, getMemoryData(page->frame, false));
+			}
+
+			page->present = false;
+			page->modified = false;
+			page->used = false;
+			page->frame = -1;
+			page->frame_timestamp = 0;
+			page->modified_timestamp = 0;
+		}
+	}
+
 	for(i = 0; i < frames_q; i++)
 	{
 		free(memory[i]);
 		memory[i] = string_duplicate("");
-	}
-
-	t_list * ps;
-	for(i = 0; i < list_size(processes); i++)
-	{
-		ps = ((t_process*)list_get(processes, i))->pages;
-		for(j = 0; j < list_size(ps); j++)
-			((t_page*)list_get(ps, j))->modified = false;
 	}
 }
 
@@ -353,12 +370,22 @@ t_page * selectFrame_CLOCK_M(int pid, t_list * presents)
 		count++;
 
 		if(method == 1 && !process->clock_pointer->used && !process->clock_pointer->modified)
+		{
+			//cambio puntero
+			nextIndex = ++nextIndex >= list_size(presents) ? 0 : nextIndex;
+			process->clock_pointer = list_get(presents, nextIndex);
 			return process->clock_pointer;
+		}
 
 		if(method == 2)
 		{
 			if(!process->clock_pointer->used && process->clock_pointer->modified)
+			{
+				//cambio puntero
+				nextIndex = ++nextIndex >= list_size(presents) ? 0 : nextIndex;
+				process->clock_pointer = list_get(presents, nextIndex);
 				return process->clock_pointer;
+			}
 
 			process->clock_pointer->used = false;
 		}
@@ -393,17 +420,20 @@ t_page * selectFrame(int pid, t_list * presents)
 // Devuelve numero de frame si no esta disponible devuelve -1
 int getNumFrame(int pid, int page_num)
 {
+	t_page * page =  getPage(pid, page_num);
 	t_translation * translation = getTranslation(pid, page_num);
 	TLB_access += 1.0f;
 	if(translation != NULL)
 	{
-		TLB_hits += 1.0f;
+		log_info(logger, "Acierto de página N°%d (PID %d)", pid, page_num);
+
+		if(page->present)
+			TLB_hits += 1.0f;
 		return translation->frame;
 	}
 
 	sleepAccessMemory();
 
-	t_page * page = getPage(pid, page_num);
 	if(page != NULL)
 		if(page->present)
 			return page->frame;
@@ -446,13 +476,13 @@ bool assignFrame(int pid, t_page * page)
 	if(list_size(presents) < frames_max && frames_free > 0)
 	{
 		page->frame = getFreeFrame();
-		/*page->present = false;
+		page->present = false;
 		addTranslation(pid, page->num, page->frame);
 		sw_getPage(pid, page->num);
-		return false;*/
-		page->present = true;
-                addTranslation(pid, page->num, page->frame);
-                return true;
+		return false;
+		/*page->present = true;
+		addTranslation(pid, page->num, page->frame);
+		return true;*/
 	}
 	// Selecciono un frame (si es que hay)
 	else if(list_size(presents) > 0)
@@ -474,11 +504,11 @@ bool assignFrame(int pid, t_page * page)
 		}
 		else
 		{
-			/*page->present = false;
+			page->present = false;
 			sw_getPage(pid, page->num);
-			return false;*/
-			page->present = true;
-                	return true;
+			return false;
+			/*page->present = true;
+            return true;*/
 		}
 	}
 	// Sin frames asignados y sin frames disponibles: aborto
@@ -498,11 +528,12 @@ bool assignFrame(int pid, t_page * page)
 // Ejecuta escritura
 bool runWrite(t_write_petition * write_petition)
 {
+	t_page * page = getPage(write_petition->pid, write_petition->page);
+	t_process * process = getProcess(write_petition->pid);
+
 	if(!write_petition->arriving)
 		getNumFrame(write_petition->pid, write_petition->page);
 
-	t_page * page = getPage(write_petition->pid, write_petition->page);
-	t_process * process = getProcess(write_petition->pid);
 	if(page->present)
 	{
 		process->access++;
@@ -542,6 +573,7 @@ bool runRead(t_read_petition * read_petition)
 		//obtengo datos de pagina y los envio
 		char * data = getMemoryData(page->frame, true);
 		page->used = true;
+		page->modified_timestamp = getTimestamp();
 		cpu_frameData(read_petition->connection->socket, page->num, data);
 		return true;
 	}
