@@ -126,7 +126,14 @@ list_proc *createNode(int pid, int pos, int pages) {
 void setZeros(int beginPos, int pages) {
 
 	int size = pages * pageSize;
+	/* lleno mi array de \0 para "eliminar" mi proceso del swap */
 	char *zeros = calloc(1, pages * size + 1);
+	/* también podía hacerse así
+	 * fseek(swap, beginPos * pageSize, SEEK_SET);
+	 * zeros = malloc(size);
+	 * memset(zeros, '\0', size);
+	 * fwrite(zeros, 1, size, swap);
+	 */
 	fseek(swap, beginPos * pageSize, SEEK_SET);
 	fwrite(zeros, 1, size, swap);
 	fflush(swap);
@@ -313,11 +320,6 @@ void endProcess(socket_connection *conn, int pid) {
 	list_find(lp, (void*) _getEnd);
 	list_remove(lp, index);
 
-	/* lleno mi array de \0 para "eliminar" mi proceso del swap */
-//	size = pages * pageSize;
-//	empty = malloc(size);
-//	memset(empty, '\0', size);
-//  writeSwap(procStart, size, empty,size);
 	pageDisp += pages;
 
 	log_info(logg, "Proceso liberado exitosamente.. PID: %d, N° de byte inicial"
