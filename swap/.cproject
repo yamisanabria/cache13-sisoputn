@@ -33,7 +33,7 @@
 								<option id="gnu.c.compiler.option.dialect.std.1968797828" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.606336709" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
-							<tool command="gcc -lcommons -pthread" id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1034559028" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
+							<tool command="gcc -lcommons -pthread -lm" id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1034559028" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
 								<option id="gnu.c.link.option.libs.1363043521" name="Libraries (-l)" superClass="gnu.c.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="Includes"/>
 									<listOptionValue builtIn="false" value="commons"/>
@@ -129,4 +129,5 @@
 			<resource resourceType="PROJECT" workspacePath="/swap"/>
 		</configuration>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

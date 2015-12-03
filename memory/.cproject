@@ -32,7 +32,7 @@
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1586498306" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
-							<tool command="gcc -lcommons -pthread" id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1718222139" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
+							<tool command="gcc -lcommons -pthread -lm" id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1718222139" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
 								<option id="gnu.c.link.option.libs.349285005" name="Libraries (-l)" superClass="gnu.c.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="commons"/>
 									<listOptionValue builtIn="false" value="pthread"/>
