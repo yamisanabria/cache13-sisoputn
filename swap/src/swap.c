@@ -79,7 +79,7 @@ void readFileConfig() {
 
 void initLog() {
 
-	logg = log_create("swap.log", "Swap", true, LOG_LEVEL_INFO);
+	logg = log_create("swap.log", "SWAP", true, LOG_LEVEL_INFO);
 }
 
 void initSwap() {
